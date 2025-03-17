@@ -1,0 +1,162 @@
+{
+    "repo_url": "https://github.com/AmPaschal/contiki-ng.git",
+    "harnesses": [
+        {
+            "cve_id": "CVE-2022-41873",
+            "branch": "cbmc_2022_41873_recreated",
+            "harness_path": "cbmc/proofs/net/l2cap/get_channel_for_cid",
+            "target_func": "get_channel_for_cid"
+        },
+        {
+            "cve_id": "CVE-2020-14937",
+            "branch": "cbmc_cve_2020_14937_recreated",
+            "harness_path": "cbmc/proofs/net/snmp/snmp_ber/decode_unsgined_integer",
+            "target_func": "snmp_ber_decode_unsigned_integer"
+        },
+        {
+            "cve_id": "CVE-2020-14936",
+            "branch": "cbmc_cve_2020_14936",
+            "harness_path": "cbmc/proofs/net/snmp/snmp_ber/decode_oid",
+            "target_func": "snmp_ber_decode_oid"
+        },
+        {
+            "cve_id": "CVE-2020-12141",
+            "branch": "cbmc_2020_12141_recreated",
+            "harness_path": "cbmc/proofs/net/snmp/snmp_ber/encode_string_len",
+            "target_func": "snmp_ber_encode_string_len"
+        },
+        {
+            "cve_id": "CVE-2020-14934",
+            "branch": "cbmc_2020_14934",
+            "harness_path": "cbmc/proofs/net/snmp/snmp_message/message_decode",
+            "target_func": "snmp_message_decode"
+        },
+        {
+            "cve_id": "CVE-2020-14935",
+            "branch": "cbmc_2020_14935",
+            "harness_path": "cbmc/proofs/net/snmp/snmp_engine/get_bulk",
+            "target_func": "snmp_engine_get_bulk"
+        },
+        {
+            "cve_id": "CVE-2021-21410",
+            "branch": "cbmc_2020_21410",
+            "harness_path": "cbmc/proofs/net/6lowpan/uncompress_hdr_iphc",
+            "target_func": "uncompress_hdr_iphc"
+        },
+        {
+            "cve_id": "CVE-2021-21280",
+            "branch": "cbmc_2020_21410",
+            "harness_path": "cbmc/proofs/net/6lowpan/uncompress_hdr_iphc",
+            "target_func": "uncompress_hdr_iphc"
+        },
+        {
+            "cve_id": "CVE-2022-36054",
+            "branch": "cbmc_2022_36054",
+            "harness_path": "cbmc/proofs/net/ipv6/uipbuf/get_next_header",
+            "target_func": "uipbuf_get_next_header"
+        },
+        {
+            "cve_id": "CVE-2022-36052",
+            "branch": "cve-2022-36052",
+            "harness_path": "cbmc/proofs/net/6lowpan/uncompress_hdr_iphc",
+            "target_func": "uncompress_hdr_iphc"
+        },
+        {
+            "cve_id": "CVE-2022-36053",
+            "branch": "cbmc_2022_36053",
+            "harness_path": "cbmc/proofs/net/ipv6/uipbuf/get_next_header",
+            "target_func": "uipbuf_get_next_header"
+        },
+        {
+            "cve_id": "CVE-2022-35926",
+            "branch": "CBMC_2022_35926",
+            "harness_path": "cbmc/proofs/net/ipv6/icmp/ns_input",
+            "target_func": "ns_input"
+        },
+        {
+            "cve_id": "CVE-2021-21279",
+            "branch": "CBMC_2022_35926",
+            "harness_path": "cbmc/proofs/net/ipv6/icmp/ns_input",
+            "target_func": "ns_input"
+        },
+        {
+            "cve_id": "CVE-2021-21282",
+            "branch": "CBMC_2021_21282",
+            "harness_path": "cbmc/proofs/net/rpl-classic/ext-header/srh-update",
+            "target_func": "rpl_ext_header_srh_update"
+        },
+        {
+            "cve_id": "CVE-2021-21257",
+            "branch": "CBMC_2021_21257",
+            "harness_path": "cbmc/proofs/net/rpl-classic/ext-header/srh-update",
+            "target_func": "rpl_ext_header_srh_update"
+        },
+        {
+            "cve_id": "CVE-2021-32771",
+            "branch": "cbmc_2021_32771",
+            "harness_path": "cbmc/proofs/net/rpl-classic/icmp6/dao_input_storing",
+            "target_func": "dao_input_storing"
+        },
+        {
+            "cve_id": "CVE-2022-35927",
+            "branch": "cbmc_2022_35927",
+            "harness_path": "cbmc/proofs/net/rpl-classic/icmp6/dio_input",
+            "target_func": "dio_input"
+        },
+        {
+            "cve_id": "CVE-2023-23609",
+            "branch": "CVE-2023-23609",
+            "harness_path": "cbmc/proofs/net/l2cap/input_l2cap_frame_flow_channel",
+            "target_func": "input_l2cap_frame_flow_channel"
+        },
+        {
+            "cve_id": "CVE-2020-12140",
+            "branch": "CVE-2020-12140",
+            "harness_path": "cbmc/proofs/net/l2cap/input_l2cap_frame_flow_channel",
+            "target_func": "input_l2cap_frame_flow_channel"
+        },
+        {
+            "cve_id": "CVE-2022-41972",
+            "branch": "CVE-2022-41972",
+            "harness_path": "cbmc/proofs/net/l2cap/input_l2cap_credit",
+            "target_func": "input_l2cap_credit"
+        },
+        {
+            "cve_id": "CVE-2023-50927",
+            "branch": "cbmc_2022_35927",
+            "harness_path": "cbmc/proofs/net/rpl-classic/icmp6/dio_input",
+            "target_func": "dio_input"
+        },
+        {
+            "cve_id": "CVE-2023-50926",
+            "branch": "CVE-2023-50926",
+            "harness_path": "cbmc/proofs/net/rpl-lite/icmp6/rpl_process_dio",
+            "target_func": "rpl_process_dio"
+        },
+        {
+            "cve_id": "CVE-2023-37459",
+            "branch": "CVE-2023-37459",
+            "harness_path": "cbmc/proofs/net/ipv6/tcp/check_for_tcp_syn",
+            "target_func": "check_for_tcp_syn"
+        },
+        {
+            "cve_id": "CVE-2023-37281",
+            "branch": "CVE-2023-37281",
+            "harness_path": "cbmc/proofs/net/6lowpan/uncompress_addr",
+            "target_func": "uncompress_addr"
+        },
+        {
+            "cve_id": "CVE-2023-34101",
+            "branch": "cbmc_2021_32771",
+            "harness_path": "cbmc/proofs/net/rpl-classic/icmp6/dao_input_storing",
+            "target_func": "dao_input_storing"
+        },
+        {
+            "cve_id": "CVE-2023-31129",
+            "branch": "CVE-2023-31129",
+            "harness_path": "cbmc/proofs/net/ipv6/rs_input",
+            "target_func": "rs_input"
+        }
+    ]
+}
+

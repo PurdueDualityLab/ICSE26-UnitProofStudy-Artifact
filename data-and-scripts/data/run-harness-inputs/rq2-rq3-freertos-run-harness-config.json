@@ -1,0 +1,54 @@
+{
+    "repo_url": "https://github.com/AmPaschal/FreeRTOS-Plus-TCP.git",
+    "harnesses": [
+        {
+            "cve_id": "CVE-2018-16523",
+            "branch": "prvSingleStepTCPHeaderOptions",
+            "harness_path": "cbmc/prvSingleStepTCPHeaderOptions",
+            "target_func": "prvSingleStepTCPHeaderOptions"
+        },
+        {
+            "cve_id": "CVE-1028-16524",
+            "branch": "prvCheckOptions",
+            "harness_path": "cbmc/prvCheckOptions",
+            "target_func": "prvCheckOptions"
+        },
+        {
+            "cve_id": "CVE-2018-16525",
+            "branch": "ulDNSHandlePacket",
+            "harness_path": "cbmc/ulDNSHandlePacket",
+            "target_func": "ulDNSHandlePacket"
+        },
+        {
+            "cve_id": "CVE-2018-16527",
+            "branch": "prvProcessICMPPacket",
+            "harness_path": "cbmc/ProcessICMPPacket",
+            "target_func": "ProcessICMPPacket"
+        },
+        {
+            "cve_id": "CVE-2018-16600",
+            "branch": "eARPProcessPacket",
+            "harness_path": "cbmc/eARPProcessPacket",
+            "target_func": "eARPProcessPacket"
+        },
+        {
+            "cve_id": "CVE-2018-16601",
+            "branch": "prvProcessIPPacket-base",
+            "harness_path": "cbmc/prvProcessIPPacket",
+            "target_func": "prvProcessIPPacket"
+        },
+        {
+            "cve_id": "CVE-2018-16602",
+            "branch": "cprvProcessDHCPReplies",
+            "harness_path": "cbmc/prvProcessDHCPReplies",
+            "target_func": "prvProcessDHCPReplies"
+        },
+        {
+            "cve_id": "CVE-2018-16603",
+            "branch": "xProcessReceivedTCPPacket-base",
+            "harness_path": "cbmc/xProcessReceivedTCPPacket",
+            "target_func": "xProcessReceivedTCPPacket"
+        }
+    ]
+}
+
