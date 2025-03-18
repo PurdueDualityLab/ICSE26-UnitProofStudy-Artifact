@@ -1,0 +1,20 @@
+{
+  "viewer-source": {
+    "all_files": [
+      "/home/tlelievr/contiki-ng/cbmc/proofs/net/snmp/snmp-generic.h",
+      "/home/tlelievr/contiki-ng/cbmc/proofs/net/snmp/snmp_ber/encode_string_len/esl_harness.c",
+      "/home/tlelievr/contiki-ng/os/net/app-layer/snmp/snmp-ber.c",
+      "/home/tlelievr/contiki-ng/os/net/app-layer/snmp/snmp.h",
+      "/usr/include/bits/stdint-uintn.h",
+      "/usr/include/stdlib.h",
+      "/usr/lib/gcc/x86_64-linux-gnu/9/include/stddef.h"
+    ],
+    "files": [
+      "cbmc/proofs/net/snmp/snmp-generic.h",
+      "cbmc/proofs/net/snmp/snmp_ber/encode_string_len/esl_harness.c",
+      "os/net/app-layer/snmp/snmp-ber.c",
+      "os/net/app-layer/snmp/snmp.h"
+    ],
+    "root": "/home/tlelievr/contiki-ng"
+  }
+}

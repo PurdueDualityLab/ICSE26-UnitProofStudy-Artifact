@@ -1,0 +1,1586 @@
+{
+  "viewer-property": {
+    "properties": {
+      "extract_lladdr_from_llao_aligned.precondition_instance.1": {
+        "class": "precondition_instance",
+        "description": "memcpy src/dst overlap",
+        "expression": "__CPROVER_POINTER_OBJECT((void *)dest) != __CPROVER_POINTER_OBJECT((const void *)&nd6_opt_llao[2]) || (const char *)(const void *)&nd6_opt_llao[2] >= (const char *)(void *)dest + (signed int)(size_t)8 || (const char *)(void *)dest >= (const char *)(const void *)&nd6_opt_llao[2] + (signed int)(size_t)8",
+        "location": {
+          "file": "os/net/ipv6/uip-nd6.c",
+          "function": "extract_lladdr_from_llao_aligned",
+          "line": 129
+        }
+      },
+      "extract_lladdr_from_llao_aligned.precondition_instance.2": {
+        "class": "precondition_instance",
+        "description": "memcpy source region readable",
+        "expression": "R_OK((const void *)&nd6_opt_llao[2], (size_t)8)",
+        "location": {
+          "file": "os/net/ipv6/uip-nd6.c",
+          "function": "extract_lladdr_from_llao_aligned",
+          "line": 129
+        }
+      },
+      "extract_lladdr_from_llao_aligned.precondition_instance.3": {
+        "class": "precondition_instance",
+        "description": "memcpy destination region writeable",
+        "expression": "W_OK((void *)dest, (size_t)8)",
+        "location": {
+          "file": "os/net/ipv6/uip-nd6.c",
+          "function": "extract_lladdr_from_llao_aligned",
+          "line": 129
+        }
+      },
+      "harness.overflow.1": {
+        "class": "overflow",
+        "description": "arithmetic overflow on signed - in (signed int)uip_len - 40",
+        "expression": "!overflow(\"-\", signed int, (signed int)uip_len, 40)",
+        "location": {
+          "file": "cbmc/proofs/net/ipv6/rs_input/rsi_harness.c",
+          "function": "harness",
+          "line": 100
+        }
+      },
+      "malloc.assertion.1": {
+        "class": "assertion",
+        "description": "max allocation size exceeded",
+        "expression": "malloc_size <= __CPROVER_max_malloc_size",
+        "location": {
+          "file": "<builtin-library-malloc>",
+          "function": "malloc",
+          "line": 31
+        }
+      },
+      "malloc.assertion.2": {
+        "class": "assertion",
+        "description": "max allocation may fail",
+        "expression": "!(1 != 0) || !should_malloc_fail",
+        "location": {
+          "file": "<builtin-library-malloc>",
+          "function": "malloc",
+          "line": 36
+        }
+      },
+      "memcmp.overflow.1": {
+        "class": "overflow",
+        "description": "arithmetic overflow on signed - in (signed int)*tmp_post_sc1 - (signed int)*tmp_post_sc2",
+        "expression": "!overflow(\"-\", signed int, (signed int)*tmp_post_sc1, (signed int)*tmp_post_sc2)",
+        "location": {
+          "file": "<builtin-library-memcmp>",
+          "function": "memcmp",
+          "line": 27
+        }
+      },
+      "memcmp.pointer_dereference.1": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer NULL in *tmp_post_sc1",
+        "expression": "!(__CPROVER_POINTER_OBJECT(((const unsigned char *)NULL)) == __CPROVER_POINTER_OBJECT(tmp_post_sc1))",
+        "location": {
+          "file": "<builtin-library-memcmp>",
+          "function": "memcmp",
+          "line": 27
+        }
+      },
+      "memcmp.pointer_dereference.10": {
+        "class": "pointer dereference",
+        "description": "dereference failure: dead object in *tmp_post_sc2",
+        "expression": "!(__CPROVER_POINTER_OBJECT(tmp_post_sc2) == __CPROVER_POINTER_OBJECT(__CPROVER_dead_object))",
+        "location": {
+          "file": "<builtin-library-memcmp>",
+          "function": "memcmp",
+          "line": 27
+        }
+      },
+      "memcmp.pointer_dereference.11": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside object bounds in *tmp_post_sc2",
+        "expression": "(unsigned __CPROVER_bitvector[33])__CPROVER_OBJECT_SIZE(tmp_post_sc2) >= (unsigned __CPROVER_bitvector[33])__CPROVER_POINTER_OFFSET(tmp_post_sc2) + 1",
+        "location": {
+          "file": "<builtin-library-memcmp>",
+          "function": "memcmp",
+          "line": 27
+        }
+      },
+      "memcmp.pointer_dereference.12": {
+        "class": "pointer dereference",
+        "description": "dereference failure: invalid integer address in *tmp_post_sc2",
+        "expression": "!(__CPROVER_POINTER_OBJECT(((const unsigned char *)NULL)) == __CPROVER_POINTER_OBJECT(tmp_post_sc2)) || tmp_post_sc2 == ((const unsigned char *)NULL)",
+        "location": {
+          "file": "<builtin-library-memcmp>",
+          "function": "memcmp",
+          "line": 27
+        }
+      },
+      "memcmp.pointer_dereference.2": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer invalid in *tmp_post_sc1",
+        "expression": "!IS_INVALID_POINTER(tmp_post_sc1)",
+        "location": {
+          "file": "<builtin-library-memcmp>",
+          "function": "memcmp",
+          "line": 27
+        }
+      },
+      "memcmp.pointer_dereference.3": {
+        "class": "pointer dereference",
+        "description": "dereference failure: deallocated dynamic object in *tmp_post_sc1",
+        "expression": "!(__CPROVER_POINTER_OBJECT(tmp_post_sc1) == __CPROVER_POINTER_OBJECT(__CPROVER_deallocated))",
+        "location": {
+          "file": "<builtin-library-memcmp>",
+          "function": "memcmp",
+          "line": 27
+        }
+      },
+      "memcmp.pointer_dereference.4": {
+        "class": "pointer dereference",
+        "description": "dereference failure: dead object in *tmp_post_sc1",
+        "expression": "!(__CPROVER_POINTER_OBJECT(tmp_post_sc1) == __CPROVER_POINTER_OBJECT(__CPROVER_dead_object))",
+        "location": {
+          "file": "<builtin-library-memcmp>",
+          "function": "memcmp",
+          "line": 27
+        }
+      },
+      "memcmp.pointer_dereference.5": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside object bounds in *tmp_post_sc1",
+        "expression": "(unsigned __CPROVER_bitvector[33])__CPROVER_OBJECT_SIZE(tmp_post_sc1) >= (unsigned __CPROVER_bitvector[33])__CPROVER_POINTER_OFFSET(tmp_post_sc1) + 1",
+        "location": {
+          "file": "<builtin-library-memcmp>",
+          "function": "memcmp",
+          "line": 27
+        }
+      },
+      "memcmp.pointer_dereference.6": {
+        "class": "pointer dereference",
+        "description": "dereference failure: invalid integer address in *tmp_post_sc1",
+        "expression": "!(__CPROVER_POINTER_OBJECT(((const unsigned char *)NULL)) == __CPROVER_POINTER_OBJECT(tmp_post_sc1)) || tmp_post_sc1 == ((const unsigned char *)NULL)",
+        "location": {
+          "file": "<builtin-library-memcmp>",
+          "function": "memcmp",
+          "line": 27
+        }
+      },
+      "memcmp.pointer_dereference.7": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer NULL in *tmp_post_sc2",
+        "expression": "!(__CPROVER_POINTER_OBJECT(((const unsigned char *)NULL)) == __CPROVER_POINTER_OBJECT(tmp_post_sc2))",
+        "location": {
+          "file": "<builtin-library-memcmp>",
+          "function": "memcmp",
+          "line": 27
+        }
+      },
+      "memcmp.pointer_dereference.8": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer invalid in *tmp_post_sc2",
+        "expression": "!IS_INVALID_POINTER(tmp_post_sc2)",
+        "location": {
+          "file": "<builtin-library-memcmp>",
+          "function": "memcmp",
+          "line": 27
+        }
+      },
+      "memcmp.pointer_dereference.9": {
+        "class": "pointer dereference",
+        "description": "dereference failure: deallocated dynamic object in *tmp_post_sc2",
+        "expression": "!(__CPROVER_POINTER_OBJECT(tmp_post_sc2) == __CPROVER_POINTER_OBJECT(__CPROVER_deallocated))",
+        "location": {
+          "file": "<builtin-library-memcmp>",
+          "function": "memcmp",
+          "line": 27
+        }
+      },
+      "memcmp.precondition.1": {
+        "class": "precondition",
+        "description": "memcmp region 1 readable",
+        "expression": "R_OK(s1, n)",
+        "location": {
+          "file": "<builtin-library-memcmp>",
+          "function": "memcmp",
+          "line": 19
+        }
+      },
+      "memcmp.precondition.2": {
+        "class": "precondition",
+        "description": "memcpy region 2 readable",
+        "expression": "R_OK(s2, n)",
+        "location": {
+          "file": "<builtin-library-memcmp>",
+          "function": "memcmp",
+          "line": 21
+        }
+      },
+      "memcpy.pointer.1": {
+        "class": "pointer",
+        "description": "same object violation in (const char *)(const void *)&nd6_opt_llao[2] >= (const char *)(void *)dest + (signed int)(size_t)8",
+        "expression": "TRUE && !(__CPROVER_POINTER_OBJECT((void *)dest) != __CPROVER_POINTER_OBJECT((const void *)&nd6_opt_llao[2])) ==> __CPROVER_POINTER_OBJECT(nd6_opt_llao) == __CPROVER_POINTER_OBJECT(dest)",
+        "location": {
+          "file": "<builtin-library-memcpy>",
+          "function": "memcpy",
+          "line": 33
+        }
+      },
+      "memcpy.pointer.2": {
+        "class": "pointer",
+        "description": "same object violation in (const char *)(void *)dest >= (const char *)(const void *)&nd6_opt_llao[2] + (signed int)(size_t)8",
+        "expression": "!(__CPROVER_POINTER_OBJECT((void *)dest) != __CPROVER_POINTER_OBJECT((const void *)&nd6_opt_llao[2]) || (const char *)(const void *)&nd6_opt_llao[2] >= (const char *)(void *)dest + (signed int)(size_t)8) ==> __CPROVER_POINTER_OBJECT(dest) == __CPROVER_POINTER_OBJECT(nd6_opt_llao)",
+        "location": {
+          "file": "<builtin-library-memcpy>",
+          "function": "memcpy",
+          "line": 34
+        }
+      },
+      "memcpy.pointer.3": {
+        "class": "pointer",
+        "description": "same object violation in (const char *)(const void *)uipbuf_default_attrs >= (const char *)(void *)uipbuf_attrs + (signed int)sizeof(uint16_t [8]) /*16u*/ ",
+        "expression": "TRUE && !(__CPROVER_POINTER_OBJECT((void *)uipbuf_attrs) != __CPROVER_POINTER_OBJECT((const void *)uipbuf_default_attrs)) ==> FALSE",
+        "location": {
+          "file": "<builtin-library-memcpy>",
+          "function": "memcpy",
+          "line": 33
+        }
+      },
+      "memcpy.pointer.4": {
+        "class": "pointer",
+        "description": "same object violation in (const char *)(void *)uipbuf_attrs >= (const char *)(const void *)uipbuf_default_attrs + (signed int)sizeof(uint16_t [8]) /*16u*/ ",
+        "expression": "!(__CPROVER_POINTER_OBJECT((void *)uipbuf_attrs) != __CPROVER_POINTER_OBJECT((const void *)uipbuf_default_attrs) || (const char *)(const void *)uipbuf_default_attrs >= (const char *)(void *)uipbuf_attrs + (signed int)sizeof(uint16_t [8]) /*16u*/ ) ==> FALSE",
+        "location": {
+          "file": "<builtin-library-memcpy>",
+          "function": "memcpy",
+          "line": 34
+        }
+      },
+      "memcpy.pointer_arithmetic.1": {
+        "class": "pointer arithmetic",
+        "description": "pointer relation: pointer NULL in (const char *)(const void *)&nd6_opt_llao[2]",
+        "expression": "TRUE && !(__CPROVER_POINTER_OBJECT((void *)dest) != __CPROVER_POINTER_OBJECT((const void *)&nd6_opt_llao[2])) ==> !(__CPROVER_POINTER_OBJECT(((const char *)NULL)) == __CPROVER_POINTER_OBJECT(nd6_opt_llao))",
+        "location": {
+          "file": "<builtin-library-memcpy>",
+          "function": "memcpy",
+          "line": 33
+        }
+      },
+      "memcpy.pointer_arithmetic.10": {
+        "class": "pointer arithmetic",
+        "description": "pointer relation: dead object in (const char *)(void *)dest + (signed int)(size_t)8",
+        "expression": "TRUE && !(__CPROVER_POINTER_OBJECT((void *)dest) != __CPROVER_POINTER_OBJECT((const void *)&nd6_opt_llao[2])) ==> !(__CPROVER_POINTER_OBJECT(dest) == __CPROVER_POINTER_OBJECT(__CPROVER_dead_object))",
+        "location": {
+          "file": "<builtin-library-memcpy>",
+          "function": "memcpy",
+          "line": 33
+        }
+      },
+      "memcpy.pointer_arithmetic.11": {
+        "class": "pointer arithmetic",
+        "description": "pointer relation: pointer outside object bounds in (const char *)(void *)dest + (signed int)(size_t)8",
+        "expression": "TRUE && !(__CPROVER_POINTER_OBJECT((void *)dest) != __CPROVER_POINTER_OBJECT((const void *)&nd6_opt_llao[2])) ==> (unsigned __CPROVER_bitvector[33])__CPROVER_OBJECT_SIZE(dest) >= (unsigned __CPROVER_bitvector[33])(__CPROVER_POINTER_OFFSET(dest) + 8u)",
+        "location": {
+          "file": "<builtin-library-memcpy>",
+          "function": "memcpy",
+          "line": 33
+        }
+      },
+      "memcpy.pointer_arithmetic.12": {
+        "class": "pointer arithmetic",
+        "description": "pointer relation: invalid integer address in (const char *)(void *)dest + (signed int)(size_t)8",
+        "expression": "TRUE && !(__CPROVER_POINTER_OBJECT((void *)dest) != __CPROVER_POINTER_OBJECT((const void *)&nd6_opt_llao[2])) ==> !(__CPROVER_POINTER_OBJECT(((const char *)NULL)) == __CPROVER_POINTER_OBJECT(dest)) || (const char *)dest + 8 == ((const char *)NULL)",
+        "location": {
+          "file": "<builtin-library-memcpy>",
+          "function": "memcpy",
+          "line": 33
+        }
+      },
+      "memcpy.pointer_arithmetic.13": {
+        "class": "pointer arithmetic",
+        "description": "pointer relation: pointer NULL in (const char *)(void *)dest",
+        "expression": "!(__CPROVER_POINTER_OBJECT((void *)dest) != __CPROVER_POINTER_OBJECT((const void *)&nd6_opt_llao[2]) || (const char *)(const void *)&nd6_opt_llao[2] >= (const char *)(void *)dest + (signed int)(size_t)8) ==> !(__CPROVER_POINTER_OBJECT(((const char *)NULL)) == __CPROVER_POINTER_OBJECT(dest))",
+        "location": {
+          "file": "<builtin-library-memcpy>",
+          "function": "memcpy",
+          "line": 34
+        }
+      },
+      "memcpy.pointer_arithmetic.14": {
+        "class": "pointer arithmetic",
+        "description": "pointer relation: pointer invalid in (const char *)(void *)dest",
+        "expression": "!(__CPROVER_POINTER_OBJECT((void *)dest) != __CPROVER_POINTER_OBJECT((const void *)&nd6_opt_llao[2]) || (const char *)(const void *)&nd6_opt_llao[2] >= (const char *)(void *)dest + (signed int)(size_t)8) ==> !IS_INVALID_POINTER(dest)",
+        "location": {
+          "file": "<builtin-library-memcpy>",
+          "function": "memcpy",
+          "line": 34
+        }
+      },
+      "memcpy.pointer_arithmetic.15": {
+        "class": "pointer arithmetic",
+        "description": "pointer relation: deallocated dynamic object in (const char *)(void *)dest",
+        "expression": "!(__CPROVER_POINTER_OBJECT((void *)dest) != __CPROVER_POINTER_OBJECT((const void *)&nd6_opt_llao[2]) || (const char *)(const void *)&nd6_opt_llao[2] >= (const char *)(void *)dest + (signed int)(size_t)8) ==> !(__CPROVER_POINTER_OBJECT(dest) == __CPROVER_POINTER_OBJECT(__CPROVER_deallocated))",
+        "location": {
+          "file": "<builtin-library-memcpy>",
+          "function": "memcpy",
+          "line": 34
+        }
+      },
+      "memcpy.pointer_arithmetic.16": {
+        "class": "pointer arithmetic",
+        "description": "pointer relation: dead object in (const char *)(void *)dest",
+        "expression": "!(__CPROVER_POINTER_OBJECT((void *)dest) != __CPROVER_POINTER_OBJECT((const void *)&nd6_opt_llao[2]) || (const char *)(const void *)&nd6_opt_llao[2] >= (const char *)(void *)dest + (signed int)(size_t)8) ==> !(__CPROVER_POINTER_OBJECT(dest) == __CPROVER_POINTER_OBJECT(__CPROVER_dead_object))",
+        "location": {
+          "file": "<builtin-library-memcpy>",
+          "function": "memcpy",
+          "line": 34
+        }
+      },
+      "memcpy.pointer_arithmetic.17": {
+        "class": "pointer arithmetic",
+        "description": "pointer relation: pointer outside object bounds in (const char *)(void *)dest",
+        "expression": "!(__CPROVER_POINTER_OBJECT((void *)dest) != __CPROVER_POINTER_OBJECT((const void *)&nd6_opt_llao[2]) || (const char *)(const void *)&nd6_opt_llao[2] >= (const char *)(void *)dest + (signed int)(size_t)8) ==> (unsigned __CPROVER_bitvector[33])__CPROVER_OBJECT_SIZE(dest) >= (unsigned __CPROVER_bitvector[33])__CPROVER_POINTER_OFFSET(dest)",
+        "location": {
+          "file": "<builtin-library-memcpy>",
+          "function": "memcpy",
+          "line": 34
+        }
+      },
+      "memcpy.pointer_arithmetic.18": {
+        "class": "pointer arithmetic",
+        "description": "pointer relation: invalid integer address in (const char *)(void *)dest",
+        "expression": "!(__CPROVER_POINTER_OBJECT((void *)dest) != __CPROVER_POINTER_OBJECT((const void *)&nd6_opt_llao[2]) || (const char *)(const void *)&nd6_opt_llao[2] >= (const char *)(void *)dest + (signed int)(size_t)8) ==> !(__CPROVER_POINTER_OBJECT(((const char *)NULL)) == __CPROVER_POINTER_OBJECT(dest)) || dest == ((uip_lladdr_t *)NULL)",
+        "location": {
+          "file": "<builtin-library-memcpy>",
+          "function": "memcpy",
+          "line": 34
+        }
+      },
+      "memcpy.pointer_arithmetic.19": {
+        "class": "pointer arithmetic",
+        "description": "pointer relation: pointer NULL in (const char *)(const void *)&nd6_opt_llao[2] + (signed int)(size_t)8",
+        "expression": "!(__CPROVER_POINTER_OBJECT((void *)dest) != __CPROVER_POINTER_OBJECT((const void *)&nd6_opt_llao[2]) || (const char *)(const void *)&nd6_opt_llao[2] >= (const char *)(void *)dest + (signed int)(size_t)8) ==> !(__CPROVER_POINTER_OBJECT(((const char *)NULL)) == __CPROVER_POINTER_OBJECT(nd6_opt_llao))",
+        "location": {
+          "file": "<builtin-library-memcpy>",
+          "function": "memcpy",
+          "line": 34
+        }
+      },
+      "memcpy.pointer_arithmetic.2": {
+        "class": "pointer arithmetic",
+        "description": "pointer relation: pointer invalid in (const char *)(const void *)&nd6_opt_llao[2]",
+        "expression": "TRUE && !(__CPROVER_POINTER_OBJECT((void *)dest) != __CPROVER_POINTER_OBJECT((const void *)&nd6_opt_llao[2])) ==> !IS_INVALID_POINTER(nd6_opt_llao)",
+        "location": {
+          "file": "<builtin-library-memcpy>",
+          "function": "memcpy",
+          "line": 33
+        }
+      },
+      "memcpy.pointer_arithmetic.20": {
+        "class": "pointer arithmetic",
+        "description": "pointer relation: pointer invalid in (const char *)(const void *)&nd6_opt_llao[2] + (signed int)(size_t)8",
+        "expression": "!(__CPROVER_POINTER_OBJECT((void *)dest) != __CPROVER_POINTER_OBJECT((const void *)&nd6_opt_llao[2]) || (const char *)(const void *)&nd6_opt_llao[2] >= (const char *)(void *)dest + (signed int)(size_t)8) ==> !IS_INVALID_POINTER(nd6_opt_llao)",
+        "location": {
+          "file": "<builtin-library-memcpy>",
+          "function": "memcpy",
+          "line": 34
+        }
+      },
+      "memcpy.pointer_arithmetic.21": {
+        "class": "pointer arithmetic",
+        "description": "pointer relation: deallocated dynamic object in (const char *)(const void *)&nd6_opt_llao[2] + (signed int)(size_t)8",
+        "expression": "!(__CPROVER_POINTER_OBJECT((void *)dest) != __CPROVER_POINTER_OBJECT((const void *)&nd6_opt_llao[2]) || (const char *)(const void *)&nd6_opt_llao[2] >= (const char *)(void *)dest + (signed int)(size_t)8) ==> !(__CPROVER_POINTER_OBJECT(nd6_opt_llao) == __CPROVER_POINTER_OBJECT(__CPROVER_deallocated))",
+        "location": {
+          "file": "<builtin-library-memcpy>",
+          "function": "memcpy",
+          "line": 34
+        }
+      },
+      "memcpy.pointer_arithmetic.22": {
+        "class": "pointer arithmetic",
+        "description": "pointer relation: dead object in (const char *)(const void *)&nd6_opt_llao[2] + (signed int)(size_t)8",
+        "expression": "!(__CPROVER_POINTER_OBJECT((void *)dest) != __CPROVER_POINTER_OBJECT((const void *)&nd6_opt_llao[2]) || (const char *)(const void *)&nd6_opt_llao[2] >= (const char *)(void *)dest + (signed int)(size_t)8) ==> !(__CPROVER_POINTER_OBJECT(nd6_opt_llao) == __CPROVER_POINTER_OBJECT(__CPROVER_dead_object))",
+        "location": {
+          "file": "<builtin-library-memcpy>",
+          "function": "memcpy",
+          "line": 34
+        }
+      },
+      "memcpy.pointer_arithmetic.23": {
+        "class": "pointer arithmetic",
+        "description": "pointer relation: pointer outside object bounds in (const char *)(const void *)&nd6_opt_llao[2] + (signed int)(size_t)8",
+        "expression": "!(__CPROVER_POINTER_OBJECT((void *)dest) != __CPROVER_POINTER_OBJECT((const void *)&nd6_opt_llao[2]) || (const char *)(const void *)&nd6_opt_llao[2] >= (const char *)(void *)dest + (signed int)(size_t)8) ==> (unsigned __CPROVER_bitvector[33])__CPROVER_OBJECT_SIZE(nd6_opt_llao) >= (unsigned __CPROVER_bitvector[33])(__CPROVER_POINTER_OFFSET(nd6_opt_llao) + 2u + 8u)",
+        "location": {
+          "file": "<builtin-library-memcpy>",
+          "function": "memcpy",
+          "line": 34
+        }
+      },
+      "memcpy.pointer_arithmetic.24": {
+        "class": "pointer arithmetic",
+        "description": "pointer relation: invalid integer address in (const char *)(const void *)&nd6_opt_llao[2] + (signed int)(size_t)8",
+        "expression": "!(__CPROVER_POINTER_OBJECT((void *)dest) != __CPROVER_POINTER_OBJECT((const void *)&nd6_opt_llao[2]) || (const char *)(const void *)&nd6_opt_llao[2] >= (const char *)(void *)dest + (signed int)(size_t)8) ==> !(__CPROVER_POINTER_OBJECT(((const char *)NULL)) == __CPROVER_POINTER_OBJECT(nd6_opt_llao)) || (const char *)(nd6_opt_llao + 2) + 8 == ((const char *)NULL)",
+        "location": {
+          "file": "<builtin-library-memcpy>",
+          "function": "memcpy",
+          "line": 34
+        }
+      },
+      "memcpy.pointer_arithmetic.3": {
+        "class": "pointer arithmetic",
+        "description": "pointer relation: deallocated dynamic object in (const char *)(const void *)&nd6_opt_llao[2]",
+        "expression": "TRUE && !(__CPROVER_POINTER_OBJECT((void *)dest) != __CPROVER_POINTER_OBJECT((const void *)&nd6_opt_llao[2])) ==> !(__CPROVER_POINTER_OBJECT(nd6_opt_llao) == __CPROVER_POINTER_OBJECT(__CPROVER_deallocated))",
+        "location": {
+          "file": "<builtin-library-memcpy>",
+          "function": "memcpy",
+          "line": 33
+        }
+      },
+      "memcpy.pointer_arithmetic.4": {
+        "class": "pointer arithmetic",
+        "description": "pointer relation: dead object in (const char *)(const void *)&nd6_opt_llao[2]",
+        "expression": "TRUE && !(__CPROVER_POINTER_OBJECT((void *)dest) != __CPROVER_POINTER_OBJECT((const void *)&nd6_opt_llao[2])) ==> !(__CPROVER_POINTER_OBJECT(nd6_opt_llao) == __CPROVER_POINTER_OBJECT(__CPROVER_dead_object))",
+        "location": {
+          "file": "<builtin-library-memcpy>",
+          "function": "memcpy",
+          "line": 33
+        }
+      },
+      "memcpy.pointer_arithmetic.5": {
+        "class": "pointer arithmetic",
+        "description": "pointer relation: pointer outside object bounds in (const char *)(const void *)&nd6_opt_llao[2]",
+        "expression": "TRUE && !(__CPROVER_POINTER_OBJECT((void *)dest) != __CPROVER_POINTER_OBJECT((const void *)&nd6_opt_llao[2])) ==> (unsigned __CPROVER_bitvector[33])__CPROVER_OBJECT_SIZE(nd6_opt_llao) >= (unsigned __CPROVER_bitvector[33])(__CPROVER_POINTER_OFFSET(nd6_opt_llao) + 2u)",
+        "location": {
+          "file": "<builtin-library-memcpy>",
+          "function": "memcpy",
+          "line": 33
+        }
+      },
+      "memcpy.pointer_arithmetic.6": {
+        "class": "pointer arithmetic",
+        "description": "pointer relation: invalid integer address in (const char *)(const void *)&nd6_opt_llao[2]",
+        "expression": "TRUE && !(__CPROVER_POINTER_OBJECT((void *)dest) != __CPROVER_POINTER_OBJECT((const void *)&nd6_opt_llao[2])) ==> !(__CPROVER_POINTER_OBJECT(((const char *)NULL)) == __CPROVER_POINTER_OBJECT(nd6_opt_llao)) || nd6_opt_llao + 2 == ((uint8_t *)NULL)",
+        "location": {
+          "file": "<builtin-library-memcpy>",
+          "function": "memcpy",
+          "line": 33
+        }
+      },
+      "memcpy.pointer_arithmetic.7": {
+        "class": "pointer arithmetic",
+        "description": "pointer relation: pointer NULL in (const char *)(void *)dest + (signed int)(size_t)8",
+        "expression": "TRUE && !(__CPROVER_POINTER_OBJECT((void *)dest) != __CPROVER_POINTER_OBJECT((const void *)&nd6_opt_llao[2])) ==> !(__CPROVER_POINTER_OBJECT(((const char *)NULL)) == __CPROVER_POINTER_OBJECT(dest))",
+        "location": {
+          "file": "<builtin-library-memcpy>",
+          "function": "memcpy",
+          "line": 33
+        }
+      },
+      "memcpy.pointer_arithmetic.8": {
+        "class": "pointer arithmetic",
+        "description": "pointer relation: pointer invalid in (const char *)(void *)dest + (signed int)(size_t)8",
+        "expression": "TRUE && !(__CPROVER_POINTER_OBJECT((void *)dest) != __CPROVER_POINTER_OBJECT((const void *)&nd6_opt_llao[2])) ==> !IS_INVALID_POINTER(dest)",
+        "location": {
+          "file": "<builtin-library-memcpy>",
+          "function": "memcpy",
+          "line": 33
+        }
+      },
+      "memcpy.pointer_arithmetic.9": {
+        "class": "pointer arithmetic",
+        "description": "pointer relation: deallocated dynamic object in (const char *)(void *)dest + (signed int)(size_t)8",
+        "expression": "TRUE && !(__CPROVER_POINTER_OBJECT((void *)dest) != __CPROVER_POINTER_OBJECT((const void *)&nd6_opt_llao[2])) ==> !(__CPROVER_POINTER_OBJECT(dest) == __CPROVER_POINTER_OBJECT(__CPROVER_deallocated))",
+        "location": {
+          "file": "<builtin-library-memcpy>",
+          "function": "memcpy",
+          "line": 33
+        }
+      },
+      "rs_input.overflow.1": {
+        "class": "overflow",
+        "description": "arithmetic overflow on signed + in 40 + (signed int)uip_ext_len",
+        "expression": "!overflow(\"+\", signed int, 40, (signed int)uip_ext_len)",
+        "location": {
+          "file": "os/net/ipv6/uip-nd6.c",
+          "function": "rs_input",
+          "line": 635
+        }
+      },
+      "rs_input.overflow.2": {
+        "class": "overflow",
+        "description": "arithmetic overflow on signed + in 40 + (signed int)uip_ext_len + 4",
+        "expression": "!overflow(\"+\", signed int, 40 + (signed int)uip_ext_len, 4)",
+        "location": {
+          "file": "os/net/ipv6/uip-nd6.c",
+          "function": "rs_input",
+          "line": 635
+        }
+      },
+      "rs_input.overflow.3": {
+        "class": "overflow",
+        "description": "arithmetic overflow on signed + in 40 + (signed int)uip_ext_len + 4 + (signed int)nd6_opt_offset",
+        "expression": "!overflow(\"+\", signed int, 44 + (signed int)uip_ext_len, (signed int)nd6_opt_offset)",
+        "location": {
+          "file": "os/net/ipv6/uip-nd6.c",
+          "function": "rs_input",
+          "line": 635
+        }
+      },
+      "rs_input.overflow.4": {
+        "class": "overflow",
+        "description": "arithmetic overflow on signed shl in (signed int)((uip_nd6_opt_hdr *)(unsigned char *)((unsigned char *)((unsigned char *)uip_aligned_buf.u8 + 40 + (signed int)uip_ext_len) + 4 + (signed int)nd6_opt_offset))->len << 3",
+        "expression": "!((signed int)((uip_nd6_opt_hdr *)(uip_aligned_buf.u8 + 44 + (signed int)uip_ext_len + (signed int)nd6_opt_offset))->len >= 0) || (signed int)((uip_nd6_opt_hdr *)(uip_aligned_buf.u8 + 44 + (signed int)uip_ext_len + (signed int)nd6_opt_offset))->len == 0 || (signed int)(signed int)((uip_nd6_opt_hdr *)(uip_aligned_buf.u8 + 44 + (signed int)uip_ext_len + (signed int)nd6_opt_offset))->len << 3[31 + 32, 31] == 0",
+        "location": {
+          "file": "os/net/ipv6/uip-nd6.c",
+          "function": "rs_input",
+          "line": 650
+        }
+      },
+      "rs_input.overflow.5": {
+        "class": "overflow",
+        "description": "arithmetic overflow on signed + in (signed int)nd6_opt_offset + ((signed int)((uip_nd6_opt_hdr *)(unsigned char *)((unsigned char *)((unsigned char *)uip_aligned_buf.u8 + 40 + (signed int)uip_ext_len) + 4 + (signed int)nd6_opt_offset))->len << 3)",
+        "expression": "!overflow(\"+\", signed int, (signed int)nd6_opt_offset, (signed int)((uip_nd6_opt_hdr *)(uip_aligned_buf.u8 + 44 + (signed int)uip_ext_len + (signed int)nd6_opt_offset))->len << 3)",
+        "location": {
+          "file": "os/net/ipv6/uip-nd6.c",
+          "function": "rs_input",
+          "line": 650
+        }
+      },
+      "rs_input.pointer_dereference.1": {
+        "class": "pointer dereference",
+        "description": "dereference failure: deallocated dynamic object in ((struct uip_ip_hdr *)uip_aligned_buf.u8)->ttl",
+        "expression": "TRUE ==> !(__CPROVER_POINTER_OBJECT(&uip_aligned_buf) == __CPROVER_POINTER_OBJECT(__CPROVER_deallocated))",
+        "location": {
+          "file": "os/net/ipv6/uip-nd6.c",
+          "function": "rs_input",
+          "line": 624
+        }
+      },
+      "rs_input.pointer_dereference.10": {
+        "class": "pointer dereference",
+        "description": "dereference failure: dead object in ((uip_nd6_opt_hdr *)(unsigned char *)((unsigned char *)((unsigned char *)uip_aligned_buf.u8 + 40 + (signed int)uip_ext_len) + 4 + (signed int)nd6_opt_offset))->type",
+        "expression": "!(__CPROVER_POINTER_OBJECT(&uip_aligned_buf) == __CPROVER_POINTER_OBJECT(__CPROVER_dead_object))",
+        "location": {
+          "file": "os/net/ipv6/uip-nd6.c",
+          "function": "rs_input",
+          "line": 642
+        }
+      },
+      "rs_input.pointer_dereference.11": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside object bounds in ((uip_nd6_opt_hdr *)(unsigned char *)((unsigned char *)((unsigned char *)uip_aligned_buf.u8 + 40 + (signed int)uip_ext_len) + 4 + (signed int)nd6_opt_offset))->type",
+        "expression": "!((unsigned __CPROVER_bitvector[33])(44u + (unsigned int)(signed int)uip_ext_len + (unsigned int)(signed int)nd6_opt_offset) + 1 >= 1281)",
+        "location": {
+          "file": "os/net/ipv6/uip-nd6.c",
+          "function": "rs_input",
+          "line": 642
+        }
+      },
+      "rs_input.pointer_dereference.12": {
+        "class": "pointer dereference",
+        "description": "dereference failure: deallocated dynamic object in ((uip_nd6_opt_hdr *)(unsigned char *)((unsigned char *)((unsigned char *)uip_aligned_buf.u8 + 40 + (signed int)uip_ext_len) + 4 + (signed int)nd6_opt_offset))->len",
+        "expression": "!(__CPROVER_POINTER_OBJECT(&uip_aligned_buf) == __CPROVER_POINTER_OBJECT(__CPROVER_deallocated))",
+        "location": {
+          "file": "os/net/ipv6/uip-nd6.c",
+          "function": "rs_input",
+          "line": 650
+        }
+      },
+      "rs_input.pointer_dereference.13": {
+        "class": "pointer dereference",
+        "description": "dereference failure: dead object in ((uip_nd6_opt_hdr *)(unsigned char *)((unsigned char *)((unsigned char *)uip_aligned_buf.u8 + 40 + (signed int)uip_ext_len) + 4 + (signed int)nd6_opt_offset))->len",
+        "expression": "!(__CPROVER_POINTER_OBJECT(&uip_aligned_buf) == __CPROVER_POINTER_OBJECT(__CPROVER_dead_object))",
+        "location": {
+          "file": "os/net/ipv6/uip-nd6.c",
+          "function": "rs_input",
+          "line": 650
+        }
+      },
+      "rs_input.pointer_dereference.14": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside object bounds in ((uip_nd6_opt_hdr *)(unsigned char *)((unsigned char *)((unsigned char *)uip_aligned_buf.u8 + 40 + (signed int)uip_ext_len) + 4 + (signed int)nd6_opt_offset))->len",
+        "expression": "!((unsigned __CPROVER_bitvector[33])(44u + (unsigned int)(signed int)uip_ext_len + (unsigned int)(signed int)nd6_opt_offset + 1u) + 1 >= 1281)",
+        "location": {
+          "file": "os/net/ipv6/uip-nd6.c",
+          "function": "rs_input",
+          "line": 650
+        }
+      },
+      "rs_input.pointer_dereference.15": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer NULL in *(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr)",
+        "expression": "TRUE && TRUE && TRUE && TRUE && TRUE && TRUE && TRUE ==> !(__CPROVER_POINTER_OBJECT(((uip_ip6addr_t *)NULL)) == __CPROVER_POINTER_OBJECT(&(*((struct uip_ip_hdr *)uip_aligned_buf.u8))))",
+        "location": {
+          "file": "os/net/ipv6/uip-nd6.c",
+          "function": "rs_input",
+          "line": 655
+        }
+      },
+      "rs_input.pointer_dereference.16": {
+        "class": "pointer dereference",
+        "description": "dereference failure: deallocated dynamic object in *(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr)",
+        "expression": "TRUE && TRUE && TRUE && TRUE && TRUE && TRUE && TRUE ==> !(__CPROVER_POINTER_OBJECT(&(*((struct uip_ip_hdr *)uip_aligned_buf.u8))) == __CPROVER_POINTER_OBJECT(__CPROVER_deallocated))",
+        "location": {
+          "file": "os/net/ipv6/uip-nd6.c",
+          "function": "rs_input",
+          "line": 655
+        }
+      },
+      "rs_input.pointer_dereference.17": {
+        "class": "pointer dereference",
+        "description": "dereference failure: dead object in *(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr)",
+        "expression": "TRUE && TRUE && TRUE && TRUE && TRUE && TRUE && TRUE ==> !(__CPROVER_POINTER_OBJECT(&(*((struct uip_ip_hdr *)uip_aligned_buf.u8))) == __CPROVER_POINTER_OBJECT(__CPROVER_dead_object))",
+        "location": {
+          "file": "os/net/ipv6/uip-nd6.c",
+          "function": "rs_input",
+          "line": 655
+        }
+      },
+      "rs_input.pointer_dereference.18": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside object bounds in *(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr)",
+        "expression": "TRUE && TRUE && TRUE && TRUE && TRUE && TRUE && TRUE ==> (unsigned __CPROVER_bitvector[33])__CPROVER_OBJECT_SIZE(&(*((struct uip_ip_hdr *)uip_aligned_buf.u8))) >= (unsigned __CPROVER_bitvector[33])__CPROVER_POINTER_OFFSET(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr) + 16",
+        "location": {
+          "file": "os/net/ipv6/uip-nd6.c",
+          "function": "rs_input",
+          "line": 655
+        }
+      },
+      "rs_input.pointer_dereference.19": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer NULL in *(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr)",
+        "expression": "TRUE && TRUE && TRUE && TRUE && TRUE && TRUE && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[0] == 0 ==> !(__CPROVER_POINTER_OBJECT(((uip_ip6addr_t *)NULL)) == __CPROVER_POINTER_OBJECT(&(*((struct uip_ip_hdr *)uip_aligned_buf.u8))))",
+        "location": {
+          "file": "os/net/ipv6/uip-nd6.c",
+          "function": "rs_input",
+          "line": 655
+        }
+      },
+      "rs_input.pointer_dereference.2": {
+        "class": "pointer dereference",
+        "description": "dereference failure: dead object in ((struct uip_ip_hdr *)uip_aligned_buf.u8)->ttl",
+        "expression": "TRUE ==> !(__CPROVER_POINTER_OBJECT(&uip_aligned_buf) == __CPROVER_POINTER_OBJECT(__CPROVER_dead_object))",
+        "location": {
+          "file": "os/net/ipv6/uip-nd6.c",
+          "function": "rs_input",
+          "line": 624
+        }
+      },
+      "rs_input.pointer_dereference.20": {
+        "class": "pointer dereference",
+        "description": "dereference failure: deallocated dynamic object in *(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr)",
+        "expression": "TRUE && TRUE && TRUE && TRUE && TRUE && TRUE && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[0] == 0 ==> !(__CPROVER_POINTER_OBJECT(&(*((struct uip_ip_hdr *)uip_aligned_buf.u8))) == __CPROVER_POINTER_OBJECT(__CPROVER_deallocated))",
+        "location": {
+          "file": "os/net/ipv6/uip-nd6.c",
+          "function": "rs_input",
+          "line": 655
+        }
+      },
+      "rs_input.pointer_dereference.21": {
+        "class": "pointer dereference",
+        "description": "dereference failure: dead object in *(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr)",
+        "expression": "TRUE && TRUE && TRUE && TRUE && TRUE && TRUE && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[0] == 0 ==> !(__CPROVER_POINTER_OBJECT(&(*((struct uip_ip_hdr *)uip_aligned_buf.u8))) == __CPROVER_POINTER_OBJECT(__CPROVER_dead_object))",
+        "location": {
+          "file": "os/net/ipv6/uip-nd6.c",
+          "function": "rs_input",
+          "line": 655
+        }
+      },
+      "rs_input.pointer_dereference.22": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside object bounds in *(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr)",
+        "expression": "TRUE && TRUE && TRUE && TRUE && TRUE && TRUE && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[0] == 0 ==> (unsigned __CPROVER_bitvector[33])__CPROVER_OBJECT_SIZE(&(*((struct uip_ip_hdr *)uip_aligned_buf.u8))) >= (unsigned __CPROVER_bitvector[33])__CPROVER_POINTER_OFFSET(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr) + 16",
+        "location": {
+          "file": "os/net/ipv6/uip-nd6.c",
+          "function": "rs_input",
+          "line": 655
+        }
+      },
+      "rs_input.pointer_dereference.23": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer NULL in *(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr)",
+        "expression": "TRUE && TRUE && TRUE && TRUE && TRUE && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[0] == 0 && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[1] == 0 ==> !(__CPROVER_POINTER_OBJECT(((uip_ip6addr_t *)NULL)) == __CPROVER_POINTER_OBJECT(&(*((struct uip_ip_hdr *)uip_aligned_buf.u8))))",
+        "location": {
+          "file": "os/net/ipv6/uip-nd6.c",
+          "function": "rs_input",
+          "line": 655
+        }
+      },
+      "rs_input.pointer_dereference.24": {
+        "class": "pointer dereference",
+        "description": "dereference failure: deallocated dynamic object in *(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr)",
+        "expression": "TRUE && TRUE && TRUE && TRUE && TRUE && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[0] == 0 && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[1] == 0 ==> !(__CPROVER_POINTER_OBJECT(&(*((struct uip_ip_hdr *)uip_aligned_buf.u8))) == __CPROVER_POINTER_OBJECT(__CPROVER_deallocated))",
+        "location": {
+          "file": "os/net/ipv6/uip-nd6.c",
+          "function": "rs_input",
+          "line": 655
+        }
+      },
+      "rs_input.pointer_dereference.25": {
+        "class": "pointer dereference",
+        "description": "dereference failure: dead object in *(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr)",
+        "expression": "TRUE && TRUE && TRUE && TRUE && TRUE && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[0] == 0 && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[1] == 0 ==> !(__CPROVER_POINTER_OBJECT(&(*((struct uip_ip_hdr *)uip_aligned_buf.u8))) == __CPROVER_POINTER_OBJECT(__CPROVER_dead_object))",
+        "location": {
+          "file": "os/net/ipv6/uip-nd6.c",
+          "function": "rs_input",
+          "line": 655
+        }
+      },
+      "rs_input.pointer_dereference.26": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside object bounds in *(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr)",
+        "expression": "TRUE && TRUE && TRUE && TRUE && TRUE && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[0] == 0 && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[1] == 0 ==> (unsigned __CPROVER_bitvector[33])__CPROVER_OBJECT_SIZE(&(*((struct uip_ip_hdr *)uip_aligned_buf.u8))) >= (unsigned __CPROVER_bitvector[33])__CPROVER_POINTER_OFFSET(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr) + 16",
+        "location": {
+          "file": "os/net/ipv6/uip-nd6.c",
+          "function": "rs_input",
+          "line": 655
+        }
+      },
+      "rs_input.pointer_dereference.27": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer NULL in *(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr)",
+        "expression": "TRUE && TRUE && TRUE && TRUE && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[0] == 0 && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[1] == 0 && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[2] == 0 ==> !(__CPROVER_POINTER_OBJECT(((uip_ip6addr_t *)NULL)) == __CPROVER_POINTER_OBJECT(&(*((struct uip_ip_hdr *)uip_aligned_buf.u8))))",
+        "location": {
+          "file": "os/net/ipv6/uip-nd6.c",
+          "function": "rs_input",
+          "line": 655
+        }
+      },
+      "rs_input.pointer_dereference.28": {
+        "class": "pointer dereference",
+        "description": "dereference failure: deallocated dynamic object in *(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr)",
+        "expression": "TRUE && TRUE && TRUE && TRUE && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[0] == 0 && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[1] == 0 && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[2] == 0 ==> !(__CPROVER_POINTER_OBJECT(&(*((struct uip_ip_hdr *)uip_aligned_buf.u8))) == __CPROVER_POINTER_OBJECT(__CPROVER_deallocated))",
+        "location": {
+          "file": "os/net/ipv6/uip-nd6.c",
+          "function": "rs_input",
+          "line": 655
+        }
+      },
+      "rs_input.pointer_dereference.29": {
+        "class": "pointer dereference",
+        "description": "dereference failure: dead object in *(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr)",
+        "expression": "TRUE && TRUE && TRUE && TRUE && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[0] == 0 && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[1] == 0 && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[2] == 0 ==> !(__CPROVER_POINTER_OBJECT(&(*((struct uip_ip_hdr *)uip_aligned_buf.u8))) == __CPROVER_POINTER_OBJECT(__CPROVER_dead_object))",
+        "location": {
+          "file": "os/net/ipv6/uip-nd6.c",
+          "function": "rs_input",
+          "line": 655
+        }
+      },
+      "rs_input.pointer_dereference.3": {
+        "class": "pointer dereference",
+        "description": "dereference failure: deallocated dynamic object in ((struct uip_icmp_hdr *)((unsigned char *)uip_aligned_buf.u8 + 40 + (signed int)uip_ext_len))->icode",
+        "expression": "!((signed int)((struct uip_ip_hdr *)uip_aligned_buf.u8)->ttl != 255) ==> !(__CPROVER_POINTER_OBJECT(&uip_aligned_buf) == __CPROVER_POINTER_OBJECT(__CPROVER_deallocated))",
+        "location": {
+          "file": "os/net/ipv6/uip-nd6.c",
+          "function": "rs_input",
+          "line": 624
+        }
+      },
+      "rs_input.pointer_dereference.30": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside object bounds in *(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr)",
+        "expression": "TRUE && TRUE && TRUE && TRUE && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[0] == 0 && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[1] == 0 && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[2] == 0 ==> (unsigned __CPROVER_bitvector[33])__CPROVER_OBJECT_SIZE(&(*((struct uip_ip_hdr *)uip_aligned_buf.u8))) >= (unsigned __CPROVER_bitvector[33])__CPROVER_POINTER_OFFSET(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr) + 16",
+        "location": {
+          "file": "os/net/ipv6/uip-nd6.c",
+          "function": "rs_input",
+          "line": 655
+        }
+      },
+      "rs_input.pointer_dereference.31": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer NULL in *(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr)",
+        "expression": "TRUE && TRUE && TRUE && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[0] == 0 && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[1] == 0 && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[2] == 0 && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[3] == 0 ==> !(__CPROVER_POINTER_OBJECT(((uip_ip6addr_t *)NULL)) == __CPROVER_POINTER_OBJECT(&(*((struct uip_ip_hdr *)uip_aligned_buf.u8))))",
+        "location": {
+          "file": "os/net/ipv6/uip-nd6.c",
+          "function": "rs_input",
+          "line": 655
+        }
+      },
+      "rs_input.pointer_dereference.32": {
+        "class": "pointer dereference",
+        "description": "dereference failure: deallocated dynamic object in *(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr)",
+        "expression": "TRUE && TRUE && TRUE && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[0] == 0 && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[1] == 0 && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[2] == 0 && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[3] == 0 ==> !(__CPROVER_POINTER_OBJECT(&(*((struct uip_ip_hdr *)uip_aligned_buf.u8))) == __CPROVER_POINTER_OBJECT(__CPROVER_deallocated))",
+        "location": {
+          "file": "os/net/ipv6/uip-nd6.c",
+          "function": "rs_input",
+          "line": 655
+        }
+      },
+      "rs_input.pointer_dereference.33": {
+        "class": "pointer dereference",
+        "description": "dereference failure: dead object in *(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr)",
+        "expression": "TRUE && TRUE && TRUE && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[0] == 0 && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[1] == 0 && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[2] == 0 && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[3] == 0 ==> !(__CPROVER_POINTER_OBJECT(&(*((struct uip_ip_hdr *)uip_aligned_buf.u8))) == __CPROVER_POINTER_OBJECT(__CPROVER_dead_object))",
+        "location": {
+          "file": "os/net/ipv6/uip-nd6.c",
+          "function": "rs_input",
+          "line": 655
+        }
+      },
+      "rs_input.pointer_dereference.34": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside object bounds in *(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr)",
+        "expression": "TRUE && TRUE && TRUE && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[0] == 0 && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[1] == 0 && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[2] == 0 && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[3] == 0 ==> (unsigned __CPROVER_bitvector[33])__CPROVER_OBJECT_SIZE(&(*((struct uip_ip_hdr *)uip_aligned_buf.u8))) >= (unsigned __CPROVER_bitvector[33])__CPROVER_POINTER_OFFSET(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr) + 16",
+        "location": {
+          "file": "os/net/ipv6/uip-nd6.c",
+          "function": "rs_input",
+          "line": 655
+        }
+      },
+      "rs_input.pointer_dereference.35": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer NULL in *(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr)",
+        "expression": "TRUE && TRUE && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[0] == 0 && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[1] == 0 && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[2] == 0 && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[3] == 0 && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[4] == 0 ==> !(__CPROVER_POINTER_OBJECT(((uip_ip6addr_t *)NULL)) == __CPROVER_POINTER_OBJECT(&(*((struct uip_ip_hdr *)uip_aligned_buf.u8))))",
+        "location": {
+          "file": "os/net/ipv6/uip-nd6.c",
+          "function": "rs_input",
+          "line": 655
+        }
+      },
+      "rs_input.pointer_dereference.36": {
+        "class": "pointer dereference",
+        "description": "dereference failure: deallocated dynamic object in *(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr)",
+        "expression": "TRUE && TRUE && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[0] == 0 && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[1] == 0 && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[2] == 0 && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[3] == 0 && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[4] == 0 ==> !(__CPROVER_POINTER_OBJECT(&(*((struct uip_ip_hdr *)uip_aligned_buf.u8))) == __CPROVER_POINTER_OBJECT(__CPROVER_deallocated))",
+        "location": {
+          "file": "os/net/ipv6/uip-nd6.c",
+          "function": "rs_input",
+          "line": 655
+        }
+      },
+      "rs_input.pointer_dereference.37": {
+        "class": "pointer dereference",
+        "description": "dereference failure: dead object in *(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr)",
+        "expression": "TRUE && TRUE && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[0] == 0 && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[1] == 0 && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[2] == 0 && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[3] == 0 && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[4] == 0 ==> !(__CPROVER_POINTER_OBJECT(&(*((struct uip_ip_hdr *)uip_aligned_buf.u8))) == __CPROVER_POINTER_OBJECT(__CPROVER_dead_object))",
+        "location": {
+          "file": "os/net/ipv6/uip-nd6.c",
+          "function": "rs_input",
+          "line": 655
+        }
+      },
+      "rs_input.pointer_dereference.38": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside object bounds in *(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr)",
+        "expression": "TRUE && TRUE && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[0] == 0 && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[1] == 0 && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[2] == 0 && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[3] == 0 && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[4] == 0 ==> (unsigned __CPROVER_bitvector[33])__CPROVER_OBJECT_SIZE(&(*((struct uip_ip_hdr *)uip_aligned_buf.u8))) >= (unsigned __CPROVER_bitvector[33])__CPROVER_POINTER_OFFSET(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr) + 16",
+        "location": {
+          "file": "os/net/ipv6/uip-nd6.c",
+          "function": "rs_input",
+          "line": 655
+        }
+      },
+      "rs_input.pointer_dereference.39": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer NULL in *(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr)",
+        "expression": "TRUE && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[0] == 0 && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[1] == 0 && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[2] == 0 && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[3] == 0 && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[4] == 0 && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[5] == 0 ==> !(__CPROVER_POINTER_OBJECT(((uip_ip6addr_t *)NULL)) == __CPROVER_POINTER_OBJECT(&(*((struct uip_ip_hdr *)uip_aligned_buf.u8))))",
+        "location": {
+          "file": "os/net/ipv6/uip-nd6.c",
+          "function": "rs_input",
+          "line": 655
+        }
+      },
+      "rs_input.pointer_dereference.4": {
+        "class": "pointer dereference",
+        "description": "dereference failure: dead object in ((struct uip_icmp_hdr *)((unsigned char *)uip_aligned_buf.u8 + 40 + (signed int)uip_ext_len))->icode",
+        "expression": "!((signed int)((struct uip_ip_hdr *)uip_aligned_buf.u8)->ttl != 255) ==> !(__CPROVER_POINTER_OBJECT(&uip_aligned_buf) == __CPROVER_POINTER_OBJECT(__CPROVER_dead_object))",
+        "location": {
+          "file": "os/net/ipv6/uip-nd6.c",
+          "function": "rs_input",
+          "line": 624
+        }
+      },
+      "rs_input.pointer_dereference.40": {
+        "class": "pointer dereference",
+        "description": "dereference failure: deallocated dynamic object in *(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr)",
+        "expression": "TRUE && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[0] == 0 && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[1] == 0 && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[2] == 0 && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[3] == 0 && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[4] == 0 && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[5] == 0 ==> !(__CPROVER_POINTER_OBJECT(&(*((struct uip_ip_hdr *)uip_aligned_buf.u8))) == __CPROVER_POINTER_OBJECT(__CPROVER_deallocated))",
+        "location": {
+          "file": "os/net/ipv6/uip-nd6.c",
+          "function": "rs_input",
+          "line": 655
+        }
+      },
+      "rs_input.pointer_dereference.41": {
+        "class": "pointer dereference",
+        "description": "dereference failure: dead object in *(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr)",
+        "expression": "TRUE && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[0] == 0 && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[1] == 0 && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[2] == 0 && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[3] == 0 && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[4] == 0 && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[5] == 0 ==> !(__CPROVER_POINTER_OBJECT(&(*((struct uip_ip_hdr *)uip_aligned_buf.u8))) == __CPROVER_POINTER_OBJECT(__CPROVER_dead_object))",
+        "location": {
+          "file": "os/net/ipv6/uip-nd6.c",
+          "function": "rs_input",
+          "line": 655
+        }
+      },
+      "rs_input.pointer_dereference.42": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside object bounds in *(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr)",
+        "expression": "TRUE && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[0] == 0 && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[1] == 0 && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[2] == 0 && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[3] == 0 && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[4] == 0 && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[5] == 0 ==> (unsigned __CPROVER_bitvector[33])__CPROVER_OBJECT_SIZE(&(*((struct uip_ip_hdr *)uip_aligned_buf.u8))) >= (unsigned __CPROVER_bitvector[33])__CPROVER_POINTER_OFFSET(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr) + 16",
+        "location": {
+          "file": "os/net/ipv6/uip-nd6.c",
+          "function": "rs_input",
+          "line": 655
+        }
+      },
+      "rs_input.pointer_dereference.43": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer NULL in *(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr)",
+        "expression": "(signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[0] == 0 && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[1] == 0 && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[2] == 0 && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[3] == 0 && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[4] == 0 && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[5] == 0 && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[6] == 0 ==> !(__CPROVER_POINTER_OBJECT(((uip_ip6addr_t *)NULL)) == __CPROVER_POINTER_OBJECT(&(*((struct uip_ip_hdr *)uip_aligned_buf.u8))))",
+        "location": {
+          "file": "os/net/ipv6/uip-nd6.c",
+          "function": "rs_input",
+          "line": 655
+        }
+      },
+      "rs_input.pointer_dereference.44": {
+        "class": "pointer dereference",
+        "description": "dereference failure: deallocated dynamic object in *(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr)",
+        "expression": "(signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[0] == 0 && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[1] == 0 && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[2] == 0 && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[3] == 0 && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[4] == 0 && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[5] == 0 && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[6] == 0 ==> !(__CPROVER_POINTER_OBJECT(&(*((struct uip_ip_hdr *)uip_aligned_buf.u8))) == __CPROVER_POINTER_OBJECT(__CPROVER_deallocated))",
+        "location": {
+          "file": "os/net/ipv6/uip-nd6.c",
+          "function": "rs_input",
+          "line": 655
+        }
+      },
+      "rs_input.pointer_dereference.45": {
+        "class": "pointer dereference",
+        "description": "dereference failure: dead object in *(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr)",
+        "expression": "(signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[0] == 0 && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[1] == 0 && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[2] == 0 && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[3] == 0 && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[4] == 0 && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[5] == 0 && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[6] == 0 ==> !(__CPROVER_POINTER_OBJECT(&(*((struct uip_ip_hdr *)uip_aligned_buf.u8))) == __CPROVER_POINTER_OBJECT(__CPROVER_dead_object))",
+        "location": {
+          "file": "os/net/ipv6/uip-nd6.c",
+          "function": "rs_input",
+          "line": 655
+        }
+      },
+      "rs_input.pointer_dereference.46": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside object bounds in *(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr)",
+        "expression": "(signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[0] == 0 && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[1] == 0 && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[2] == 0 && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[3] == 0 && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[4] == 0 && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[5] == 0 && (signed int)byte_extract_little_endian(*(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr), 0, uint16_t [8])[6] == 0 ==> (unsigned __CPROVER_bitvector[33])__CPROVER_OBJECT_SIZE(&(*((struct uip_ip_hdr *)uip_aligned_buf.u8))) >= (unsigned __CPROVER_bitvector[33])__CPROVER_POINTER_OFFSET(&((struct uip_ip_hdr *)uip_aligned_buf.u8)->srcipaddr) + 16",
+        "location": {
+          "file": "os/net/ipv6/uip-nd6.c",
+          "function": "rs_input",
+          "line": 655
+        }
+      },
+      "rs_input.pointer_dereference.47": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer NULL in *nbr",
+        "expression": "!(__CPROVER_POINTER_OBJECT(((uip_ds6_nbr_t *)NULL)) == __CPROVER_POINTER_OBJECT(nbr))",
+        "location": {
+          "file": "os/net/ipv6/uip-nd6.c",
+          "function": "rs_input",
+          "line": 675
+        }
+      },
+      "rs_input.pointer_dereference.48": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer invalid in *nbr",
+        "expression": "!IS_INVALID_POINTER(nbr)",
+        "location": {
+          "file": "os/net/ipv6/uip-nd6.c",
+          "function": "rs_input",
+          "line": 675
+        }
+      },
+      "rs_input.pointer_dereference.49": {
+        "class": "pointer dereference",
+        "description": "dereference failure: deallocated dynamic object in *nbr",
+        "expression": "!(__CPROVER_POINTER_OBJECT(nbr) == __CPROVER_POINTER_OBJECT(__CPROVER_deallocated))",
+        "location": {
+          "file": "os/net/ipv6/uip-nd6.c",
+          "function": "rs_input",
+          "line": 675
+        }
+      },
+      "rs_input.pointer_dereference.5": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside object bounds in ((struct uip_icmp_hdr *)((unsigned char *)uip_aligned_buf.u8 + 40 + (signed int)uip_ext_len))->icode",
+        "expression": "!((signed int)((struct uip_ip_hdr *)uip_aligned_buf.u8)->ttl != 255) ==> !((unsigned __CPROVER_bitvector[33])(40u + (unsigned int)(signed int)uip_ext_len + 1u) + 1 >= 1281)",
+        "location": {
+          "file": "os/net/ipv6/uip-nd6.c",
+          "function": "rs_input",
+          "line": 624
+        }
+      },
+      "rs_input.pointer_dereference.50": {
+        "class": "pointer dereference",
+        "description": "dereference failure: dead object in *nbr",
+        "expression": "!(__CPROVER_POINTER_OBJECT(nbr) == __CPROVER_POINTER_OBJECT(__CPROVER_dead_object))",
+        "location": {
+          "file": "os/net/ipv6/uip-nd6.c",
+          "function": "rs_input",
+          "line": 675
+        }
+      },
+      "rs_input.pointer_dereference.51": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside object bounds in *nbr",
+        "expression": "(unsigned __CPROVER_bitvector[33])__CPROVER_OBJECT_SIZE(nbr) >= (unsigned __CPROVER_bitvector[33])__CPROVER_POINTER_OFFSET(nbr) + 44",
+        "location": {
+          "file": "os/net/ipv6/uip-nd6.c",
+          "function": "rs_input",
+          "line": 675
+        }
+      },
+      "rs_input.pointer_dereference.52": {
+        "class": "pointer dereference",
+        "description": "dereference failure: invalid integer address in *nbr",
+        "expression": "!(__CPROVER_POINTER_OBJECT(((uip_ds6_nbr_t *)NULL)) == __CPROVER_POINTER_OBJECT(nbr)) || nbr == ((uip_ds6_nbr_t *)NULL)",
+        "location": {
+          "file": "os/net/ipv6/uip-nd6.c",
+          "function": "rs_input",
+          "line": 675
+        }
+      },
+      "rs_input.pointer_dereference.53": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer NULL in nbr->reachable",
+        "expression": "!(__CPROVER_POINTER_OBJECT(((struct stimer *)NULL)) == __CPROVER_POINTER_OBJECT(nbr))",
+        "location": {
+          "file": "os/net/ipv6/uip-nd6.c",
+          "function": "rs_input",
+          "line": 682
+        }
+      },
+      "rs_input.pointer_dereference.54": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer invalid in nbr->reachable",
+        "expression": "!IS_INVALID_POINTER(nbr)",
+        "location": {
+          "file": "os/net/ipv6/uip-nd6.c",
+          "function": "rs_input",
+          "line": 682
+        }
+      },
+      "rs_input.pointer_dereference.55": {
+        "class": "pointer dereference",
+        "description": "dereference failure: deallocated dynamic object in nbr->reachable",
+        "expression": "!(__CPROVER_POINTER_OBJECT(nbr) == __CPROVER_POINTER_OBJECT(__CPROVER_deallocated))",
+        "location": {
+          "file": "os/net/ipv6/uip-nd6.c",
+          "function": "rs_input",
+          "line": 682
+        }
+      },
+      "rs_input.pointer_dereference.56": {
+        "class": "pointer dereference",
+        "description": "dereference failure: dead object in nbr->reachable",
+        "expression": "!(__CPROVER_POINTER_OBJECT(nbr) == __CPROVER_POINTER_OBJECT(__CPROVER_dead_object))",
+        "location": {
+          "file": "os/net/ipv6/uip-nd6.c",
+          "function": "rs_input",
+          "line": 682
+        }
+      },
+      "rs_input.pointer_dereference.57": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside object bounds in nbr->reachable",
+        "expression": "(unsigned __CPROVER_bitvector[33])__CPROVER_OBJECT_SIZE(nbr) >= (unsigned __CPROVER_bitvector[33])(__CPROVER_POINTER_OFFSET(nbr) + 20u) + 8",
+        "location": {
+          "file": "os/net/ipv6/uip-nd6.c",
+          "function": "rs_input",
+          "line": 682
+        }
+      },
+      "rs_input.pointer_dereference.58": {
+        "class": "pointer dereference",
+        "description": "dereference failure: invalid integer address in nbr->reachable",
+        "expression": "!(__CPROVER_POINTER_OBJECT(((struct stimer *)NULL)) == __CPROVER_POINTER_OBJECT(nbr)) || (char *)nbr + 20 == ((char *)NULL)",
+        "location": {
+          "file": "os/net/ipv6/uip-nd6.c",
+          "function": "rs_input",
+          "line": 682
+        }
+      },
+      "rs_input.pointer_dereference.59": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer NULL in nbr->sendns",
+        "expression": "!(__CPROVER_POINTER_OBJECT(((struct stimer *)NULL)) == __CPROVER_POINTER_OBJECT(nbr))",
+        "location": {
+          "file": "os/net/ipv6/uip-nd6.c",
+          "function": "rs_input",
+          "line": 683
+        }
+      },
+      "rs_input.pointer_dereference.6": {
+        "class": "pointer dereference",
+        "description": "dereference failure: deallocated dynamic object in ((uip_nd6_opt_hdr *)(unsigned char *)((unsigned char *)((unsigned char *)uip_aligned_buf.u8 + 40 + (signed int)uip_ext_len) + 4 + (signed int)nd6_opt_offset))->len",
+        "expression": "!(__CPROVER_POINTER_OBJECT(&uip_aligned_buf) == __CPROVER_POINTER_OBJECT(__CPROVER_deallocated))",
+        "location": {
+          "file": "os/net/ipv6/uip-nd6.c",
+          "function": "rs_input",
+          "line": 637
+        }
+      },
+      "rs_input.pointer_dereference.60": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer invalid in nbr->sendns",
+        "expression": "!IS_INVALID_POINTER(nbr)",
+        "location": {
+          "file": "os/net/ipv6/uip-nd6.c",
+          "function": "rs_input",
+          "line": 683
+        }
+      },
+      "rs_input.pointer_dereference.61": {
+        "class": "pointer dereference",
+        "description": "dereference failure: deallocated dynamic object in nbr->sendns",
+        "expression": "!(__CPROVER_POINTER_OBJECT(nbr) == __CPROVER_POINTER_OBJECT(__CPROVER_deallocated))",
+        "location": {
+          "file": "os/net/ipv6/uip-nd6.c",
+          "function": "rs_input",
+          "line": 683
+        }
+      },
+      "rs_input.pointer_dereference.62": {
+        "class": "pointer dereference",
+        "description": "dereference failure: dead object in nbr->sendns",
+        "expression": "!(__CPROVER_POINTER_OBJECT(nbr) == __CPROVER_POINTER_OBJECT(__CPROVER_dead_object))",
+        "location": {
+          "file": "os/net/ipv6/uip-nd6.c",
+          "function": "rs_input",
+          "line": 683
+        }
+      },
+      "rs_input.pointer_dereference.63": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside object bounds in nbr->sendns",
+        "expression": "(unsigned __CPROVER_bitvector[33])__CPROVER_OBJECT_SIZE(nbr) >= (unsigned __CPROVER_bitvector[33])(__CPROVER_POINTER_OFFSET(nbr) + 28u) + 8",
+        "location": {
+          "file": "os/net/ipv6/uip-nd6.c",
+          "function": "rs_input",
+          "line": 683
+        }
+      },
+      "rs_input.pointer_dereference.64": {
+        "class": "pointer dereference",
+        "description": "dereference failure: invalid integer address in nbr->sendns",
+        "expression": "!(__CPROVER_POINTER_OBJECT(((struct stimer *)NULL)) == __CPROVER_POINTER_OBJECT(nbr)) || (char *)nbr + 28 == ((char *)NULL)",
+        "location": {
+          "file": "os/net/ipv6/uip-nd6.c",
+          "function": "rs_input",
+          "line": 683
+        }
+      },
+      "rs_input.pointer_dereference.65": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer NULL in nbr->nscount",
+        "expression": "!(__CPROVER_POINTER_OBJECT(((uint8_t *)NULL)) == __CPROVER_POINTER_OBJECT(nbr))",
+        "location": {
+          "file": "os/net/ipv6/uip-nd6.c",
+          "function": "rs_input",
+          "line": 684
+        }
+      },
+      "rs_input.pointer_dereference.66": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer invalid in nbr->nscount",
+        "expression": "!IS_INVALID_POINTER(nbr)",
+        "location": {
+          "file": "os/net/ipv6/uip-nd6.c",
+          "function": "rs_input",
+          "line": 684
+        }
+      },
+      "rs_input.pointer_dereference.67": {
+        "class": "pointer dereference",
+        "description": "dereference failure: deallocated dynamic object in nbr->nscount",
+        "expression": "!(__CPROVER_POINTER_OBJECT(nbr) == __CPROVER_POINTER_OBJECT(__CPROVER_deallocated))",
+        "location": {
+          "file": "os/net/ipv6/uip-nd6.c",
+          "function": "rs_input",
+          "line": 684
+        }
+      },
+      "rs_input.pointer_dereference.68": {
+        "class": "pointer dereference",
+        "description": "dereference failure: dead object in nbr->nscount",
+        "expression": "!(__CPROVER_POINTER_OBJECT(nbr) == __CPROVER_POINTER_OBJECT(__CPROVER_dead_object))",
+        "location": {
+          "file": "os/net/ipv6/uip-nd6.c",
+          "function": "rs_input",
+          "line": 684
+        }
+      },
+      "rs_input.pointer_dereference.69": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside object bounds in nbr->nscount",
+        "expression": "(unsigned __CPROVER_bitvector[33])__CPROVER_OBJECT_SIZE(nbr) >= (unsigned __CPROVER_bitvector[33])(__CPROVER_POINTER_OFFSET(nbr) + 36u) + 1",
+        "location": {
+          "file": "os/net/ipv6/uip-nd6.c",
+          "function": "rs_input",
+          "line": 684
+        }
+      },
+      "rs_input.pointer_dereference.7": {
+        "class": "pointer dereference",
+        "description": "dereference failure: dead object in ((uip_nd6_opt_hdr *)(unsigned char *)((unsigned char *)((unsigned char *)uip_aligned_buf.u8 + 40 + (signed int)uip_ext_len) + 4 + (signed int)nd6_opt_offset))->len",
+        "expression": "!(__CPROVER_POINTER_OBJECT(&uip_aligned_buf) == __CPROVER_POINTER_OBJECT(__CPROVER_dead_object))",
+        "location": {
+          "file": "os/net/ipv6/uip-nd6.c",
+          "function": "rs_input",
+          "line": 637
+        }
+      },
+      "rs_input.pointer_dereference.70": {
+        "class": "pointer dereference",
+        "description": "dereference failure: invalid integer address in nbr->nscount",
+        "expression": "!(__CPROVER_POINTER_OBJECT(((uint8_t *)NULL)) == __CPROVER_POINTER_OBJECT(nbr)) || (char *)nbr + 36 == ((char *)NULL)",
+        "location": {
+          "file": "os/net/ipv6/uip-nd6.c",
+          "function": "rs_input",
+          "line": 684
+        }
+      },
+      "rs_input.pointer_dereference.71": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer NULL in nbr->isrouter",
+        "expression": "!(__CPROVER_POINTER_OBJECT(((uint8_t *)NULL)) == __CPROVER_POINTER_OBJECT(nbr))",
+        "location": {
+          "file": "os/net/ipv6/uip-nd6.c",
+          "function": "rs_input",
+          "line": 686
+        }
+      },
+      "rs_input.pointer_dereference.72": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer invalid in nbr->isrouter",
+        "expression": "!IS_INVALID_POINTER(nbr)",
+        "location": {
+          "file": "os/net/ipv6/uip-nd6.c",
+          "function": "rs_input",
+          "line": 686
+        }
+      },
+      "rs_input.pointer_dereference.73": {
+        "class": "pointer dereference",
+        "description": "dereference failure: deallocated dynamic object in nbr->isrouter",
+        "expression": "!(__CPROVER_POINTER_OBJECT(nbr) == __CPROVER_POINTER_OBJECT(__CPROVER_deallocated))",
+        "location": {
+          "file": "os/net/ipv6/uip-nd6.c",
+          "function": "rs_input",
+          "line": 686
+        }
+      },
+      "rs_input.pointer_dereference.74": {
+        "class": "pointer dereference",
+        "description": "dereference failure: dead object in nbr->isrouter",
+        "expression": "!(__CPROVER_POINTER_OBJECT(nbr) == __CPROVER_POINTER_OBJECT(__CPROVER_dead_object))",
+        "location": {
+          "file": "os/net/ipv6/uip-nd6.c",
+          "function": "rs_input",
+          "line": 686
+        }
+      },
+      "rs_input.pointer_dereference.75": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside object bounds in nbr->isrouter",
+        "expression": "(unsigned __CPROVER_bitvector[33])__CPROVER_OBJECT_SIZE(nbr) >= (unsigned __CPROVER_bitvector[33])(__CPROVER_POINTER_OFFSET(nbr) + 16u) + 1",
+        "location": {
+          "file": "os/net/ipv6/uip-nd6.c",
+          "function": "rs_input",
+          "line": 686
+        }
+      },
+      "rs_input.pointer_dereference.76": {
+        "class": "pointer dereference",
+        "description": "dereference failure: invalid integer address in nbr->isrouter",
+        "expression": "!(__CPROVER_POINTER_OBJECT(((uint8_t *)NULL)) == __CPROVER_POINTER_OBJECT(nbr)) || (char *)nbr + 16 == ((char *)NULL)",
+        "location": {
+          "file": "os/net/ipv6/uip-nd6.c",
+          "function": "rs_input",
+          "line": 686
+        }
+      },
+      "rs_input.pointer_dereference.8": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside object bounds in ((uip_nd6_opt_hdr *)(unsigned char *)((unsigned char *)((unsigned char *)uip_aligned_buf.u8 + 40 + (signed int)uip_ext_len) + 4 + (signed int)nd6_opt_offset))->len",
+        "expression": "!((unsigned __CPROVER_bitvector[33])(44u + (unsigned int)(signed int)uip_ext_len + (unsigned int)(signed int)nd6_opt_offset + 1u) + 1 >= 1281)",
+        "location": {
+          "file": "os/net/ipv6/uip-nd6.c",
+          "function": "rs_input",
+          "line": 637
+        }
+      },
+      "rs_input.pointer_dereference.9": {
+        "class": "pointer dereference",
+        "description": "dereference failure: deallocated dynamic object in ((uip_nd6_opt_hdr *)(unsigned char *)((unsigned char *)((unsigned char *)uip_aligned_buf.u8 + 40 + (signed int)uip_ext_len) + 4 + (signed int)nd6_opt_offset))->type",
+        "expression": "!(__CPROVER_POINTER_OBJECT(&uip_aligned_buf) == __CPROVER_POINTER_OBJECT(__CPROVER_deallocated))",
+        "location": {
+          "file": "os/net/ipv6/uip-nd6.c",
+          "function": "rs_input",
+          "line": 642
+        }
+      },
+      "rs_input.undefined-shift.1": {
+        "class": "undefined-shift",
+        "description": "shift operand is negative in (signed int)((uip_nd6_opt_hdr *)(unsigned char *)((unsigned char *)((unsigned char *)uip_aligned_buf.u8 + 40 + (signed int)uip_ext_len) + 4 + (signed int)nd6_opt_offset))->len << 3",
+        "expression": "(signed int)((uip_nd6_opt_hdr *)(uip_aligned_buf.u8 + 44 + (signed int)uip_ext_len + (signed int)nd6_opt_offset))->len >= 0",
+        "location": {
+          "file": "os/net/ipv6/uip-nd6.c",
+          "function": "rs_input",
+          "line": 650
+        }
+      },
+      "uip_ds6_nbr_add.pointer_dereference.1": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer NULL in uip_ds6_nbr_add$$1$$nbr->ipaddr",
+        "expression": "!(__CPROVER_POINTER_OBJECT(((uip_ipaddr_t *)NULL)) == __CPROVER_POINTER_OBJECT(uip_ds6_nbr_add$$1$$nbr))",
+        "location": {
+          "file": "cbmc/proofs/net/ipv6/rs_input/rsi_harness.c",
+          "function": "uip_ds6_nbr_add",
+          "line": 75
+        }
+      },
+      "uip_ds6_nbr_add.pointer_dereference.10": {
+        "class": "pointer dereference",
+        "description": "dereference failure: dead object in *ipaddr",
+        "expression": "!(__CPROVER_POINTER_OBJECT(ipaddr) == __CPROVER_POINTER_OBJECT(__CPROVER_dead_object))",
+        "location": {
+          "file": "cbmc/proofs/net/ipv6/rs_input/rsi_harness.c",
+          "function": "uip_ds6_nbr_add",
+          "line": 75
+        }
+      },
+      "uip_ds6_nbr_add.pointer_dereference.11": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside object bounds in *ipaddr",
+        "expression": "(unsigned __CPROVER_bitvector[33])__CPROVER_OBJECT_SIZE(ipaddr) >= (unsigned __CPROVER_bitvector[33])__CPROVER_POINTER_OFFSET(ipaddr) + 16",
+        "location": {
+          "file": "cbmc/proofs/net/ipv6/rs_input/rsi_harness.c",
+          "function": "uip_ds6_nbr_add",
+          "line": 75
+        }
+      },
+      "uip_ds6_nbr_add.pointer_dereference.12": {
+        "class": "pointer dereference",
+        "description": "dereference failure: invalid integer address in *ipaddr",
+        "expression": "!(__CPROVER_POINTER_OBJECT(((const uip_ipaddr_t *)NULL)) == __CPROVER_POINTER_OBJECT(ipaddr)) || ipaddr == ((const uip_ipaddr_t *)NULL)",
+        "location": {
+          "file": "cbmc/proofs/net/ipv6/rs_input/rsi_harness.c",
+          "function": "uip_ds6_nbr_add",
+          "line": 75
+        }
+      },
+      "uip_ds6_nbr_add.pointer_dereference.2": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer invalid in uip_ds6_nbr_add$$1$$nbr->ipaddr",
+        "expression": "!IS_INVALID_POINTER(uip_ds6_nbr_add$$1$$nbr)",
+        "location": {
+          "file": "cbmc/proofs/net/ipv6/rs_input/rsi_harness.c",
+          "function": "uip_ds6_nbr_add",
+          "line": 75
+        }
+      },
+      "uip_ds6_nbr_add.pointer_dereference.3": {
+        "class": "pointer dereference",
+        "description": "dereference failure: deallocated dynamic object in uip_ds6_nbr_add$$1$$nbr->ipaddr",
+        "expression": "!(__CPROVER_POINTER_OBJECT(uip_ds6_nbr_add$$1$$nbr) == __CPROVER_POINTER_OBJECT(__CPROVER_deallocated))",
+        "location": {
+          "file": "cbmc/proofs/net/ipv6/rs_input/rsi_harness.c",
+          "function": "uip_ds6_nbr_add",
+          "line": 75
+        }
+      },
+      "uip_ds6_nbr_add.pointer_dereference.4": {
+        "class": "pointer dereference",
+        "description": "dereference failure: dead object in uip_ds6_nbr_add$$1$$nbr->ipaddr",
+        "expression": "!(__CPROVER_POINTER_OBJECT(uip_ds6_nbr_add$$1$$nbr) == __CPROVER_POINTER_OBJECT(__CPROVER_dead_object))",
+        "location": {
+          "file": "cbmc/proofs/net/ipv6/rs_input/rsi_harness.c",
+          "function": "uip_ds6_nbr_add",
+          "line": 75
+        }
+      },
+      "uip_ds6_nbr_add.pointer_dereference.5": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside object bounds in uip_ds6_nbr_add$$1$$nbr->ipaddr",
+        "expression": "(unsigned __CPROVER_bitvector[33])__CPROVER_OBJECT_SIZE(uip_ds6_nbr_add$$1$$nbr) >= (unsigned __CPROVER_bitvector[33])__CPROVER_POINTER_OFFSET(uip_ds6_nbr_add$$1$$nbr) + 16",
+        "location": {
+          "file": "cbmc/proofs/net/ipv6/rs_input/rsi_harness.c",
+          "function": "uip_ds6_nbr_add",
+          "line": 75
+        }
+      },
+      "uip_ds6_nbr_add.pointer_dereference.6": {
+        "class": "pointer dereference",
+        "description": "dereference failure: invalid integer address in uip_ds6_nbr_add$$1$$nbr->ipaddr",
+        "expression": "!(__CPROVER_POINTER_OBJECT(((uip_ipaddr_t *)NULL)) == __CPROVER_POINTER_OBJECT(uip_ds6_nbr_add$$1$$nbr)) || uip_ds6_nbr_add$$1$$nbr == ((uip_ds6_nbr_t *)NULL)",
+        "location": {
+          "file": "cbmc/proofs/net/ipv6/rs_input/rsi_harness.c",
+          "function": "uip_ds6_nbr_add",
+          "line": 75
+        }
+      },
+      "uip_ds6_nbr_add.pointer_dereference.7": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer NULL in *ipaddr",
+        "expression": "!(__CPROVER_POINTER_OBJECT(((const uip_ipaddr_t *)NULL)) == __CPROVER_POINTER_OBJECT(ipaddr))",
+        "location": {
+          "file": "cbmc/proofs/net/ipv6/rs_input/rsi_harness.c",
+          "function": "uip_ds6_nbr_add",
+          "line": 75
+        }
+      },
+      "uip_ds6_nbr_add.pointer_dereference.8": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer invalid in *ipaddr",
+        "expression": "!IS_INVALID_POINTER(ipaddr)",
+        "location": {
+          "file": "cbmc/proofs/net/ipv6/rs_input/rsi_harness.c",
+          "function": "uip_ds6_nbr_add",
+          "line": 75
+        }
+      },
+      "uip_ds6_nbr_add.pointer_dereference.9": {
+        "class": "pointer dereference",
+        "description": "dereference failure: deallocated dynamic object in *ipaddr",
+        "expression": "!(__CPROVER_POINTER_OBJECT(ipaddr) == __CPROVER_POINTER_OBJECT(__CPROVER_deallocated))",
+        "location": {
+          "file": "cbmc/proofs/net/ipv6/rs_input/rsi_harness.c",
+          "function": "uip_ds6_nbr_add",
+          "line": 75
+        }
+      },
+      "uip_ds6_nbr_lookup.pointer_dereference.1": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer NULL in nbrt->ipaddr",
+        "expression": "!(__CPROVER_POINTER_OBJECT(((uip_ipaddr_t *)NULL)) == __CPROVER_POINTER_OBJECT(nbrt))",
+        "location": {
+          "file": "cbmc/proofs/net/ipv6/rs_input/rsi_harness.c",
+          "function": "uip_ds6_nbr_lookup",
+          "line": 38
+        }
+      },
+      "uip_ds6_nbr_lookup.pointer_dereference.10": {
+        "class": "pointer dereference",
+        "description": "dereference failure: dead object in *ipaddr",
+        "expression": "!(__CPROVER_POINTER_OBJECT(ipaddr) == __CPROVER_POINTER_OBJECT(__CPROVER_dead_object))",
+        "location": {
+          "file": "cbmc/proofs/net/ipv6/rs_input/rsi_harness.c",
+          "function": "uip_ds6_nbr_lookup",
+          "line": 38
+        }
+      },
+      "uip_ds6_nbr_lookup.pointer_dereference.11": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside object bounds in *ipaddr",
+        "expression": "(unsigned __CPROVER_bitvector[33])__CPROVER_OBJECT_SIZE(ipaddr) >= (unsigned __CPROVER_bitvector[33])__CPROVER_POINTER_OFFSET(ipaddr) + 16",
+        "location": {
+          "file": "cbmc/proofs/net/ipv6/rs_input/rsi_harness.c",
+          "function": "uip_ds6_nbr_lookup",
+          "line": 38
+        }
+      },
+      "uip_ds6_nbr_lookup.pointer_dereference.12": {
+        "class": "pointer dereference",
+        "description": "dereference failure: invalid integer address in *ipaddr",
+        "expression": "!(__CPROVER_POINTER_OBJECT(((const uip_ipaddr_t *)NULL)) == __CPROVER_POINTER_OBJECT(ipaddr)) || ipaddr == ((const uip_ipaddr_t *)NULL)",
+        "location": {
+          "file": "cbmc/proofs/net/ipv6/rs_input/rsi_harness.c",
+          "function": "uip_ds6_nbr_lookup",
+          "line": 38
+        }
+      },
+      "uip_ds6_nbr_lookup.pointer_dereference.2": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer invalid in nbrt->ipaddr",
+        "expression": "!IS_INVALID_POINTER(nbrt)",
+        "location": {
+          "file": "cbmc/proofs/net/ipv6/rs_input/rsi_harness.c",
+          "function": "uip_ds6_nbr_lookup",
+          "line": 38
+        }
+      },
+      "uip_ds6_nbr_lookup.pointer_dereference.3": {
+        "class": "pointer dereference",
+        "description": "dereference failure: deallocated dynamic object in nbrt->ipaddr",
+        "expression": "!(__CPROVER_POINTER_OBJECT(nbrt) == __CPROVER_POINTER_OBJECT(__CPROVER_deallocated))",
+        "location": {
+          "file": "cbmc/proofs/net/ipv6/rs_input/rsi_harness.c",
+          "function": "uip_ds6_nbr_lookup",
+          "line": 38
+        }
+      },
+      "uip_ds6_nbr_lookup.pointer_dereference.4": {
+        "class": "pointer dereference",
+        "description": "dereference failure: dead object in nbrt->ipaddr",
+        "expression": "!(__CPROVER_POINTER_OBJECT(nbrt) == __CPROVER_POINTER_OBJECT(__CPROVER_dead_object))",
+        "location": {
+          "file": "cbmc/proofs/net/ipv6/rs_input/rsi_harness.c",
+          "function": "uip_ds6_nbr_lookup",
+          "line": 38
+        }
+      },
+      "uip_ds6_nbr_lookup.pointer_dereference.5": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer outside object bounds in nbrt->ipaddr",
+        "expression": "(unsigned __CPROVER_bitvector[33])__CPROVER_OBJECT_SIZE(nbrt) >= (unsigned __CPROVER_bitvector[33])__CPROVER_POINTER_OFFSET(nbrt) + 16",
+        "location": {
+          "file": "cbmc/proofs/net/ipv6/rs_input/rsi_harness.c",
+          "function": "uip_ds6_nbr_lookup",
+          "line": 38
+        }
+      },
+      "uip_ds6_nbr_lookup.pointer_dereference.6": {
+        "class": "pointer dereference",
+        "description": "dereference failure: invalid integer address in nbrt->ipaddr",
+        "expression": "!(__CPROVER_POINTER_OBJECT(((uip_ipaddr_t *)NULL)) == __CPROVER_POINTER_OBJECT(nbrt)) || nbrt == ((uip_ds6_nbr_t *)NULL)",
+        "location": {
+          "file": "cbmc/proofs/net/ipv6/rs_input/rsi_harness.c",
+          "function": "uip_ds6_nbr_lookup",
+          "line": 38
+        }
+      },
+      "uip_ds6_nbr_lookup.pointer_dereference.7": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer NULL in *ipaddr",
+        "expression": "!(__CPROVER_POINTER_OBJECT(((const uip_ipaddr_t *)NULL)) == __CPROVER_POINTER_OBJECT(ipaddr))",
+        "location": {
+          "file": "cbmc/proofs/net/ipv6/rs_input/rsi_harness.c",
+          "function": "uip_ds6_nbr_lookup",
+          "line": 38
+        }
+      },
+      "uip_ds6_nbr_lookup.pointer_dereference.8": {
+        "class": "pointer dereference",
+        "description": "dereference failure: pointer invalid in *ipaddr",
+        "expression": "!IS_INVALID_POINTER(ipaddr)",
+        "location": {
+          "file": "cbmc/proofs/net/ipv6/rs_input/rsi_harness.c",
+          "function": "uip_ds6_nbr_lookup",
+          "line": 38
+        }
+      },
+      "uip_ds6_nbr_lookup.pointer_dereference.9": {
+        "class": "pointer dereference",
+        "description": "dereference failure: deallocated dynamic object in *ipaddr",
+        "expression": "!(__CPROVER_POINTER_OBJECT(ipaddr) == __CPROVER_POINTER_OBJECT(__CPROVER_deallocated))",
+        "location": {
+          "file": "cbmc/proofs/net/ipv6/rs_input/rsi_harness.c",
+          "function": "uip_ds6_nbr_lookup",
+          "line": 38
+        }
+      },
+      "uipbuf_clear_attr.precondition_instance.1": {
+        "class": "precondition_instance",
+        "description": "memcpy src/dst overlap",
+        "expression": "__CPROVER_POINTER_OBJECT((void *)uipbuf_attrs) != __CPROVER_POINTER_OBJECT((const void *)uipbuf_default_attrs) || (const char *)(const void *)uipbuf_default_attrs >= (const char *)(void *)uipbuf_attrs + (signed int)sizeof(uint16_t [8]) /*16u*/  || (const char *)(void *)uipbuf_attrs >= (const char *)(const void *)uipbuf_default_attrs + (signed int)sizeof(uint16_t [8]) /*16u*/ ",
+        "location": {
+          "file": "os/net/ipv6/uipbuf.c",
+          "function": "uipbuf_clear_attr",
+          "line": 218
+        }
+      },
+      "uipbuf_clear_attr.precondition_instance.2": {
+        "class": "precondition_instance",
+        "description": "memcpy source region readable",
+        "expression": "R_OK((const void *)uipbuf_default_attrs, sizeof(uint16_t [8]) /*16u*/ )",
+        "location": {
+          "file": "os/net/ipv6/uipbuf.c",
+          "function": "uipbuf_clear_attr",
+          "line": 218
+        }
+      },
+      "uipbuf_clear_attr.precondition_instance.3": {
+        "class": "precondition_instance",
+        "description": "memcpy destination region writeable",
+        "expression": "W_OK((void *)uipbuf_attrs, sizeof(uint16_t [8]) /*16u*/ )",
+        "location": {
+          "file": "os/net/ipv6/uipbuf.c",
+          "function": "uipbuf_clear_attr",
+          "line": 218
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "viewer-reachable": {
+    "reachable": {
+      "cbmc/proofs/net/rpl-classic/icmp6/dio_input/dio_harness.c": [
+        "harness"
+      ],
+      "os/net/routing/rpl-classic/rpl-icmp6.c": [
+        "dio_input",
+        "get16",
+        "get32"
+      ]
+    }
+  }
+}

@@ -1,0 +1,136 @@
+{
+  "viewer-loop": {
+    "loops": {
+      "dio_input.0": {
+        "file": "os/net/routing/rpl-classic/rpl-icmp6.c",
+        "function": "dio_input",
+        "line": 308
+      },
+      "dio_input.1": {
+        "file": "os/net/routing/rpl-classic/rpl-icmp6.c",
+        "function": "dio_input",
+        "line": 309
+      },
+      "dio_input.10": {
+        "file": "os/net/routing/rpl-classic/rpl-icmp6.c",
+        "function": "dio_input",
+        "line": 369
+      },
+      "dio_input.11": {
+        "file": "os/net/routing/rpl-classic/rpl-icmp6.c",
+        "function": "dio_input",
+        "line": 375
+      },
+      "dio_input.12": {
+        "file": "os/net/routing/rpl-classic/rpl-icmp6.c",
+        "function": "dio_input",
+        "line": 379
+      },
+      "dio_input.13": {
+        "file": "os/net/routing/rpl-classic/rpl-icmp6.c",
+        "function": "dio_input",
+        "line": 394
+      },
+      "dio_input.14": {
+        "file": "os/net/routing/rpl-classic/rpl-icmp6.c",
+        "function": "dio_input",
+        "line": 399
+      },
+      "dio_input.15": {
+        "file": "os/net/routing/rpl-classic/rpl-icmp6.c",
+        "function": "dio_input",
+        "line": 408
+      },
+      "dio_input.16": {
+        "file": "os/net/routing/rpl-classic/rpl-icmp6.c",
+        "function": "dio_input",
+        "line": 414
+      },
+      "dio_input.17": {
+        "file": "os/net/routing/rpl-classic/rpl-icmp6.c",
+        "function": "dio_input",
+        "line": 420
+      },
+      "dio_input.18": {
+        "file": "os/net/routing/rpl-classic/rpl-icmp6.c",
+        "function": "dio_input",
+        "line": 433
+      },
+      "dio_input.19": {
+        "file": "os/net/routing/rpl-classic/rpl-icmp6.c",
+        "function": "dio_input",
+        "line": 437
+      },
+      "dio_input.2": {
+        "file": "os/net/routing/rpl-classic/rpl-icmp6.c",
+        "function": "dio_input",
+        "line": 310
+      },
+      "dio_input.20": {
+        "file": "os/net/routing/rpl-classic/rpl-icmp6.c",
+        "function": "dio_input",
+        "line": 445
+      },
+      "dio_input.21": {
+        "file": "os/net/routing/rpl-classic/rpl-icmp6.c",
+        "function": "dio_input",
+        "line": 460
+      },
+      "dio_input.22": {
+        "file": "os/net/routing/rpl-classic/rpl-icmp6.c",
+        "function": "dio_input",
+        "line": 467
+      },
+      "dio_input.23": {
+        "file": "os/net/routing/rpl-classic/rpl-icmp6.c",
+        "function": "dio_input",
+        "line": 485
+      },
+      "dio_input.24": {
+        "file": "os/net/routing/rpl-classic/rpl-icmp6.c",
+        "function": "dio_input",
+        "line": 489
+      },
+      "dio_input.25": {
+        "file": "os/net/routing/rpl-classic/rpl-icmp6.c",
+        "function": "dio_input",
+        "line": 350
+      },
+      "dio_input.3": {
+        "file": "os/net/routing/rpl-classic/rpl-icmp6.c",
+        "function": "dio_input",
+        "line": 315
+      },
+      "dio_input.4": {
+        "file": "os/net/routing/rpl-classic/rpl-icmp6.c",
+        "function": "dio_input",
+        "line": 329
+      },
+      "dio_input.5": {
+        "file": "os/net/routing/rpl-classic/rpl-icmp6.c",
+        "function": "dio_input",
+        "line": 345
+      },
+      "dio_input.6": {
+        "file": "os/net/routing/rpl-classic/rpl-icmp6.c",
+        "function": "dio_input",
+        "line": 346
+      },
+      "dio_input.7": {
+        "file": "os/net/routing/rpl-classic/rpl-icmp6.c",
+        "function": "dio_input",
+        "line": 347
+      },
+      "dio_input.8": {
+        "file": "os/net/routing/rpl-classic/rpl-icmp6.c",
+        "function": "dio_input",
+        "line": 357
+      },
+      "dio_input.9": {
+        "file": "os/net/routing/rpl-classic/rpl-icmp6.c",
+        "function": "dio_input",
+        "line": 364
+      }
+    }
+  }
+}

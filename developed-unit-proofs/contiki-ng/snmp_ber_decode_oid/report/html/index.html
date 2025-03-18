@@ -1,0 +1,204 @@
+
+
+<html>
+  <head>
+    <title>CBMC</title>
+    <link rel="stylesheet" type="text/css" href="/viewer.css">
+  </head>
+
+  <body>
+    <h1>CBMC report</h1>
+
+    <div class="coverage">
+      <h2>Coverage</h2>
+      
+
+      
+      
+      <p>
+        Coverage: 0.97 (reached 58 of 60 reachable lines)
+      </p>
+      
+
+      
+      
+      <table class="coverage">
+        <tr>
+          <th class="coverage">Coverage</th>
+          <th class="function">Function</th>
+          <th class="file">File</th>
+        </tr>
+        
+        <tr>
+          <td class="coverage">1.00 (8/8)</td>
+          <td class="function"><a href="./cbmc/proofs/net/snmp/snmp-generic.h.html#28">init_packet_in</a></td>
+          <td class="file"><a href="./cbmc/proofs/net/snmp/snmp-generic.h.html">cbmc/proofs/net/snmp/snmp-generic.h</a></td>
+        </tr>
+        
+        <tr>
+          <td class="coverage">1.00 (3/3)</td>
+          <td class="function"><a href="./cbmc/proofs/net/snmp/snmp_ber/decode_oid/doid_harness.c.html#20">div</a></td>
+          <td class="file"><a href="./cbmc/proofs/net/snmp/snmp_ber/decode_oid/doid_harness.c.html">cbmc/proofs/net/snmp/snmp_ber/decode_oid/doid_harness.c</a></td>
+        </tr>
+        
+        <tr>
+          <td class="coverage">1.00 (5/5)</td>
+          <td class="function"><a href="./cbmc/proofs/net/snmp/snmp_ber/decode_oid/doid_harness.c.html#29">harness</a></td>
+          <td class="file"><a href="./cbmc/proofs/net/snmp/snmp_ber/decode_oid/doid_harness.c.html">cbmc/proofs/net/snmp/snmp_ber/decode_oid/doid_harness.c</a></td>
+        </tr>
+        
+        <tr>
+          <td class="coverage">1.00 (4/4)</td>
+          <td class="function"><a href="./os/net/app-layer/snmp/snmp-ber.c.html#341">snmp_ber_decode_length</a></td>
+          <td class="file"><a href="./os/net/app-layer/snmp/snmp-ber.c.html">os/net/app-layer/snmp/snmp-ber.c</a></td>
+        </tr>
+        
+        <tr>
+          <td class="coverage">1.00 (6/6)</td>
+          <td class="function"><a href="./os/net/app-layer/snmp/snmp-ber.c.html#328">snmp_ber_decode_type</a></td>
+          <td class="file"><a href="./os/net/app-layer/snmp/snmp-ber.c.html">os/net/app-layer/snmp/snmp-ber.c</a></td>
+        </tr>
+        
+        <tr>
+          <td class="coverage">0.94 (32/34)</td>
+          <td class="function"><a href="./os/net/app-layer/snmp/snmp-ber.c.html#435">snmp_ber_decode_oid</a></td>
+          <td class="file"><a href="./os/net/app-layer/snmp/snmp-ber.c.html">os/net/app-layer/snmp/snmp-ber.c</a></td>
+        </tr>
+        
+      </table>
+    </div>
+    
+
+    
+
+    <div class="warnings">
+      <h2> Warnings</h2>
+      
+
+      
+
+      
+
+      
+
+      
+      None
+      
+
+    <div class="errors">
+      <h2>Errors</h2>
+      
+
+      
+      <ul>
+        <li>Loop unwinding failures
+          <ul>
+            
+            <li> [<a href="./traces/snmp_ber_decode_oid.unwind.1.html">trace</a>]
+              snmp_ber_decode_oid.unwind.1
+              in line
+              <a href="./os/net/app-layer/snmp/snmp-ber.c.html#467">467</a>
+              in file
+              <a href="./os/net/app-layer/snmp/snmp-ber.c.html">os/net/app-layer/snmp/snmp-ber.c</a>
+            </li>
+            
+          </ul>
+        </li>
+      </ul>
+      
+
+      
+
+      
+      <ul>
+        
+        <li> File <a href="./os/net/app-layer/snmp/snmp-ber.c.html">os/net/app-layer/snmp/snmp-ber.c</a>
+          <ul>
+            
+            
+            <li>
+              Function <a href="./os/net/app-layer/snmp/snmp-ber.c.html#341">snmp_ber_decode_length</a>
+              <ul>
+                
+                <li>
+                  Line <a href="./os/net/app-layer/snmp/snmp-ber.c.html#347">347</a>
+                  <ul>
+                    
+                    <li>
+                      [<a href="./traces/snmp_ber_decode_length.pointer_dereference.17.html">trace</a>]
+                      dereference failure: pointer outside object bounds in *tmp_post
+                    </li>
+                     
+                  </ul>
+                </li>
+                 
+              </ul>
+            </li>
+            
+            
+            <li>
+              Function <a href="./os/net/app-layer/snmp/snmp-ber.c.html#435">snmp_ber_decode_oid</a>
+              <ul>
+                
+                <li>
+                  Line <a href="./os/net/app-layer/snmp/snmp-ber.c.html#460">460</a>
+                  <ul>
+                    
+                    <li>
+                      [<a href="./traces/snmp_ber_decode_oid.pointer_dereference.29.html">trace</a>]
+                      dereference failure: pointer outside object bounds in *tmp_post
+                    </li>
+                     
+                  </ul>
+                </li>
+                
+                <li>
+                  Line <a href="./os/net/app-layer/snmp/snmp-ber.c.html#475">475</a>
+                  <ul>
+                    
+                    <li>
+                      [<a href="./traces/snmp_ber_decode_oid.pointer_dereference.101.html">trace</a>]
+                      dereference failure: pointer outside object bounds in *snmp_packet->in
+                    </li>
+                     
+                  </ul>
+                </li>
+                
+                <li>
+                  Line <a href="./os/net/app-layer/snmp/snmp-ber.c.html#478">478</a>
+                  <ul>
+                    
+                    <li>
+                      [<a href="./traces/snmp_ber_decode_oid.pointer_dereference.119.html">trace</a>]
+                      dereference failure: pointer outside object bounds in *tmp_post$2
+                    </li>
+                     
+                  </ul>
+                </li>
+                
+                <li>
+                  Line <a href="./os/net/app-layer/snmp/snmp-ber.c.html#487">487</a>
+                  <ul>
+                    
+                    <li>
+                      [<a href="./traces/snmp_ber_decode_oid.pointer_dereference.161.html">trace</a>]
+                      dereference failure: pointer outside object bounds in *snmp_packet->in
+                    </li>
+                     
+                  </ul>
+                </li>
+                 
+              </ul>
+            </li>
+             
+          </ul>
+        </li>
+         
+      </ul>
+      
+
+      
+
+    </div>
+  </body>
+</html>

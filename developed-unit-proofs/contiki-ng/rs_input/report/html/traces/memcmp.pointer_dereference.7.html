@@ -1,0 +1,2258 @@
+
+<html>
+  <head>
+    <title>memcmp.pointer_dereference.7</title>
+    <link rel="stylesheet" type="text/css" href="../viewer.css">
+  </head>
+
+  <body>
+    <h2>Error trace for property memcmp.pointer_dereference.7</h2>
+
+    <div id="trace-header">
+    <div id="trace-description">
+    <p>
+      Property that failed:
+      <ul>
+        <li> Name: memcmp.pointer_dereference.7
+        <li> Description: dereference failure: pointer NULL in *tmp_post_sc2
+        <li> Location: Function memcmp, File &lt;builtin-library-memcmp&gt;, Line 27
+      </ul>
+    </p>
+    </div>
+
+    <div id="trace-navigation">
+    <p>
+      Trace navigation tips:
+      <ul>
+        <li>
+          <strong>Shift-Click: Hide function steps:</strong>
+          Shift-click on any step of a function to toggle the display
+          of function steps (hide or display steps).
+          This corresponds to stepping over a function in a debugger.
+          <em>Example:</em> Shift-click on any step of malloc to hide
+          the initialization of the struct members being malloc'd.
+        </li>
+        <li>
+          <strong>Shift-Alt-Click: Focus on function steps:</strong>
+          Shift-Alt-click on any step of a function to hide all steps
+          of all functions not currently on the call stack.
+          This corresponds to viewing the call stack in a debugger.
+          <em>Example:</em> Shift-Alt-click on a failure step to the display the
+          most direct path from the initial state to the failure.
+        </li>
+      </ul>
+    </p>
+    </div>
+    </div>
+
+    <div class="trace">
+
+      
+
+        
+        <div class="function">
+        <div class="function-call">
+        
+
+        
+
+        <div id="step1" class="step">
+        <div class="header">Step 1: Function None, File &lt;built-in-additions&gt;, Line 24</div>
+        
+        <div class="cbmc">-> __CPROVER_initialize</div>
+        </div>
+
+        
+        </div> 
+        <div class="function-body">
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step2" class="step">
+        <div class="header">Step 2: Function None, File <a href="../os/sys/log.h.html">os/sys/log.h</a>, Line <a href="../os/sys/log.h.html#111">111</a></div>
+        
+        <div class="code">extern int curr_log_level_ipv6;</div>
+        
+        <div class="cbmc">curr_log_level_ipv6 = 2 (00000000 00000000 00000000 00000010)</div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step3" class="step">
+        <div class="header">Step 3: Function None, File <a href="../os/net/ipv6/uip-nd6.c.html">os/net/ipv6/uip-nd6.c</a>, Line <a href="../os/net/ipv6/uip-nd6.c.html#106">106</a></div>
+        
+        <div class="code">static uip_ds6_nbr_t *nbr;</div>
+        
+        <div class="cbmc">nbr = ((uip_ds6_nbr_t *)NULL) </div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step4" class="step">
+        <div class="header">Step 4: Function None, File <a href="../os/net/ipv6/uip-nd6.c.html">os/net/ipv6/uip-nd6.c</a>, Line <a href="../os/net/ipv6/uip-nd6.c.html#105">105</a></div>
+        
+        <div class="code">static uint8_t *nd6_opt_llao;</div>
+        
+        <div class="cbmc">nd6_opt_llao = ((uint8_t *)NULL) </div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step5" class="step">
+        <div class="header">Step 5: Function None, File <a href="../os/net/ipv6/uip-nd6.c.html">os/net/ipv6/uip-nd6.c</a>, Line <a href="../os/net/ipv6/uip-nd6.c.html#104">104</a></div>
+        
+        <div class="code">static uint16_t nd6_opt_offset;</div>
+        
+        <div class="cbmc">nd6_opt_offset = 0 (00000000 00000000)</div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step6" class="step">
+        <div class="header">Step 6: Function None, File <a href="../os/net/ipv6/uip.h.html">os/net/ipv6/uip.h</a>, Line <a href="../os/net/ipv6/uip.h.html#462">462</a></div>
+        
+        <div class="code">extern uip_buf_t uip_aligned_buf;</div>
+        
+        <div class="cbmc">uip_aligned_buf = { .u32={ 607133728u, 540017425u, 1650602531u, 140731251u, 274735985u, 537985025u, 8464801u, 1073746689u, 805371904u, 2147549984u, 855670784u, 419439873u, 545326512u, 33752371u, 544244241u, 539324721u, 2438988592u, 2975935410u, 811672419u, 714302256u, 1613049897u, 1633771813u, 694288437u, 2990617123u, 623223729u, 2745246507u, 1638082401u, 2736990003u, 1902121907u, 1906405680u, 1886388259u, 2708550560u, 35979954u, 2703860528u, 654387515u, 711131697u, 2696030885u, 712024832u, 624043057u, 673592736u, 1629960305u, 1663509299u, 589959779u, 694162217u, 3010663009u, 2703964963u, 2708582704u, 863150353u, 1646502243u, 1630691890u, 1646461857u, 2712769328u, 2745382187u, 1717584801u, 628301925u, 2708471859u, 690422307u, 660611763u, 2746221411u, 3007030048u, 1634755426u, 1667392304u, 1898971184u, 2705457712u, 1638082419u, 1914741546u, 1650664480u, 843067696u, 10560609u, 1131559587u, 58730497u, 963751985u, 1898265009u, 2976981808u, 2991816753u, 997209011u, 10588561u, 2167996724u, 855901539u, 962700073u, 2720359281u, 573575841u, 1633722787u, 697377697u, 2993750451u, 899903785u, 2809475698u, 691012901u, 807757157u, 892548646u, 721762101u, 36860416u, 660870567u, 94831935u, 842445747u, 356356449u, 2008093973u, 87503029u, 2708804925u, 119410865u, 2809241969u, 86848613u, 631571815u, 120562729u, 1164248999u, 1697191793u, 2770560357u, 87365029u, 2692027761u, 337978277u, 3014885733u, 841813349u, 2008199348u, 623658855u, 934380291u, 154563083u, 2737153636u, 3047252341u, 607548716u, 1158100277u, 2769642289u, 758587572u, 2737071013u, 3047400995u, 858878337u, 623993131u, 908082033u, 2712756539u, 732143968u, 621130021u, 722514217u, 305230083u, 661661091u, 2476749473u, 23078179u, 866214321u, 1906391152u, 1664295793u, 966865504u, 1638994480u, 1932862577u, 1907581297u, 1671508081u, 275845537u, 2704618417u, 2972190560u, 817276343u, 309436457u, 2621809u, 1034133665u, 624784800u, 880096805u, 828612965u, 1352900977u, 1906379651u, 101798787u, 269521574u, 458759u, 2704499010u, 950100321u, 19768325u, 1932816801u, 1983164722u, 707813687u, 85373475u, 1041544545u, 900794117u, 757442359u, 1701147941u, 1896198439u, 1679140133u, 930362679u, 2774755237u, 627348533u, 926315621u, 632636711u, 872506421u, 361967415u, 896906352u, 766791861u, 614795186u, 661763375u, 2741175584u, 691811605u, 875509123u, 1973777252u, 1698654117u, 757933364u, 774468151u, 61187335u, 2972808615u, 6529851u, 295797089u, 882946321u, 614674832u, 2722300200u, 2702393642u, 859922699u, 23179587u, 2993752859u, 1629516387u, 288031545u, 2737152823u, 23135089u, 731988385u, 1102291509u, 325136754u, 645047203u, 1672559107u, 1671636264u, 1667442451u, 1370571554u, 660669314u, 866153271u, 959129505u, 867397651u, 1635877027u, 1670471959u, 1671570529u, 593650081u, 2771729988u, 1896286516u, 537948433u, 688025872u, 2771725618u, 2703568133u, 1705064707u, 61015906u, 2690716257u, 2997989794u, 422735969u, 1898148769u, 621965920u, 1393648531u, 1634866019u, 307401603u, 620964001u, 1664303971u, 1652762881u, 2208367459u, 966882209u, 539558697u, 2711834915u, 1663279507u, 2711695392u, 1899344256u, 1613300659u, 590066433u, 899899761u, 590377769u, 2721276033u, 1651593314u, 620834833u, 966852977u, 2712908643u, 1664131889u, 855704496u, 1929605539u, 688022313u, 2734766370u, 993079571u, 1897116459u, 721486134u, 595798315u, 824213923u, 2712761185u, 2970858401u, 23143779u, 2707518245u, 858859808u, 23093665u, 308388193u, 2980143397u, 1671509937u, 1627480354u, 857940915u, 28352805u, 824910707u, 2703515963u, 2150699377u, 2980131125u, 1906324005u, 1663382321u, 1633787907u, 330371937u, 1903165537u, 2997948771u, 1885352561u, 2956304801u, 6336816u, 2955223137u, 2472556657u, 2746364001u, 593573728u, 959000626u, 539664436u, 2707468641u, 1630540128u, 1672556897u, 2724241841u, 19640483u, 589935522u, 27338403u, 1633746985u, 19473827u, 2208371473u, 287907888u, 1633691957u, 19474801u, 1001460321u, 1631125939u, 23179699u, 623444499u, 657598817u, 1906386192u, 1898147881u, 1663656289u, 908292403u, 1630548658u, 864117088u } } </div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step7" class="step">
+        <div class="header">Step 7: Function None, File <a href="../os/net/ipv6/uip.h.html">os/net/ipv6/uip.h</a>, Line <a href="../os/net/ipv6/uip.h.html#462">462</a></div>
+        
+        <div class="code">extern uip_buf_t uip_aligned_buf;</div>
+        
+        <div class="cbmc">uip_aligned_buf.u32 = { 607133728u, 540017425u, 1650602531u, 140731251u, 274735985u, 537985025u, 8464801u, 1073746689u, 805371904u, 2147549984u, 855670784u, 419439873u, 545326512u, 33752371u, 544244241u, 539324721u, 2438988592u, 2975935410u, 811672419u, 714302256u, 1613049897u, 1633771813u, 694288437u, 2990617123u, 623223729u, 2745246507u, 1638082401u, 2736990003u, 1902121907u, 1906405680u, 1886388259u, 2708550560u, 35979954u, 2703860528u, 654387515u, 711131697u, 2696030885u, 712024832u, 624043057u, 673592736u, 1629960305u, 1663509299u, 589959779u, 694162217u, 3010663009u, 2703964963u, 2708582704u, 863150353u, 1646502243u, 1630691890u, 1646461857u, 2712769328u, 2745382187u, 1717584801u, 628301925u, 2708471859u, 690422307u, 660611763u, 2746221411u, 3007030048u, 1634755426u, 1667392304u, 1898971184u, 2705457712u, 1638082419u, 1914741546u, 1650664480u, 843067696u, 10560609u, 1131559587u, 58730497u, 963751985u, 1898265009u, 2976981808u, 2991816753u, 997209011u, 10588561u, 2167996724u, 855901539u, 962700073u, 2720359281u, 573575841u, 1633722787u, 697377697u, 2993750451u, 899903785u, 2809475698u, 691012901u, 807757157u, 892548646u, 721762101u, 36860416u, 660870567u, 94831935u, 842445747u, 356356449u, 2008093973u, 87503029u, 2708804925u, 119410865u, 2809241969u, 86848613u, 631571815u, 120562729u, 1164248999u, 1697191793u, 2770560357u, 87365029u, 2692027761u, 337978277u, 3014885733u, 841813349u, 2008199348u, 623658855u, 934380291u, 154563083u, 2737153636u, 3047252341u, 607548716u, 1158100277u, 2769642289u, 758587572u, 2737071013u, 3047400995u, 858878337u, 623993131u, 908082033u, 2712756539u, 732143968u, 621130021u, 722514217u, 305230083u, 661661091u, 2476749473u, 23078179u, 866214321u, 1906391152u, 1664295793u, 966865504u, 1638994480u, 1932862577u, 1907581297u, 1671508081u, 275845537u, 2704618417u, 2972190560u, 817276343u, 309436457u, 2621809u, 1034133665u, 624784800u, 880096805u, 828612965u, 1352900977u, 1906379651u, 101798787u, 269521574u, 458759u, 2704499010u, 950100321u, 19768325u, 1932816801u, 1983164722u, 707813687u, 85373475u, 1041544545u, 900794117u, 757442359u, 1701147941u, 1896198439u, 1679140133u, 930362679u, 2774755237u, 627348533u, 926315621u, 632636711u, 872506421u, 361967415u, 896906352u, 766791861u, 614795186u, 661763375u, 2741175584u, 691811605u, 875509123u, 1973777252u, 1698654117u, 757933364u, 774468151u, 61187335u, 2972808615u, 6529851u, 295797089u, 882946321u, 614674832u, 2722300200u, 2702393642u, 859922699u, 23179587u, 2993752859u, 1629516387u, 288031545u, 2737152823u, 23135089u, 731988385u, 1102291509u, 325136754u, 645047203u, 1672559107u, 1671636264u, 1667442451u, 1370571554u, 660669314u, 866153271u, 959129505u, 867397651u, 1635877027u, 1670471959u, 1671570529u, 593650081u, 2771729988u, 1896286516u, 537948433u, 688025872u, 2771725618u, 2703568133u, 1705064707u, 61015906u, 2690716257u, 2997989794u, 422735969u, 1898148769u, 621965920u, 1393648531u, 1634866019u, 307401603u, 620964001u, 1664303971u, 1652762881u, 2208367459u, 966882209u, 539558697u, 2711834915u, 1663279507u, 2711695392u, 1899344256u, 1613300659u, 590066433u, 899899761u, 590377769u, 2721276033u, 1651593314u, 620834833u, 966852977u, 2712908643u, 1664131889u, 855704496u, 1929605539u, 688022313u, 2734766370u, 993079571u, 1897116459u, 721486134u, 595798315u, 824213923u, 2712761185u, 2970858401u, 23143779u, 2707518245u, 858859808u, 23093665u, 308388193u, 2980143397u, 1671509937u, 1627480354u, 857940915u, 28352805u, 824910707u, 2703515963u, 2150699377u, 2980131125u, 1906324005u, 1663382321u, 1633787907u, 330371937u, 1903165537u, 2997948771u, 1885352561u, 2956304801u, 6336816u, 2955223137u, 2472556657u, 2746364001u, 593573728u, 959000626u, 539664436u, 2707468641u, 1630540128u, 1672556897u, 2724241841u, 19640483u, 589935522u, 27338403u, 1633746985u, 19473827u, 2208371473u, 287907888u, 1633691957u, 19474801u, 1001460321u, 1631125939u, 23179699u, 623444499u, 657598817u, 1906386192u, 1898147881u, 1663656289u, 908292403u, 1630548658u, 864117088u } </div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step8" class="step">
+        <div class="header">Step 8: Function None, File <a href="../os/net/ipv6/uip.h.html">os/net/ipv6/uip.h</a>, Line <a href="../os/net/ipv6/uip.h.html#462">462</a></div>
+        
+        <div class="code">extern uip_buf_t uip_aligned_buf;</div>
+        
+        <div class="cbmc">uip_aligned_buf.u8 = { 32, 32, 48, 36, 17, 3, 48, 32, 35, 50, 98, 98, 115, 99, 99, 8, 113, 35, 96, 16, 1, 0, 17, 32, 161, 41, 129, 0, 1, 19, 0, 64, 0, 0, 1, 48, 32, 3, 1, 128, 0, 128, 0, 51, 1, 37, 0, 25, 176, 5, 129, 32, 51, 5, 3, 2, 17, 130, 112, 32, 49, 113, 37, 32, 48, 3, 96, 145, 178, 43, 97, 177, 99, 35, 97, 48, 48, 99, 147, 42, 41, 48, 37, 96, 37, 97, 97, 97, 53, 0, 98, 41, 35, 50, 65, 178, 177, 163, 37, 37, 43, 35, 161, 163, 97, 39, 163, 97, 51, 39, 35, 163, 179, 19, 96, 113, 48, 113, 161, 113, 35, 0, 112, 112, 160, 51, 113, 161, 178, 2, 37, 2, 48, 163, 41, 161, 59, 41, 1, 39, 49, 2, 99, 42, 165, 42, 178, 160, 0, 163, 112, 42, 49, 36, 50, 37, 160, 53, 38, 40, 113, 56, 39, 97, 51, 35, 39, 99, 99, 18, 42, 35, 41, 19, 96, 41, 97, 18, 115, 179, 35, 59, 43, 161, 48, 177, 113, 161, 17, 161, 114, 51, 99, 161, 35, 98, 50, 98, 50, 97, 161, 3, 35, 98, 48, 147, 177, 161, 43, 53, 163, 163, 161, 67, 96, 102, 101, 32, 115, 37, 51, 0, 112, 161, 35, 2, 39, 41, 179, 34, 96, 39, 99, 3, 176, 163, 32, 163, 59, 179, 98, 99, 112, 97, 48, 99, 98, 99, 48, 0, 48, 113, 48, 2, 66, 161, 115, 39, 163, 97, 42, 163, 32, 114, 32, 36, 99, 98, 48, 49, 64, 50, 97, 36, 161, 0, 163, 58, 114, 67, 1, 40, 128, 3, 49, 176, 113, 57, 177, 57, 37, 113, 48, 35, 113, 177, 49, 128, 83, 178, 179, 51, 112, 59, 145, 145, 161, 0, 52, 1, 57, 129, 99, 5, 4, 51, 41, 163, 97, 57, 113, 99, 37, 162, 161, 18, 48, 34, 163, 161, 96, 97, 161, 35, 145, 41, 179, 1, 113, 178, 41, 113, 163, 53, 114, 50, 117, 167, 37, 5, 48, 41, 101, 101, 37, 48, 38, 54, 51, 53, 53, 55, 5, 43, 0, 114, 50, 2, 167, 21, 100, 39, 63, 5, 167, 5, 179, 179, 54, 50, 97, 145, 61, 21, 21, 21, 177, 119, 181, 48, 55, 5, 61, 21, 117, 161, 177, 16, 30, 7, 113, 161, 113, 167, 101, 52, 45, 5, 103, 5, 165, 37, 41, 164, 47, 7, 167, 7, 101, 69, 113, 23, 41, 101, 101, 101, 35, 165, 165, 21, 53, 5, 113, 21, 117, 160, 165, 35, 37, 20, 101, 129, 179, 179, 101, 13, 45, 50, 180, 176, 178, 119, 103, 71, 44, 37, 3, 131, 177, 55, 11, 114, 54, 9, 100, 166, 37, 163, 117, 97, 161, 181, 44, 117, 54, 36, 53, 53, 7, 69, 49, 99, 21, 165, 180, 32, 55, 45, 165, 99, 36, 163, 35, 166, 163, 181, 129, 113, 49, 51, 43, 97, 49, 37, 113, 59, 32, 54, 59, 97, 177, 161, 96, 161, 163, 43, 37, 177, 5, 37, 41, 177, 16, 43, 3, 113, 49, 18, 163, 37, 112, 39, 161, 50, 160, 147, 35, 37, 96, 1, 177, 97, 161, 51, 112, 56, 161, 113, 113, 35, 51, 99, 96, 50, 161, 57, 48, 18, 177, 97, 113, 36, 53, 115, 113, 97, 179, 113, 113, 48, 161, 99, 161, 17, 113, 16, 177, 51, 53, 161, 96, 7, 40, 177, 183, 165, 182, 48, 41, 160, 113, 18, 113, 1, 40, 0, 161, 160, 163, 61, 160, 117, 61, 37, 37, 54, 117, 52, 101, 161, 99, 49, 113, 161, 163, 80, 131, 11, 161, 113, 131, 83, 17, 6, 166, 146, 16, 16, 7, 0, 7, 0, 66, 97, 51, 161, 97, 97, 161, 56, 5, 164, 45, 1, 161, 113, 52, 115, 50, 177, 52, 118, 55, 97, 48, 42, 35, 178, 22, 5, 97, 181, 20, 62, 5, 7, 177, 53, 55, 167, 37, 45, 37, 117, 101, 101, 39, 177, 5, 113, 37, 165, 21, 100, 55, 53, 116, 55, 165, 103, 99, 165, 53, 148, 100, 37, 101, 116, 54, 55, 39, 69, 181, 37, 53, 100, 1, 52, 55, 47, 147, 21, 112, 180, 117, 53, 181, 80, 180, 45, 178, 7, 165, 36, 47, 181, 113, 39, 32, 5, 99, 163, 21, 53, 60, 41, 131, 53, 47, 52, 100, 115, 165, 117, 165, 103, 63, 101, 52, 37, 45, 45, 55, 114, 41, 46, 7, 165, 165, 3, 167, 117, 49, 177, 59, 163, 99, 0, 97, 129, 161, 17, 17, 177, 160, 52, 144, 49, 163, 36, 40, 1, 67, 162, 42, 65, 19, 161, 11, 97, 65, 51, 67, 177, 97, 1, 27, 11, 113, 178, 99, 114, 32, 97, 57, 3, 43, 17, 55, 163, 37, 163, 113, 3, 97, 1, 161, 65, 161, 43, 53, 162, 179, 65, 114, 49, 97, 19, 163, 163, 114, 38, 3, 58, 177, 99, 40, 37, 163, 99, 19, 39, 99, 99, 34, 67, 177, 81, 130, 3, 97, 39, 55, 115, 160, 51, 161, 39, 43, 57, 19, 112, 179, 51, 163, 128, 129, 97, 23, 97, 145, 99, 97, 36, 162, 99, 161, 97, 98, 35, 68, 62, 53, 165, 52, 9, 7, 113, 17, 113, 16, 32, 16, 113, 2, 41, 50, 45, 53, 165, 5, 45, 37, 161, 3, 57, 161, 101, 98, 7, 163, 3, 97, 18, 97, 160, 162, 177, 177, 178, 97, 112, 50, 25, 161, 115, 35, 113, 96, 114, 18, 37, 147, 99, 17, 83, 99, 19, 114, 97, 131, 147, 82, 18, 161, 40, 3, 37, 99, 67, 51, 99, 1, 41, 131, 98, 99, 3, 161, 131, 161, 115, 161, 57, 41, 3, 41, 32, 35, 81, 163, 161, 147, 161, 35, 99, 32, 48, 161, 161, 128, 177, 53, 113, 179, 3, 41, 96, 1, 179, 43, 35, 113, 97, 163, 53, 41, 115, 48, 35, 129, 96, 51, 162, 98, 80, 113, 98, 17, 48, 1, 37, 113, 1, 161, 57, 99, 179, 179, 161, 49, 163, 48, 99, 176, 3, 1, 51, 163, 113, 3, 115, 41, 99, 2, 41, 34, 57, 1, 163, 19, 49, 49, 59, 43, 179, 19, 113, 54, 1, 1, 43, 43, 41, 131, 35, 163, 129, 32, 49, 97, 115, 177, 161, 161, 179, 19, 177, 99, 37, 97, 1, 37, 115, 97, 161, 32, 41, 49, 51, 161, 97, 96, 1, 97, 161, 97, 18, 37, 97, 161, 177, 177, 55, 161, 99, 34, 97, 1, 97, 179, 35, 35, 51, 37, 161, 176, 1, 115, 35, 43, 49, 59, 97, 36, 161, 113, 17, 49, 128, 53, 49, 161, 177, 37, 50, 160, 113, 49, 51, 37, 99, 3, 160, 97, 97, 97, 19, 177, 19, 97, 0, 112, 113, 99, 17, 177, 178, 113, 50, 96, 112, 161, 161, 53, 176, 48, 177, 96, 0, 97, 32, 37, 176, 113, 56, 96, 147, 97, 48, 178, 163, 96, 55, 97, 35, 50, 48, 41, 57, 52, 160, 42, 32, 97, 177, 96, 161, 96, 17, 48, 97, 97, 49, 177, 99, 177, 161, 96, 162, 163, 176, 43, 1, 162, 179, 41, 35, 163, 38, 161, 1, 41, 0, 97, 97, 163, 37, 41, 1, 17, 19, 161, 131, 48, 32, 41, 17, 53, 41, 96, 97, 113, 41, 41, 1, 97, 18, 177, 59, 179, 1, 57, 97, 179, 177, 97, 1, 19, 2, 41, 37, 97, 41, 50, 39, 16, 37, 161, 113, 41, 112, 35, 113, 97, 97, 41, 99, 51, 113, 35, 54, 178, 50, 48, 97, 96, 97, 129, 51 } </div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step9" class="step">
+        <div class="header">Step 9: Function None, File <a href="../os/net/ipv6/uip.h.html">os/net/ipv6/uip.h</a>, Line <a href="../os/net/ipv6/uip.h.html#1237">1237</a></div>
+        
+        <div class="code">extern uint16_t uip_ext_len;</div>
+        
+        <div class="cbmc">uip_ext_len = 35326 (10001001 11111110)</div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step10" class="step">
+        <div class="header">Step 10: Function None, File <a href="../os/net/ipv6/uip.h.html">os/net/ipv6/uip.h</a>, Line <a href="../os/net/ipv6/uip.h.html#1241">1241</a></div>
+        
+        <div class="code">extern uint8_t uip_last_proto;</div>
+        
+        <div class="cbmc">uip_last_proto = 0 (00000000)</div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step11" class="step">
+        <div class="header">Step 11: Function None, File <a href="../os/net/ipv6/uip.h.html">os/net/ipv6/uip.h</a>, Line <a href="../os/net/ipv6/uip.h.html#1232">1232</a></div>
+        
+        <div class="code">extern uint16_t uip_len;</div>
+        
+        <div class="cbmc">uip_len = 45119 (10110000 00111111)</div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step12" class="step">
+        <div class="header">Step 12: Function None, File <a href="../os/net/ipv6/uipbuf.c.html">os/net/ipv6/uipbuf.c</a>, Line <a href="../os/net/ipv6/uipbuf.c.html#39">39</a></div>
+        
+        <div class="code">static uint16_t uipbuf_attrs[UIPBUF_ATTR_MAX];</div>
+        
+        <div class="cbmc">uipbuf_attrs = { 0, 0, 0, 0, 0, 0, 0, 0 } </div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step13" class="step">
+        <div class="header">Step 13: Function None, File <a href="../os/net/ipv6/uipbuf.c.html">os/net/ipv6/uipbuf.c</a>, Line <a href="../os/net/ipv6/uipbuf.c.html#39">39</a></div>
+        
+        <div class="code">static uint16_t uipbuf_attrs[UIPBUF_ATTR_MAX];</div>
+        
+        <div class="cbmc">uipbuf_attrs[0] = 0 (00000000 00000000)</div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step14" class="step">
+        <div class="header">Step 14: Function None, File <a href="../os/net/ipv6/uipbuf.c.html">os/net/ipv6/uipbuf.c</a>, Line <a href="../os/net/ipv6/uipbuf.c.html#39">39</a></div>
+        
+        <div class="code">static uint16_t uipbuf_attrs[UIPBUF_ATTR_MAX];</div>
+        
+        <div class="cbmc">uipbuf_attrs[1] = 0 (00000000 00000000)</div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step15" class="step">
+        <div class="header">Step 15: Function None, File <a href="../os/net/ipv6/uipbuf.c.html">os/net/ipv6/uipbuf.c</a>, Line <a href="../os/net/ipv6/uipbuf.c.html#39">39</a></div>
+        
+        <div class="code">static uint16_t uipbuf_attrs[UIPBUF_ATTR_MAX];</div>
+        
+        <div class="cbmc">uipbuf_attrs[2] = 0 (00000000 00000000)</div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step16" class="step">
+        <div class="header">Step 16: Function None, File <a href="../os/net/ipv6/uipbuf.c.html">os/net/ipv6/uipbuf.c</a>, Line <a href="../os/net/ipv6/uipbuf.c.html#39">39</a></div>
+        
+        <div class="code">static uint16_t uipbuf_attrs[UIPBUF_ATTR_MAX];</div>
+        
+        <div class="cbmc">uipbuf_attrs[3] = 0 (00000000 00000000)</div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step17" class="step">
+        <div class="header">Step 17: Function None, File <a href="../os/net/ipv6/uipbuf.c.html">os/net/ipv6/uipbuf.c</a>, Line <a href="../os/net/ipv6/uipbuf.c.html#39">39</a></div>
+        
+        <div class="code">static uint16_t uipbuf_attrs[UIPBUF_ATTR_MAX];</div>
+        
+        <div class="cbmc">uipbuf_attrs[4] = 0 (00000000 00000000)</div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step18" class="step">
+        <div class="header">Step 18: Function None, File <a href="../os/net/ipv6/uipbuf.c.html">os/net/ipv6/uipbuf.c</a>, Line <a href="../os/net/ipv6/uipbuf.c.html#39">39</a></div>
+        
+        <div class="code">static uint16_t uipbuf_attrs[UIPBUF_ATTR_MAX];</div>
+        
+        <div class="cbmc">uipbuf_attrs[5] = 0 (00000000 00000000)</div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step19" class="step">
+        <div class="header">Step 19: Function None, File <a href="../os/net/ipv6/uipbuf.c.html">os/net/ipv6/uipbuf.c</a>, Line <a href="../os/net/ipv6/uipbuf.c.html#39">39</a></div>
+        
+        <div class="code">static uint16_t uipbuf_attrs[UIPBUF_ATTR_MAX];</div>
+        
+        <div class="cbmc">uipbuf_attrs[6] = 0 (00000000 00000000)</div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step20" class="step">
+        <div class="header">Step 20: Function None, File <a href="../os/net/ipv6/uipbuf.c.html">os/net/ipv6/uipbuf.c</a>, Line <a href="../os/net/ipv6/uipbuf.c.html#39">39</a></div>
+        
+        <div class="code">static uint16_t uipbuf_attrs[UIPBUF_ATTR_MAX];</div>
+        
+        <div class="cbmc">uipbuf_attrs[7] = 0 (00000000 00000000)</div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step21" class="step">
+        <div class="header">Step 21: Function None, File <a href="../os/net/ipv6/uipbuf.c.html">os/net/ipv6/uipbuf.c</a>, Line <a href="../os/net/ipv6/uipbuf.c.html#40">40</a></div>
+        
+        <div class="code">static uint16_t uipbuf_default_attrs[UIPBUF_ATTR_MAX];</div>
+        
+        <div class="cbmc">uipbuf_default_attrs = { 0, 0, 0, 0, 0, 0, 0, 0 } </div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step22" class="step">
+        <div class="header">Step 22: Function None, File <a href="../os/net/ipv6/uipbuf.c.html">os/net/ipv6/uipbuf.c</a>, Line <a href="../os/net/ipv6/uipbuf.c.html#40">40</a></div>
+        
+        <div class="code">static uint16_t uipbuf_default_attrs[UIPBUF_ATTR_MAX];</div>
+        
+        <div class="cbmc">uipbuf_default_attrs[0] = 0 (00000000 00000000)</div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step23" class="step">
+        <div class="header">Step 23: Function None, File <a href="../os/net/ipv6/uipbuf.c.html">os/net/ipv6/uipbuf.c</a>, Line <a href="../os/net/ipv6/uipbuf.c.html#40">40</a></div>
+        
+        <div class="code">static uint16_t uipbuf_default_attrs[UIPBUF_ATTR_MAX];</div>
+        
+        <div class="cbmc">uipbuf_default_attrs[1] = 0 (00000000 00000000)</div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step24" class="step">
+        <div class="header">Step 24: Function None, File <a href="../os/net/ipv6/uipbuf.c.html">os/net/ipv6/uipbuf.c</a>, Line <a href="../os/net/ipv6/uipbuf.c.html#40">40</a></div>
+        
+        <div class="code">static uint16_t uipbuf_default_attrs[UIPBUF_ATTR_MAX];</div>
+        
+        <div class="cbmc">uipbuf_default_attrs[2] = 0 (00000000 00000000)</div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step25" class="step">
+        <div class="header">Step 25: Function None, File <a href="../os/net/ipv6/uipbuf.c.html">os/net/ipv6/uipbuf.c</a>, Line <a href="../os/net/ipv6/uipbuf.c.html#40">40</a></div>
+        
+        <div class="code">static uint16_t uipbuf_default_attrs[UIPBUF_ATTR_MAX];</div>
+        
+        <div class="cbmc">uipbuf_default_attrs[3] = 0 (00000000 00000000)</div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step26" class="step">
+        <div class="header">Step 26: Function None, File <a href="../os/net/ipv6/uipbuf.c.html">os/net/ipv6/uipbuf.c</a>, Line <a href="../os/net/ipv6/uipbuf.c.html#40">40</a></div>
+        
+        <div class="code">static uint16_t uipbuf_default_attrs[UIPBUF_ATTR_MAX];</div>
+        
+        <div class="cbmc">uipbuf_default_attrs[4] = 0 (00000000 00000000)</div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step27" class="step">
+        <div class="header">Step 27: Function None, File <a href="../os/net/ipv6/uipbuf.c.html">os/net/ipv6/uipbuf.c</a>, Line <a href="../os/net/ipv6/uipbuf.c.html#40">40</a></div>
+        
+        <div class="code">static uint16_t uipbuf_default_attrs[UIPBUF_ATTR_MAX];</div>
+        
+        <div class="cbmc">uipbuf_default_attrs[5] = 0 (00000000 00000000)</div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step28" class="step">
+        <div class="header">Step 28: Function None, File <a href="../os/net/ipv6/uipbuf.c.html">os/net/ipv6/uipbuf.c</a>, Line <a href="../os/net/ipv6/uipbuf.c.html#40">40</a></div>
+        
+        <div class="code">static uint16_t uipbuf_default_attrs[UIPBUF_ATTR_MAX];</div>
+        
+        <div class="cbmc">uipbuf_default_attrs[6] = 0 (00000000 00000000)</div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step29" class="step">
+        <div class="header">Step 29: Function None, File <a href="../os/net/ipv6/uipbuf.c.html">os/net/ipv6/uipbuf.c</a>, Line <a href="../os/net/ipv6/uipbuf.c.html#40">40</a></div>
+        
+        <div class="code">static uint16_t uipbuf_default_attrs[UIPBUF_ATTR_MAX];</div>
+        
+        <div class="cbmc">uipbuf_default_attrs[7] = 0 (00000000 00000000)</div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+        </div> 
+        <div class="function-return">
+        
+
+        <div id="step30" class="step">
+        <div class="header">Step 30: Function MISSING, File MISSING, Line 0</div>
+        
+        <div class="cbmc"><- __CPROVER_initialize</div>
+        </div>
+
+        
+
+        
+        </div> 
+        </div> 
+        
+
+      
+
+        
+        <div class="function">
+        <div class="function-call">
+        
+
+        
+
+        <div id="step31" class="step">
+        <div class="header">Step 31: Function None, File <a href="../cbmc/proofs/net/ipv6/rs_input/test_harness.c.html">cbmc/proofs/net/ipv6/rs_input/test_harness.c</a>, Line <a href="../cbmc/proofs/net/ipv6/rs_input/test_harness.c.html#539">539</a></div>
+        
+        <div class="code">void harness(void) { rs_input();</div>
+        
+        <div class="cbmc">-> <a href="../cbmc/proofs/net/ipv6/rs_input/test_harness.c.html#539">harness</a></div>
+        </div>
+
+        
+        </div> 
+        <div class="function-body">
+        
+
+        
+
+      
+
+        
+        <div class="function">
+        <div class="function-call">
+        
+
+        
+
+        <div id="step32" class="step">
+        <div class="header">Step 32: Function <a href="../cbmc/proofs/net/ipv6/rs_input/test_harness.c.html#539">harness</a>, File <a href="../cbmc/proofs/net/ipv6/rs_input/test_harness.c.html">cbmc/proofs/net/ipv6/rs_input/test_harness.c</a>, Line <a href="../cbmc/proofs/net/ipv6/rs_input/test_harness.c.html#541">541</a></div>
+        
+        <div class="code">rs_input();</div>
+        
+        <div class="cbmc">-> <a href="../os/net/ipv6/uip-nd6.c.html#607">rs_input</a></div>
+        </div>
+
+        
+        </div> 
+        <div class="function-body">
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step33" class="step">
+        <div class="header">Step 33: Function <a href="../os/net/ipv6/uip-nd6.c.html#607">rs_input</a>, File <a href="../os/net/ipv6/uip-nd6.c.html">os/net/ipv6/uip-nd6.c</a>, Line <a href="../os/net/ipv6/uip-nd6.c.html#624">624</a></div>
+        
+        <div class="code">if((UIP_IP_BUF-&gt;ttl != UIP_ND6_HOP_LIMIT) || (UIP_ICMP_BUF-&gt;icode != 0)) { LOG_ERR(&quot;RS received is bad\n&quot;);</div>
+        
+        <div class="cbmc">failure: rs_input.pointer_dereference.5: dereference failure: pointer outside object bounds in ((struct uip_icmp_hdr *)((unsigned char *)uip_aligned_buf.u8 + 40 + (signed int)uip_ext_len))->icode</div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step34" class="step">
+        <div class="header">Step 34: Function <a href="../os/net/ipv6/uip-nd6.c.html#607">rs_input</a>, File <a href="../os/net/ipv6/uip-nd6.c.html">os/net/ipv6/uip-nd6.c</a>, Line <a href="../os/net/ipv6/uip-nd6.c.html#632">632</a></div>
+        
+        <div class="code">nd6_opt_offset = UIP_ND6_RS_LEN;</div>
+        
+        <div class="cbmc">nd6_opt_offset = 4 (00000000 00000100)</div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step35" class="step">
+        <div class="header">Step 35: Function <a href="../os/net/ipv6/uip-nd6.c.html#607">rs_input</a>, File <a href="../os/net/ipv6/uip-nd6.c.html">os/net/ipv6/uip-nd6.c</a>, Line <a href="../os/net/ipv6/uip-nd6.c.html#633">633</a></div>
+        
+        <div class="code">nd6_opt_llao = NULL;</div>
+        
+        <div class="cbmc">nd6_opt_llao = ((uint8_t *)NULL) </div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step36" class="step">
+        <div class="header">Step 36: Function <a href="../os/net/ipv6/uip-nd6.c.html#607">rs_input</a>, File <a href="../os/net/ipv6/uip-nd6.c.html">os/net/ipv6/uip-nd6.c</a>, Line <a href="../os/net/ipv6/uip-nd6.c.html#637">637</a></div>
+        
+        <div class="code">if(ND6_OPT_HDR_BUF(nd6_opt_offset)-&gt;len == 0) { LOG_ERR(&quot;RS received is bad\n&quot;);</div>
+        
+        <div class="cbmc">failure: rs_input.pointer_dereference.8: dereference failure: pointer outside object bounds in ((uip_nd6_opt_hdr *)(unsigned char *)((unsigned char *)((unsigned char *)uip_aligned_buf.u8 + 40 + (signed int)uip_ext_len) + 4 + (signed int)nd6_opt_offset))->len</div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step37" class="step">
+        <div class="header">Step 37: Function <a href="../os/net/ipv6/uip-nd6.c.html#607">rs_input</a>, File <a href="../os/net/ipv6/uip-nd6.c.html">os/net/ipv6/uip-nd6.c</a>, Line <a href="../os/net/ipv6/uip-nd6.c.html#642">642</a></div>
+        
+        <div class="code">switch (ND6_OPT_HDR_BUF(nd6_opt_offset)-&gt;type) { case UIP_ND6_OPT_SLLAO: nd6_opt_llao = (uint8_t *)ND6_OPT_HDR_BUF(nd6_opt_offset);</div>
+        
+        <div class="cbmc">failure: rs_input.pointer_dereference.11: dereference failure: pointer outside object bounds in ((uip_nd6_opt_hdr *)(unsigned char *)((unsigned char *)((unsigned char *)uip_aligned_buf.u8 + 40 + (signed int)uip_ext_len) + 4 + (signed int)nd6_opt_offset))->type</div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step38" class="step">
+        <div class="header">Step 38: Function <a href="../os/net/ipv6/uip-nd6.c.html#607">rs_input</a>, File <a href="../os/net/ipv6/uip-nd6.c.html">os/net/ipv6/uip-nd6.c</a>, Line <a href="../os/net/ipv6/uip-nd6.c.html#644">644</a></div>
+        
+        <div class="code">nd6_opt_llao = (uint8_t *)ND6_OPT_HDR_BUF(nd6_opt_offset);</div>
+        
+        <div class="cbmc">nd6_opt_llao = (uint8_t *)((char *)&uip_aligned_buf + 35374) </div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step39" class="step">
+        <div class="header">Step 39: Function <a href="../os/net/ipv6/uip-nd6.c.html#607">rs_input</a>, File <a href="../os/net/ipv6/uip-nd6.c.html">os/net/ipv6/uip-nd6.c</a>, Line <a href="../os/net/ipv6/uip-nd6.c.html#650">650</a></div>
+        
+        <div class="code">nd6_opt_offset += (ND6_OPT_HDR_BUF(nd6_opt_offset)-&gt;len &lt;&lt; 3);</div>
+        
+        <div class="cbmc">failure: rs_input.pointer_dereference.14: dereference failure: pointer outside object bounds in ((uip_nd6_opt_hdr *)(unsigned char *)((unsigned char *)((unsigned char *)uip_aligned_buf.u8 + 40 + (signed int)uip_ext_len) + 4 + (signed int)nd6_opt_offset))->len</div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step40" class="step">
+        <div class="header">Step 40: Function <a href="../os/net/ipv6/uip-nd6.c.html#607">rs_input</a>, File <a href="../os/net/ipv6/uip-nd6.c.html">os/net/ipv6/uip-nd6.c</a>, Line <a href="../os/net/ipv6/uip-nd6.c.html#650">650</a></div>
+        
+        <div class="code">nd6_opt_offset += (ND6_OPT_HDR_BUF(nd6_opt_offset)-&gt;len &lt;&lt; 3);</div>
+        
+        <div class="cbmc">nd6_opt_offset = 2044 (00000111 11111100)</div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step41" class="step">
+        <div class="header">Step 41: Function <a href="../os/net/ipv6/uip-nd6.c.html#607">rs_input</a>, File <a href="../os/net/ipv6/uip-nd6.c.html">os/net/ipv6/uip-nd6.c</a>, Line <a href="../os/net/ipv6/uip-nd6.c.html#637">637</a></div>
+        
+        <div class="code">if(ND6_OPT_HDR_BUF(nd6_opt_offset)-&gt;len == 0) { LOG_ERR(&quot;RS received is bad\n&quot;);</div>
+        
+        <div class="cbmc">failure: rs_input.pointer_dereference.8: dereference failure: pointer outside object bounds in ((uip_nd6_opt_hdr *)(unsigned char *)((unsigned char *)((unsigned char *)uip_aligned_buf.u8 + 40 + (signed int)uip_ext_len) + 4 + (signed int)nd6_opt_offset))->len</div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step42" class="step">
+        <div class="header">Step 42: Function <a href="../os/net/ipv6/uip-nd6.c.html#607">rs_input</a>, File <a href="../os/net/ipv6/uip-nd6.c.html">os/net/ipv6/uip-nd6.c</a>, Line <a href="../os/net/ipv6/uip-nd6.c.html#642">642</a></div>
+        
+        <div class="code">switch (ND6_OPT_HDR_BUF(nd6_opt_offset)-&gt;type) { case UIP_ND6_OPT_SLLAO: nd6_opt_llao = (uint8_t *)ND6_OPT_HDR_BUF(nd6_opt_offset);</div>
+        
+        <div class="cbmc">failure: rs_input.pointer_dereference.11: dereference failure: pointer outside object bounds in ((uip_nd6_opt_hdr *)(unsigned char *)((unsigned char *)((unsigned char *)uip_aligned_buf.u8 + 40 + (signed int)uip_ext_len) + 4 + (signed int)nd6_opt_offset))->type</div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step43" class="step">
+        <div class="header">Step 43: Function <a href="../os/net/ipv6/uip-nd6.c.html#607">rs_input</a>, File <a href="../os/net/ipv6/uip-nd6.c.html">os/net/ipv6/uip-nd6.c</a>, Line <a href="../os/net/ipv6/uip-nd6.c.html#644">644</a></div>
+        
+        <div class="code">nd6_opt_llao = (uint8_t *)ND6_OPT_HDR_BUF(nd6_opt_offset);</div>
+        
+        <div class="cbmc">nd6_opt_llao = (uint8_t *)((char *)&uip_aligned_buf + 37414) </div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step44" class="step">
+        <div class="header">Step 44: Function <a href="../os/net/ipv6/uip-nd6.c.html#607">rs_input</a>, File <a href="../os/net/ipv6/uip-nd6.c.html">os/net/ipv6/uip-nd6.c</a>, Line <a href="../os/net/ipv6/uip-nd6.c.html#650">650</a></div>
+        
+        <div class="code">nd6_opt_offset += (ND6_OPT_HDR_BUF(nd6_opt_offset)-&gt;len &lt;&lt; 3);</div>
+        
+        <div class="cbmc">failure: rs_input.pointer_dereference.14: dereference failure: pointer outside object bounds in ((uip_nd6_opt_hdr *)(unsigned char *)((unsigned char *)((unsigned char *)uip_aligned_buf.u8 + 40 + (signed int)uip_ext_len) + 4 + (signed int)nd6_opt_offset))->len</div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step45" class="step">
+        <div class="header">Step 45: Function <a href="../os/net/ipv6/uip-nd6.c.html#607">rs_input</a>, File <a href="../os/net/ipv6/uip-nd6.c.html">os/net/ipv6/uip-nd6.c</a>, Line <a href="../os/net/ipv6/uip-nd6.c.html#650">650</a></div>
+        
+        <div class="code">nd6_opt_offset += (ND6_OPT_HDR_BUF(nd6_opt_offset)-&gt;len &lt;&lt; 3);</div>
+        
+        <div class="cbmc">nd6_opt_offset = 4028 (00001111 10111100)</div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step46" class="step">
+        <div class="header">Step 46: Function <a href="../os/net/ipv6/uip-nd6.c.html#607">rs_input</a>, File <a href="../os/net/ipv6/uip-nd6.c.html">os/net/ipv6/uip-nd6.c</a>, Line <a href="../os/net/ipv6/uip-nd6.c.html#637">637</a></div>
+        
+        <div class="code">if(ND6_OPT_HDR_BUF(nd6_opt_offset)-&gt;len == 0) { LOG_ERR(&quot;RS received is bad\n&quot;);</div>
+        
+        <div class="cbmc">failure: rs_input.pointer_dereference.8: dereference failure: pointer outside object bounds in ((uip_nd6_opt_hdr *)(unsigned char *)((unsigned char *)((unsigned char *)uip_aligned_buf.u8 + 40 + (signed int)uip_ext_len) + 4 + (signed int)nd6_opt_offset))->len</div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step47" class="step">
+        <div class="header">Step 47: Function <a href="../os/net/ipv6/uip-nd6.c.html#607">rs_input</a>, File <a href="../os/net/ipv6/uip-nd6.c.html">os/net/ipv6/uip-nd6.c</a>, Line <a href="../os/net/ipv6/uip-nd6.c.html#642">642</a></div>
+        
+        <div class="code">switch (ND6_OPT_HDR_BUF(nd6_opt_offset)-&gt;type) { case UIP_ND6_OPT_SLLAO: nd6_opt_llao = (uint8_t *)ND6_OPT_HDR_BUF(nd6_opt_offset);</div>
+        
+        <div class="cbmc">failure: rs_input.pointer_dereference.11: dereference failure: pointer outside object bounds in ((uip_nd6_opt_hdr *)(unsigned char *)((unsigned char *)((unsigned char *)uip_aligned_buf.u8 + 40 + (signed int)uip_ext_len) + 4 + (signed int)nd6_opt_offset))->type</div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step48" class="step">
+        <div class="header">Step 48: Function <a href="../os/net/ipv6/uip-nd6.c.html#607">rs_input</a>, File <a href="../os/net/ipv6/uip-nd6.c.html">os/net/ipv6/uip-nd6.c</a>, Line <a href="../os/net/ipv6/uip-nd6.c.html#644">644</a></div>
+        
+        <div class="code">nd6_opt_llao = (uint8_t *)ND6_OPT_HDR_BUF(nd6_opt_offset);</div>
+        
+        <div class="cbmc">nd6_opt_llao = (uint8_t *)((char *)&uip_aligned_buf + 39398) </div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step49" class="step">
+        <div class="header">Step 49: Function <a href="../os/net/ipv6/uip-nd6.c.html#607">rs_input</a>, File <a href="../os/net/ipv6/uip-nd6.c.html">os/net/ipv6/uip-nd6.c</a>, Line <a href="../os/net/ipv6/uip-nd6.c.html#650">650</a></div>
+        
+        <div class="code">nd6_opt_offset += (ND6_OPT_HDR_BUF(nd6_opt_offset)-&gt;len &lt;&lt; 3);</div>
+        
+        <div class="cbmc">failure: rs_input.pointer_dereference.14: dereference failure: pointer outside object bounds in ((uip_nd6_opt_hdr *)(unsigned char *)((unsigned char *)((unsigned char *)uip_aligned_buf.u8 + 40 + (signed int)uip_ext_len) + 4 + (signed int)nd6_opt_offset))->len</div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step50" class="step">
+        <div class="header">Step 50: Function <a href="../os/net/ipv6/uip-nd6.c.html#607">rs_input</a>, File <a href="../os/net/ipv6/uip-nd6.c.html">os/net/ipv6/uip-nd6.c</a>, Line <a href="../os/net/ipv6/uip-nd6.c.html#650">650</a></div>
+        
+        <div class="code">nd6_opt_offset += (ND6_OPT_HDR_BUF(nd6_opt_offset)-&gt;len &lt;&lt; 3);</div>
+        
+        <div class="cbmc">nd6_opt_offset = 6052 (00010111 10100100)</div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step51" class="step">
+        <div class="header">Step 51: Function <a href="../os/net/ipv6/uip-nd6.c.html#607">rs_input</a>, File <a href="../os/net/ipv6/uip-nd6.c.html">os/net/ipv6/uip-nd6.c</a>, Line <a href="../os/net/ipv6/uip-nd6.c.html#637">637</a></div>
+        
+        <div class="code">if(ND6_OPT_HDR_BUF(nd6_opt_offset)-&gt;len == 0) { LOG_ERR(&quot;RS received is bad\n&quot;);</div>
+        
+        <div class="cbmc">failure: rs_input.pointer_dereference.8: dereference failure: pointer outside object bounds in ((uip_nd6_opt_hdr *)(unsigned char *)((unsigned char *)((unsigned char *)uip_aligned_buf.u8 + 40 + (signed int)uip_ext_len) + 4 + (signed int)nd6_opt_offset))->len</div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step52" class="step">
+        <div class="header">Step 52: Function <a href="../os/net/ipv6/uip-nd6.c.html#607">rs_input</a>, File <a href="../os/net/ipv6/uip-nd6.c.html">os/net/ipv6/uip-nd6.c</a>, Line <a href="../os/net/ipv6/uip-nd6.c.html#642">642</a></div>
+        
+        <div class="code">switch (ND6_OPT_HDR_BUF(nd6_opt_offset)-&gt;type) { case UIP_ND6_OPT_SLLAO: nd6_opt_llao = (uint8_t *)ND6_OPT_HDR_BUF(nd6_opt_offset);</div>
+        
+        <div class="cbmc">failure: rs_input.pointer_dereference.11: dereference failure: pointer outside object bounds in ((uip_nd6_opt_hdr *)(unsigned char *)((unsigned char *)((unsigned char *)uip_aligned_buf.u8 + 40 + (signed int)uip_ext_len) + 4 + (signed int)nd6_opt_offset))->type</div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step53" class="step">
+        <div class="header">Step 53: Function <a href="../os/net/ipv6/uip-nd6.c.html#607">rs_input</a>, File <a href="../os/net/ipv6/uip-nd6.c.html">os/net/ipv6/uip-nd6.c</a>, Line <a href="../os/net/ipv6/uip-nd6.c.html#650">650</a></div>
+        
+        <div class="code">nd6_opt_offset += (ND6_OPT_HDR_BUF(nd6_opt_offset)-&gt;len &lt;&lt; 3);</div>
+        
+        <div class="cbmc">failure: rs_input.pointer_dereference.14: dereference failure: pointer outside object bounds in ((uip_nd6_opt_hdr *)(unsigned char *)((unsigned char *)((unsigned char *)uip_aligned_buf.u8 + 40 + (signed int)uip_ext_len) + 4 + (signed int)nd6_opt_offset))->len</div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step54" class="step">
+        <div class="header">Step 54: Function <a href="../os/net/ipv6/uip-nd6.c.html#607">rs_input</a>, File <a href="../os/net/ipv6/uip-nd6.c.html">os/net/ipv6/uip-nd6.c</a>, Line <a href="../os/net/ipv6/uip-nd6.c.html#650">650</a></div>
+        
+        <div class="code">nd6_opt_offset += (ND6_OPT_HDR_BUF(nd6_opt_offset)-&gt;len &lt;&lt; 3);</div>
+        
+        <div class="cbmc">nd6_opt_offset = 7580 (00011101 10011100)</div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step55" class="step">
+        <div class="header">Step 55: Function <a href="../os/net/ipv6/uip-nd6.c.html#607">rs_input</a>, File <a href="../os/net/ipv6/uip-nd6.c.html">os/net/ipv6/uip-nd6.c</a>, Line <a href="../os/net/ipv6/uip-nd6.c.html#637">637</a></div>
+        
+        <div class="code">if(ND6_OPT_HDR_BUF(nd6_opt_offset)-&gt;len == 0) { LOG_ERR(&quot;RS received is bad\n&quot;);</div>
+        
+        <div class="cbmc">failure: rs_input.pointer_dereference.8: dereference failure: pointer outside object bounds in ((uip_nd6_opt_hdr *)(unsigned char *)((unsigned char *)((unsigned char *)uip_aligned_buf.u8 + 40 + (signed int)uip_ext_len) + 4 + (signed int)nd6_opt_offset))->len</div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step56" class="step">
+        <div class="header">Step 56: Function <a href="../os/net/ipv6/uip-nd6.c.html#607">rs_input</a>, File <a href="../os/net/ipv6/uip-nd6.c.html">os/net/ipv6/uip-nd6.c</a>, Line <a href="../os/net/ipv6/uip-nd6.c.html#642">642</a></div>
+        
+        <div class="code">switch (ND6_OPT_HDR_BUF(nd6_opt_offset)-&gt;type) { case UIP_ND6_OPT_SLLAO: nd6_opt_llao = (uint8_t *)ND6_OPT_HDR_BUF(nd6_opt_offset);</div>
+        
+        <div class="cbmc">failure: rs_input.pointer_dereference.11: dereference failure: pointer outside object bounds in ((uip_nd6_opt_hdr *)(unsigned char *)((unsigned char *)((unsigned char *)uip_aligned_buf.u8 + 40 + (signed int)uip_ext_len) + 4 + (signed int)nd6_opt_offset))->type</div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step57" class="step">
+        <div class="header">Step 57: Function <a href="../os/net/ipv6/uip-nd6.c.html#607">rs_input</a>, File <a href="../os/net/ipv6/uip-nd6.c.html">os/net/ipv6/uip-nd6.c</a>, Line <a href="../os/net/ipv6/uip-nd6.c.html#650">650</a></div>
+        
+        <div class="code">nd6_opt_offset += (ND6_OPT_HDR_BUF(nd6_opt_offset)-&gt;len &lt;&lt; 3);</div>
+        
+        <div class="cbmc">failure: rs_input.pointer_dereference.14: dereference failure: pointer outside object bounds in ((uip_nd6_opt_hdr *)(unsigned char *)((unsigned char *)((unsigned char *)uip_aligned_buf.u8 + 40 + (signed int)uip_ext_len) + 4 + (signed int)nd6_opt_offset))->len</div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step58" class="step">
+        <div class="header">Step 58: Function <a href="../os/net/ipv6/uip-nd6.c.html#607">rs_input</a>, File <a href="../os/net/ipv6/uip-nd6.c.html">os/net/ipv6/uip-nd6.c</a>, Line <a href="../os/net/ipv6/uip-nd6.c.html#650">650</a></div>
+        
+        <div class="code">nd6_opt_offset += (ND6_OPT_HDR_BUF(nd6_opt_offset)-&gt;len &lt;&lt; 3);</div>
+        
+        <div class="cbmc">nd6_opt_offset = 7588 (00011101 10100100)</div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step59" class="step">
+        <div class="header">Step 59: Function <a href="../os/net/ipv6/uip-nd6.c.html#607">rs_input</a>, File <a href="../os/net/ipv6/uip-nd6.c.html">os/net/ipv6/uip-nd6.c</a>, Line <a href="../os/net/ipv6/uip-nd6.c.html#637">637</a></div>
+        
+        <div class="code">if(ND6_OPT_HDR_BUF(nd6_opt_offset)-&gt;len == 0) { LOG_ERR(&quot;RS received is bad\n&quot;);</div>
+        
+        <div class="cbmc">failure: rs_input.pointer_dereference.8: dereference failure: pointer outside object bounds in ((uip_nd6_opt_hdr *)(unsigned char *)((unsigned char *)((unsigned char *)uip_aligned_buf.u8 + 40 + (signed int)uip_ext_len) + 4 + (signed int)nd6_opt_offset))->len</div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step60" class="step">
+        <div class="header">Step 60: Function <a href="../os/net/ipv6/uip-nd6.c.html#607">rs_input</a>, File <a href="../os/net/ipv6/uip-nd6.c.html">os/net/ipv6/uip-nd6.c</a>, Line <a href="../os/net/ipv6/uip-nd6.c.html#642">642</a></div>
+        
+        <div class="code">switch (ND6_OPT_HDR_BUF(nd6_opt_offset)-&gt;type) { case UIP_ND6_OPT_SLLAO: nd6_opt_llao = (uint8_t *)ND6_OPT_HDR_BUF(nd6_opt_offset);</div>
+        
+        <div class="cbmc">failure: rs_input.pointer_dereference.11: dereference failure: pointer outside object bounds in ((uip_nd6_opt_hdr *)(unsigned char *)((unsigned char *)((unsigned char *)uip_aligned_buf.u8 + 40 + (signed int)uip_ext_len) + 4 + (signed int)nd6_opt_offset))->type</div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step61" class="step">
+        <div class="header">Step 61: Function <a href="../os/net/ipv6/uip-nd6.c.html#607">rs_input</a>, File <a href="../os/net/ipv6/uip-nd6.c.html">os/net/ipv6/uip-nd6.c</a>, Line <a href="../os/net/ipv6/uip-nd6.c.html#650">650</a></div>
+        
+        <div class="code">nd6_opt_offset += (ND6_OPT_HDR_BUF(nd6_opt_offset)-&gt;len &lt;&lt; 3);</div>
+        
+        <div class="cbmc">failure: rs_input.pointer_dereference.14: dereference failure: pointer outside object bounds in ((uip_nd6_opt_hdr *)(unsigned char *)((unsigned char *)((unsigned char *)uip_aligned_buf.u8 + 40 + (signed int)uip_ext_len) + 4 + (signed int)nd6_opt_offset))->len</div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step62" class="step">
+        <div class="header">Step 62: Function <a href="../os/net/ipv6/uip-nd6.c.html#607">rs_input</a>, File <a href="../os/net/ipv6/uip-nd6.c.html">os/net/ipv6/uip-nd6.c</a>, Line <a href="../os/net/ipv6/uip-nd6.c.html#650">650</a></div>
+        
+        <div class="code">nd6_opt_offset += (ND6_OPT_HDR_BUF(nd6_opt_offset)-&gt;len &lt;&lt; 3);</div>
+        
+        <div class="cbmc">nd6_opt_offset = 7620 (00011101 11000100)</div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step63" class="step">
+        <div class="header">Step 63: Function <a href="../os/net/ipv6/uip-nd6.c.html#607">rs_input</a>, File <a href="../os/net/ipv6/uip-nd6.c.html">os/net/ipv6/uip-nd6.c</a>, Line <a href="../os/net/ipv6/uip-nd6.c.html#637">637</a></div>
+        
+        <div class="code">if(ND6_OPT_HDR_BUF(nd6_opt_offset)-&gt;len == 0) { LOG_ERR(&quot;RS received is bad\n&quot;);</div>
+        
+        <div class="cbmc">failure: rs_input.pointer_dereference.8: dereference failure: pointer outside object bounds in ((uip_nd6_opt_hdr *)(unsigned char *)((unsigned char *)((unsigned char *)uip_aligned_buf.u8 + 40 + (signed int)uip_ext_len) + 4 + (signed int)nd6_opt_offset))->len</div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step64" class="step">
+        <div class="header">Step 64: Function <a href="../os/net/ipv6/uip-nd6.c.html#607">rs_input</a>, File <a href="../os/net/ipv6/uip-nd6.c.html">os/net/ipv6/uip-nd6.c</a>, Line <a href="../os/net/ipv6/uip-nd6.c.html#642">642</a></div>
+        
+        <div class="code">switch (ND6_OPT_HDR_BUF(nd6_opt_offset)-&gt;type) { case UIP_ND6_OPT_SLLAO: nd6_opt_llao = (uint8_t *)ND6_OPT_HDR_BUF(nd6_opt_offset);</div>
+        
+        <div class="cbmc">failure: rs_input.pointer_dereference.11: dereference failure: pointer outside object bounds in ((uip_nd6_opt_hdr *)(unsigned char *)((unsigned char *)((unsigned char *)uip_aligned_buf.u8 + 40 + (signed int)uip_ext_len) + 4 + (signed int)nd6_opt_offset))->type</div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step65" class="step">
+        <div class="header">Step 65: Function <a href="../os/net/ipv6/uip-nd6.c.html#607">rs_input</a>, File <a href="../os/net/ipv6/uip-nd6.c.html">os/net/ipv6/uip-nd6.c</a>, Line <a href="../os/net/ipv6/uip-nd6.c.html#650">650</a></div>
+        
+        <div class="code">nd6_opt_offset += (ND6_OPT_HDR_BUF(nd6_opt_offset)-&gt;len &lt;&lt; 3);</div>
+        
+        <div class="cbmc">failure: rs_input.pointer_dereference.14: dereference failure: pointer outside object bounds in ((uip_nd6_opt_hdr *)(unsigned char *)((unsigned char *)((unsigned char *)uip_aligned_buf.u8 + 40 + (signed int)uip_ext_len) + 4 + (signed int)nd6_opt_offset))->len</div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step66" class="step">
+        <div class="header">Step 66: Function <a href="../os/net/ipv6/uip-nd6.c.html#607">rs_input</a>, File <a href="../os/net/ipv6/uip-nd6.c.html">os/net/ipv6/uip-nd6.c</a>, Line <a href="../os/net/ipv6/uip-nd6.c.html#650">650</a></div>
+        
+        <div class="code">nd6_opt_offset += (ND6_OPT_HDR_BUF(nd6_opt_offset)-&gt;len &lt;&lt; 3);</div>
+        
+        <div class="cbmc">nd6_opt_offset = 7700 (00011110 00010100)</div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step67" class="step">
+        <div class="header">Step 67: Function <a href="../os/net/ipv6/uip-nd6.c.html#607">rs_input</a>, File <a href="../os/net/ipv6/uip-nd6.c.html">os/net/ipv6/uip-nd6.c</a>, Line <a href="../os/net/ipv6/uip-nd6.c.html#637">637</a></div>
+        
+        <div class="code">if(ND6_OPT_HDR_BUF(nd6_opt_offset)-&gt;len == 0) { LOG_ERR(&quot;RS received is bad\n&quot;);</div>
+        
+        <div class="cbmc">failure: rs_input.pointer_dereference.8: dereference failure: pointer outside object bounds in ((uip_nd6_opt_hdr *)(unsigned char *)((unsigned char *)((unsigned char *)uip_aligned_buf.u8 + 40 + (signed int)uip_ext_len) + 4 + (signed int)nd6_opt_offset))->len</div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step68" class="step">
+        <div class="header">Step 68: Function <a href="../os/net/ipv6/uip-nd6.c.html#607">rs_input</a>, File <a href="../os/net/ipv6/uip-nd6.c.html">os/net/ipv6/uip-nd6.c</a>, Line <a href="../os/net/ipv6/uip-nd6.c.html#642">642</a></div>
+        
+        <div class="code">switch (ND6_OPT_HDR_BUF(nd6_opt_offset)-&gt;type) { case UIP_ND6_OPT_SLLAO: nd6_opt_llao = (uint8_t *)ND6_OPT_HDR_BUF(nd6_opt_offset);</div>
+        
+        <div class="cbmc">failure: rs_input.pointer_dereference.11: dereference failure: pointer outside object bounds in ((uip_nd6_opt_hdr *)(unsigned char *)((unsigned char *)((unsigned char *)uip_aligned_buf.u8 + 40 + (signed int)uip_ext_len) + 4 + (signed int)nd6_opt_offset))->type</div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step69" class="step">
+        <div class="header">Step 69: Function <a href="../os/net/ipv6/uip-nd6.c.html#607">rs_input</a>, File <a href="../os/net/ipv6/uip-nd6.c.html">os/net/ipv6/uip-nd6.c</a>, Line <a href="../os/net/ipv6/uip-nd6.c.html#650">650</a></div>
+        
+        <div class="code">nd6_opt_offset += (ND6_OPT_HDR_BUF(nd6_opt_offset)-&gt;len &lt;&lt; 3);</div>
+        
+        <div class="cbmc">failure: rs_input.pointer_dereference.14: dereference failure: pointer outside object bounds in ((uip_nd6_opt_hdr *)(unsigned char *)((unsigned char *)((unsigned char *)uip_aligned_buf.u8 + 40 + (signed int)uip_ext_len) + 4 + (signed int)nd6_opt_offset))->len</div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step70" class="step">
+        <div class="header">Step 70: Function <a href="../os/net/ipv6/uip-nd6.c.html#607">rs_input</a>, File <a href="../os/net/ipv6/uip-nd6.c.html">os/net/ipv6/uip-nd6.c</a>, Line <a href="../os/net/ipv6/uip-nd6.c.html#650">650</a></div>
+        
+        <div class="code">nd6_opt_offset += (ND6_OPT_HDR_BUF(nd6_opt_offset)-&gt;len &lt;&lt; 3);</div>
+        
+        <div class="cbmc">nd6_opt_offset = 9708 (00100101 11101100)</div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step71" class="step">
+        <div class="header">Step 71: Function <a href="../os/net/ipv6/uip-nd6.c.html#607">rs_input</a>, File <a href="../os/net/ipv6/uip-nd6.c.html">os/net/ipv6/uip-nd6.c</a>, Line <a href="../os/net/ipv6/uip-nd6.c.html#637">637</a></div>
+        
+        <div class="code">if(ND6_OPT_HDR_BUF(nd6_opt_offset)-&gt;len == 0) { LOG_ERR(&quot;RS received is bad\n&quot;);</div>
+        
+        <div class="cbmc">failure: rs_input.pointer_dereference.8: dereference failure: pointer outside object bounds in ((uip_nd6_opt_hdr *)(unsigned char *)((unsigned char *)((unsigned char *)uip_aligned_buf.u8 + 40 + (signed int)uip_ext_len) + 4 + (signed int)nd6_opt_offset))->len</div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step72" class="step">
+        <div class="header">Step 72: Function <a href="../os/net/ipv6/uip-nd6.c.html#607">rs_input</a>, File <a href="../os/net/ipv6/uip-nd6.c.html">os/net/ipv6/uip-nd6.c</a>, Line <a href="../os/net/ipv6/uip-nd6.c.html#642">642</a></div>
+        
+        <div class="code">switch (ND6_OPT_HDR_BUF(nd6_opt_offset)-&gt;type) { case UIP_ND6_OPT_SLLAO: nd6_opt_llao = (uint8_t *)ND6_OPT_HDR_BUF(nd6_opt_offset);</div>
+        
+        <div class="cbmc">failure: rs_input.pointer_dereference.11: dereference failure: pointer outside object bounds in ((uip_nd6_opt_hdr *)(unsigned char *)((unsigned char *)((unsigned char *)uip_aligned_buf.u8 + 40 + (signed int)uip_ext_len) + 4 + (signed int)nd6_opt_offset))->type</div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step73" class="step">
+        <div class="header">Step 73: Function <a href="../os/net/ipv6/uip-nd6.c.html#607">rs_input</a>, File <a href="../os/net/ipv6/uip-nd6.c.html">os/net/ipv6/uip-nd6.c</a>, Line <a href="../os/net/ipv6/uip-nd6.c.html#650">650</a></div>
+        
+        <div class="code">nd6_opt_offset += (ND6_OPT_HDR_BUF(nd6_opt_offset)-&gt;len &lt;&lt; 3);</div>
+        
+        <div class="cbmc">failure: rs_input.pointer_dereference.14: dereference failure: pointer outside object bounds in ((uip_nd6_opt_hdr *)(unsigned char *)((unsigned char *)((unsigned char *)uip_aligned_buf.u8 + 40 + (signed int)uip_ext_len) + 4 + (signed int)nd6_opt_offset))->len</div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step74" class="step">
+        <div class="header">Step 74: Function <a href="../os/net/ipv6/uip-nd6.c.html#607">rs_input</a>, File <a href="../os/net/ipv6/uip-nd6.c.html">os/net/ipv6/uip-nd6.c</a>, Line <a href="../os/net/ipv6/uip-nd6.c.html#650">650</a></div>
+        
+        <div class="code">nd6_opt_offset += (ND6_OPT_HDR_BUF(nd6_opt_offset)-&gt;len &lt;&lt; 3);</div>
+        
+        <div class="cbmc">nd6_opt_offset = 9812 (00100110 01010100)</div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step75" class="step">
+        <div class="header">Step 75: Function <a href="../os/net/ipv6/uip-nd6.c.html#607">rs_input</a>, File <a href="../os/net/ipv6/uip-nd6.c.html">os/net/ipv6/uip-nd6.c</a>, Line <a href="../os/net/ipv6/uip-nd6.c.html#660">660</a></div>
+        
+        <div class="code">uip_lladdr_t lladdr_aligned;</div>
+        
+        <div class="cbmc">lladdr_aligned = { .addr={ 0, 0, 0, 0, 0, 0, 0, 0 } } </div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+        <div class="function">
+        <div class="function-call">
+        
+
+        
+
+        <div id="step76" class="step">
+        <div class="header">Step 76: Function <a href="../os/net/ipv6/uip-nd6.c.html#607">rs_input</a>, File <a href="../os/net/ipv6/uip-nd6.c.html">os/net/ipv6/uip-nd6.c</a>, Line <a href="../os/net/ipv6/uip-nd6.c.html#661">661</a></div>
+        
+        <div class="code">extract_lladdr_from_llao_aligned(&amp;lladdr_aligned);</div>
+        
+        <div class="cbmc">-> <a href="../os/net/ipv6/uip-nd6.c.html#126">extract_lladdr_from_llao_aligned</a></div>
+        </div>
+
+        
+        </div> 
+        <div class="function-body">
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step77" class="step">
+        <div class="header">Step 77: Function <a href="../os/net/ipv6/uip-nd6.c.html#607">rs_input</a>, File <a href="../os/net/ipv6/uip-nd6.c.html">os/net/ipv6/uip-nd6.c</a>, Line <a href="../os/net/ipv6/uip-nd6.c.html#661">661</a></div>
+        
+        <div class="code">extract_lladdr_from_llao_aligned(&amp;lladdr_aligned);</div>
+        
+        <div class="cbmc">dest = &lladdr_aligned!0@1 </div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step78" class="step">
+        <div class="header">Step 78: Function <a href="../os/net/ipv6/uip-nd6.c.html#126">extract_lladdr_from_llao_aligned</a>, File <a href="../os/net/ipv6/uip-nd6.c.html">os/net/ipv6/uip-nd6.c</a>, Line <a href="../os/net/ipv6/uip-nd6.c.html#129">129</a></div>
+        
+        <div class="code">memcpy(dest, &amp;nd6_opt_llao[UIP_ND6_OPT_DATA_OFFSET], UIP_LLADDR_LEN);</div>
+        
+        <div class="cbmc">failure: extract_lladdr_from_llao_aligned.precondition_instance.2: memcpy source region readable</div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+        <div class="function">
+        <div class="function-call">
+        
+
+        
+
+        <div id="step79" class="step">
+        <div class="header">Step 79: Function <a href="../os/net/ipv6/uip-nd6.c.html#126">extract_lladdr_from_llao_aligned</a>, File <a href="../os/net/ipv6/uip-nd6.c.html">os/net/ipv6/uip-nd6.c</a>, Line <a href="../os/net/ipv6/uip-nd6.c.html#129">129</a></div>
+        
+        <div class="code">memcpy(dest, &amp;nd6_opt_llao[UIP_ND6_OPT_DATA_OFFSET], UIP_LLADDR_LEN);</div>
+        
+        <div class="cbmc">-> memcpy</div>
+        </div>
+
+        
+        </div> 
+        <div class="function-body">
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step80" class="step">
+        <div class="header">Step 80: Function <a href="../os/net/ipv6/uip-nd6.c.html#126">extract_lladdr_from_llao_aligned</a>, File <a href="../os/net/ipv6/uip-nd6.c.html">os/net/ipv6/uip-nd6.c</a>, Line <a href="../os/net/ipv6/uip-nd6.c.html#129">129</a></div>
+        
+        <div class="code">memcpy(dest, &amp;nd6_opt_llao[UIP_ND6_OPT_DATA_OFFSET], UIP_LLADDR_LEN);</div>
+        
+        <div class="cbmc">dst = (const void *)lladdr_aligned!0@1.addr </div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step81" class="step">
+        <div class="header">Step 81: Function <a href="../os/net/ipv6/uip-nd6.c.html#126">extract_lladdr_from_llao_aligned</a>, File <a href="../os/net/ipv6/uip-nd6.c.html">os/net/ipv6/uip-nd6.c</a>, Line <a href="../os/net/ipv6/uip-nd6.c.html#129">129</a></div>
+        
+        <div class="code">memcpy(dest, &amp;nd6_opt_llao[UIP_ND6_OPT_DATA_OFFSET], UIP_LLADDR_LEN);</div>
+        
+        <div class="cbmc">src = (const void *)((char *)&uip_aligned_buf + 39400) </div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step82" class="step">
+        <div class="header">Step 82: Function <a href="../os/net/ipv6/uip-nd6.c.html#126">extract_lladdr_from_llao_aligned</a>, File <a href="../os/net/ipv6/uip-nd6.c.html">os/net/ipv6/uip-nd6.c</a>, Line <a href="../os/net/ipv6/uip-nd6.c.html#129">129</a></div>
+        
+        <div class="code">memcpy(dest, &amp;nd6_opt_llao[UIP_ND6_OPT_DATA_OFFSET], UIP_LLADDR_LEN);</div>
+        
+        <div class="cbmc">n = 8u (00000000 00000000 00000000 00001000)</div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step83" class="step">
+        <div class="header">Step 83: Function memcpy, File &lt;builtin-library-memcpy&gt;, Line 45</div>
+        
+        <div class="cbmc">src_n[0] = '!' (00100001)</div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step84" class="step">
+        <div class="header">Step 84: Function memcpy, File &lt;builtin-library-memcpy&gt;, Line 45</div>
+        
+        <div class="cbmc">src_n[1] = '!' (00100001)</div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step85" class="step">
+        <div class="header">Step 85: Function memcpy, File &lt;builtin-library-memcpy&gt;, Line 45</div>
+        
+        <div class="cbmc">src_n[2] = 18 (00010010)</div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step86" class="step">
+        <div class="header">Step 86: Function memcpy, File &lt;builtin-library-memcpy&gt;, Line 45</div>
+        
+        <div class="cbmc">src_n[3] = 0 (00000000)</div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step87" class="step">
+        <div class="header">Step 87: Function memcpy, File &lt;builtin-library-memcpy&gt;, Line 45</div>
+        
+        <div class="cbmc">src_n[4] = '#' (00100011)</div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step88" class="step">
+        <div class="header">Step 88: Function memcpy, File &lt;builtin-library-memcpy&gt;, Line 45</div>
+        
+        <div class="cbmc">src_n[5] = '#' (00100011)</div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step89" class="step">
+        <div class="header">Step 89: Function memcpy, File &lt;builtin-library-memcpy&gt;, Line 45</div>
+        
+        <div class="cbmc">src_n[6] = ' ' (00100000)</div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step90" class="step">
+        <div class="header">Step 90: Function memcpy, File &lt;builtin-library-memcpy&gt;, Line 45</div>
+        
+        <div class="cbmc">src_n[7] = '!' (00100001)</div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step91" class="step">
+        <div class="header">Step 91: Function memcpy, File &lt;builtin-library-memcpy&gt;, Line 46</div>
+        
+        <div class="cbmc">lladdr_aligned.addr[0] = 33 (00100001)</div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step92" class="step">
+        <div class="header">Step 92: Function memcpy, File &lt;builtin-library-memcpy&gt;, Line 46</div>
+        
+        <div class="cbmc">lladdr_aligned.addr[1] = 33 (00100001)</div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step93" class="step">
+        <div class="header">Step 93: Function memcpy, File &lt;builtin-library-memcpy&gt;, Line 46</div>
+        
+        <div class="cbmc">lladdr_aligned.addr[2] = 18 (00010010)</div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step94" class="step">
+        <div class="header">Step 94: Function memcpy, File &lt;builtin-library-memcpy&gt;, Line 46</div>
+        
+        <div class="cbmc">lladdr_aligned.addr[3] = 0 (00000000)</div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step95" class="step">
+        <div class="header">Step 95: Function memcpy, File &lt;builtin-library-memcpy&gt;, Line 46</div>
+        
+        <div class="cbmc">lladdr_aligned.addr[4] = 35 (00100011)</div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step96" class="step">
+        <div class="header">Step 96: Function memcpy, File &lt;builtin-library-memcpy&gt;, Line 46</div>
+        
+        <div class="cbmc">lladdr_aligned.addr[5] = 35 (00100011)</div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step97" class="step">
+        <div class="header">Step 97: Function memcpy, File &lt;builtin-library-memcpy&gt;, Line 46</div>
+        
+        <div class="cbmc">lladdr_aligned.addr[6] = 32 (00100000)</div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step98" class="step">
+        <div class="header">Step 98: Function memcpy, File &lt;builtin-library-memcpy&gt;, Line 46</div>
+        
+        <div class="cbmc">lladdr_aligned.addr[7] = 33 (00100001)</div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+        </div> 
+        <div class="function-return">
+        
+
+        <div id="step99" class="step">
+        <div class="header">Step 99: Function memcpy, File &lt;builtin-library-memcpy&gt;, Line 51</div>
+        
+        <div class="cbmc"><- memcpy</div>
+        </div>
+
+        
+
+        
+        </div> 
+        </div> 
+        
+
+      
+
+        
+
+        
+        </div> 
+        <div class="function-return">
+        
+
+        <div id="step100" class="step">
+        <div class="header">Step 100: Function <a href="../os/net/ipv6/uip-nd6.c.html#126">extract_lladdr_from_llao_aligned</a>, File <a href="../os/net/ipv6/uip-nd6.c.html">os/net/ipv6/uip-nd6.c</a>, Line <a href="../os/net/ipv6/uip-nd6.c.html#133">133</a></div>
+        
+        <div class="code">}</div>
+        
+        <div class="cbmc"><- <a href="../os/net/ipv6/uip-nd6.c.html#126">extract_lladdr_from_llao_aligned</a></div>
+        </div>
+
+        
+
+        
+        </div> 
+        </div> 
+        
+
+      
+
+        
+        <div class="function">
+        <div class="function-call">
+        
+
+        
+
+        <div id="step101" class="step">
+        <div class="header">Step 101: Function <a href="../os/net/ipv6/uip-nd6.c.html#607">rs_input</a>, File <a href="../os/net/ipv6/uip-nd6.c.html">os/net/ipv6/uip-nd6.c</a>, Line <a href="../os/net/ipv6/uip-nd6.c.html#662">662</a></div>
+        
+        <div class="code">if((nbr = uip_ds6_nbr_lookup(&amp;UIP_IP_BUF-&gt;srcipaddr)) == NULL) { /* we need to add the neighbor */ uip_ds6_nbr_add(&amp;UIP_IP_BUF-&gt;srcipaddr, &amp;lladdr_aligned, 0, NBR_STALE, NBR_TABLE_REASON_IPV6_ND, NULL);</div>
+        
+        <div class="cbmc">-> <a href="../os/net/ipv6/uip-ds6-nbr.h.html#198">uip_ds6_nbr_lookup</a></div>
+        </div>
+
+        
+        </div> 
+        <div class="function-body">
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step102" class="step">
+        <div class="header">Step 102: Function <a href="../os/net/ipv6/uip-nd6.c.html#607">rs_input</a>, File <a href="../os/net/ipv6/uip-nd6.c.html">os/net/ipv6/uip-nd6.c</a>, Line <a href="../os/net/ipv6/uip-nd6.c.html#662">662</a></div>
+        
+        <div class="code">if((nbr = uip_ds6_nbr_lookup(&amp;UIP_IP_BUF-&gt;srcipaddr)) == NULL) { /* we need to add the neighbor */ uip_ds6_nbr_add(&amp;UIP_IP_BUF-&gt;srcipaddr, &amp;lladdr_aligned, 0, NBR_STALE, NBR_TABLE_REASON_IPV6_ND, NULL);</div>
+        
+        <div class="cbmc">failure: rs_input.no-body.uip_ds6_nbr_lookup: no body for callee uip_ds6_nbr_lookup</div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+        </div> 
+        <div class="function-return">
+        
+
+        <div id="step103" class="step">
+        <div class="header">Step 103: Function <a href="../os/net/ipv6/uip-nd6.c.html#607">rs_input</a>, File <a href="../os/net/ipv6/uip-nd6.c.html">os/net/ipv6/uip-nd6.c</a>, Line <a href="../os/net/ipv6/uip-nd6.c.html#662">662</a></div>
+        
+        <div class="code">if((nbr = uip_ds6_nbr_lookup(&amp;UIP_IP_BUF-&gt;srcipaddr)) == NULL) { /* we need to add the neighbor */ uip_ds6_nbr_add(&amp;UIP_IP_BUF-&gt;srcipaddr, &amp;lladdr_aligned, 0, NBR_STALE, NBR_TABLE_REASON_IPV6_ND, NULL);</div>
+        
+        <div class="cbmc"><- <a href="../os/net/ipv6/uip-ds6-nbr.h.html#198">uip_ds6_nbr_lookup</a></div>
+        </div>
+
+        
+
+        
+        </div> 
+        </div> 
+        
+
+      
+
+        
+
+        
+
+        <div id="step104" class="step">
+        <div class="header">Step 104: Function <a href="../os/net/ipv6/uip-nd6.c.html#607">rs_input</a>, File <a href="../os/net/ipv6/uip-nd6.c.html">os/net/ipv6/uip-nd6.c</a>, Line <a href="../os/net/ipv6/uip-nd6.c.html#662">662</a></div>
+        
+        <div class="code">if((nbr = uip_ds6_nbr_lookup(&amp;UIP_IP_BUF-&gt;srcipaddr)) == NULL) { /* we need to add the neighbor */ uip_ds6_nbr_add(&amp;UIP_IP_BUF-&gt;srcipaddr, &amp;lladdr_aligned, 0, NBR_STALE, NBR_TABLE_REASON_IPV6_ND, NULL);</div>
+        
+        <div class="cbmc">nbr = ((uip_ds6_nbr_t *)NULL) + 15 </div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+        <div class="function">
+        <div class="function-call">
+        
+
+        
+
+        <div id="step105" class="step">
+        <div class="header">Step 105: Function <a href="../os/net/ipv6/uip-nd6.c.html#607">rs_input</a>, File <a href="../os/net/ipv6/uip-nd6.c.html">os/net/ipv6/uip-nd6.c</a>, Line <a href="../os/net/ipv6/uip-nd6.c.html#668">668</a></div>
+        
+        <div class="code">const uip_lladdr_t *lladdr = uip_ds6_nbr_get_ll(nbr);</div>
+        
+        <div class="cbmc">-> <a href="../os/net/ipv6/uip-ds6-nbr.h.html#157">uip_ds6_nbr_get_ll</a></div>
+        </div>
+
+        
+        </div> 
+        <div class="function-body">
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step106" class="step">
+        <div class="header">Step 106: Function <a href="../os/net/ipv6/uip-nd6.c.html#607">rs_input</a>, File <a href="../os/net/ipv6/uip-nd6.c.html">os/net/ipv6/uip-nd6.c</a>, Line <a href="../os/net/ipv6/uip-nd6.c.html#668">668</a></div>
+        
+        <div class="code">const uip_lladdr_t *lladdr = uip_ds6_nbr_get_ll(nbr);</div>
+        
+        <div class="cbmc">failure: rs_input.no-body.uip_ds6_nbr_get_ll: no body for callee uip_ds6_nbr_get_ll</div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+        </div> 
+        <div class="function-return">
+        
+
+        <div id="step107" class="step">
+        <div class="header">Step 107: Function <a href="../os/net/ipv6/uip-nd6.c.html#607">rs_input</a>, File <a href="../os/net/ipv6/uip-nd6.c.html">os/net/ipv6/uip-nd6.c</a>, Line <a href="../os/net/ipv6/uip-nd6.c.html#668">668</a></div>
+        
+        <div class="code">const uip_lladdr_t *lladdr = uip_ds6_nbr_get_ll(nbr);</div>
+        
+        <div class="cbmc"><- <a href="../os/net/ipv6/uip-ds6-nbr.h.html#157">uip_ds6_nbr_get_ll</a></div>
+        </div>
+
+        
+
+        
+        </div> 
+        </div> 
+        
+
+      
+
+        
+
+        
+
+        <div id="step108" class="step">
+        <div class="header">Step 108: Function <a href="../os/net/ipv6/uip-nd6.c.html#607">rs_input</a>, File <a href="../os/net/ipv6/uip-nd6.c.html">os/net/ipv6/uip-nd6.c</a>, Line <a href="../os/net/ipv6/uip-nd6.c.html#668">668</a></div>
+        
+        <div class="code">const uip_lladdr_t *lladdr = uip_ds6_nbr_get_ll(nbr);</div>
+        
+        <div class="cbmc">return_value_uip_ds6_nbr_get_ll = ((uip_lladdr_t *)NULL) + 1 </div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step109" class="step">
+        <div class="header">Step 109: Function <a href="../os/net/ipv6/uip-nd6.c.html#607">rs_input</a>, File <a href="../os/net/ipv6/uip-nd6.c.html">os/net/ipv6/uip-nd6.c</a>, Line <a href="../os/net/ipv6/uip-nd6.c.html#668">668</a></div>
+        
+        <div class="code">const uip_lladdr_t *lladdr = uip_ds6_nbr_get_ll(nbr);</div>
+        
+        <div class="cbmc">lladdr = ((uip_lladdr_t *)NULL) + 1 </div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+        <div class="function">
+        <div class="function-call">
+        
+
+        
+
+        <div id="step110" class="step">
+        <div class="header">Step 110: Function <a href="../os/net/ipv6/uip-nd6.c.html#607">rs_input</a>, File <a href="../os/net/ipv6/uip-nd6.c.html">os/net/ipv6/uip-nd6.c</a>, Line <a href="../os/net/ipv6/uip-nd6.c.html#672">672</a></div>
+        
+        <div class="code">if(memcmp(&amp;nd6_opt_llao[UIP_ND6_OPT_DATA_OFFSET], lladdr, UIP_LLADDR_LEN) != 0) { uip_ds6_nbr_t nbr_data;</div>
+        
+        <div class="cbmc">-> memcmp</div>
+        </div>
+
+        
+        </div> 
+        <div class="function-body">
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step111" class="step">
+        <div class="header">Step 111: Function <a href="../os/net/ipv6/uip-nd6.c.html#607">rs_input</a>, File <a href="../os/net/ipv6/uip-nd6.c.html">os/net/ipv6/uip-nd6.c</a>, Line <a href="../os/net/ipv6/uip-nd6.c.html#672">672</a></div>
+        
+        <div class="code">if(memcmp(&amp;nd6_opt_llao[UIP_ND6_OPT_DATA_OFFSET], lladdr, UIP_LLADDR_LEN) != 0) { uip_ds6_nbr_t nbr_data;</div>
+        
+        <div class="cbmc">s1 = (const void *)((char *)&uip_aligned_buf + 39400) </div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step112" class="step">
+        <div class="header">Step 112: Function <a href="../os/net/ipv6/uip-nd6.c.html#607">rs_input</a>, File <a href="../os/net/ipv6/uip-nd6.c.html">os/net/ipv6/uip-nd6.c</a>, Line <a href="../os/net/ipv6/uip-nd6.c.html#672">672</a></div>
+        
+        <div class="code">if(memcmp(&amp;nd6_opt_llao[UIP_ND6_OPT_DATA_OFFSET], lladdr, UIP_LLADDR_LEN) != 0) { uip_ds6_nbr_t nbr_data;</div>
+        
+        <div class="cbmc">s2 = NULL + 1 </div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step113" class="step">
+        <div class="header">Step 113: Function <a href="../os/net/ipv6/uip-nd6.c.html#607">rs_input</a>, File <a href="../os/net/ipv6/uip-nd6.c.html">os/net/ipv6/uip-nd6.c</a>, Line <a href="../os/net/ipv6/uip-nd6.c.html#672">672</a></div>
+        
+        <div class="code">if(memcmp(&amp;nd6_opt_llao[UIP_ND6_OPT_DATA_OFFSET], lladdr, UIP_LLADDR_LEN) != 0) { uip_ds6_nbr_t nbr_data;</div>
+        
+        <div class="cbmc">n = 8u (00000000 00000000 00000000 00001000)</div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step114" class="step">
+        <div class="header">Step 114: Function memcmp, File &lt;builtin-library-memcmp&gt;, Line 19</div>
+        
+        <div class="cbmc">failure: memcmp.precondition.1: memcmp region 1 readable</div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step115" class="step">
+        <div class="header">Step 115: Function memcmp, File &lt;builtin-library-memcmp&gt;, Line 21</div>
+        
+        <div class="cbmc">failure: memcmp.precondition.2: memcpy region 2 readable</div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step116" class="step">
+        <div class="header">Step 116: Function memcmp, File &lt;builtin-library-memcmp&gt;, Line 27</div>
+        
+        <div class="cbmc">failure: memcmp.pointer_dereference.5: dereference failure: pointer outside object bounds in *tmp_post_sc1</div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+
+        <div id="step117" class="step">
+        <div class="header">Step 117: Function memcmp, File &lt;builtin-library-memcmp&gt;, Line 27</div>
+        
+        <div class="cbmc">failure: memcmp.pointer_dereference.7: dereference failure: pointer NULL in *tmp_post_sc2</div>
+        </div>
+
+        
+
+        
+
+      
+
+        
+
+        
+        </div> 
+        <div class="function-return">
+        
+
+        <div id="step118" class="step">
+        <div class="header">Step 118: Function memcmp, File &lt;builtin-library-memcmp&gt;, Line 27</div>
+        
+        <div class="cbmc"><- memcmp</div>
+        </div>
+
+        
+
+        
+        </div> 
+        </div> 
+        
+
+      
+
+        
+
+        
+        </div> 
+        <div class="function-return">
+        
+
+        <div id="step119" class="step">
+        <div class="header">Step 119: Function memcmp, File &lt;builtin-library-memcmp&gt;, Line 27</div>
+        
+        <div class="cbmc"><- <a href="../os/net/ipv6/uip-nd6.c.html#607">rs_input</a></div>
+        </div>
+
+        
+
+        
+        </div> 
+        </div> 
+        
+
+      
+
+        
+
+        
+        </div> 
+        <div class="function-return">
+        
+
+        <div id="step120" class="step">
+        <div class="header">Step 120: Function memcmp, File &lt;builtin-library-memcmp&gt;, Line 27</div>
+        
+        <div class="cbmc"><- <a href="../cbmc/proofs/net/ipv6/rs_input/test_harness.c.html#539">harness</a></div>
+        </div>
+
+        
+
+        
+        </div> 
+        </div> 
+        
+
+      
+    </div>
+  </body>
+  <script type="text/javascript" src="../viewer.js"></script>
+</html>

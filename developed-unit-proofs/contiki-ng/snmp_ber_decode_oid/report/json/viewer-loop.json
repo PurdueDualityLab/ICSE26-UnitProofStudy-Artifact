@@ -1,0 +1,16 @@
+{
+  "viewer-loop": {
+    "loops": {
+      "snmp_ber_decode_oid.0": {
+        "file": "os/net/app-layer/snmp/snmp-ber.c",
+        "function": "snmp_ber_decode_oid",
+        "line": 476
+      },
+      "snmp_ber_decode_oid.1": {
+        "file": "os/net/app-layer/snmp/snmp-ber.c",
+        "function": "snmp_ber_decode_oid",
+        "line": 467
+      }
+    }
+  }
+}
