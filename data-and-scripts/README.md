@@ -14,6 +14,8 @@ This folder contains both the input and output data that was used by our various
 
 - other-inputs: This is any miscellaneous json inputs for other scripts that generated plots from our data.
 
+- rq1-rq2-analysis-sheet.xlsx: This sheet contains the unit proof analysis used to answer RQ1 and RQ2.
+
 ## Scripts
 
 The scripts directory contains scripts used to either extract information about a repository, automatically run and collect data on harnesses, or build plots using our data. Each script has a comment at the top explaining which graphs it generates, as well as any important info about running it.

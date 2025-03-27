@@ -7,6 +7,6 @@ It contains the following:
 2. [data-and-scripts](./data-and-scripts/): This directory contains the raw data and the scripts used to answer each research question.
 3. [reintroduced-defects](./reintroduced-defects/): This directory contains the repositories for the embedded OS projects and the corresponding defects reintroduced in them.
 4. [new-defects-found](./new-defects-found/): This directory contains details of the new defects found in the respective embedded software projects. We include the detailed reports we submitted to the corresponding project maintainers.
-5. [unit-proofing-examples](./unit-proofing-examples/): This directory contains examples of the strategies applied when creating the unit proofs. It will help engineers easily resolve similar challenges during unit proofing.
+5. [unit-proofing-strategies](./unit-proofing-strategies/): This directory contains a compilation of the strategies applied to resolve unit proofing errors. It will help engineers easily resolve similar challenges during unit proofing.
 
 The README files in the different directories provide details of the content and structure of these directories.
