@@ -1,0 +1,3054 @@
+CBMC version 6.3.1 (cbmc-6.3.1) 64-bit x86_64 linux
+Reading GOTO program from file build/gnrc_sixlowpan_frag_sfr_send.goto
+Generating GOTO Program
+Adding CPROVER library (i386)
+Removal of function pointers and virtual functions
+Generic Property Instrumentation
+Starting Bounded Model Checking
+[Guard size: 1] code statement="function_call"(nil, __CPROVER_initialize, arguments)
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1104
+__CPROVER_initialize
+
+[Guard size: 1] code statement="assign"(__CPROVER_dead_object, NULL)
+[Guard size: 1] code statement="assign"(__CPROVER_deallocated, NULL)
+[Guard size: 1] code statement="assign"(__CPROVER_malloc_is_new_array, 0 ≠ 0)
+[Guard size: 1] code statement="assign"(__CPROVER_max_malloc_size, 8388608)
+[Guard size: 1] code statement="assign"(__CPROVER_memory_leak, NULL)
+[Guard size: 1] code statement="assign"(__CPROVER_rounding_mode, 0)
+[Guard size: 1] code statement="assign"(_arq_timer, { { { NULL, 0 }, NULL, NULL }, 0, NULL, NULL })
+[Guard size: 1] code statement="assign"(_frag_descs_free, { NULL })
+[Guard size: 1] code statement="assign"(_frame_queue, { NULL })
+[Guard size: 1] code statement="assign"(_frame_queue_free, { NULL })
+[Guard size: 1] code statement="assign"(_if_gap_msg, { 0, cast(552, unsignedbv[16]), byte_update_little_endian(side_effect statement="nondet" is_nondet_nullable="1", 0, NULL, union tag-#anon#UN[*{V}'ptr'|U32'value']) })
+[Guard size: 1] code statement="assign"(_if_gap_timer, { NULL, 0, 0, 0, 0, NULL, NULL })
+[Guard size: 1] code statement="assign"(_last_frame_sent, 0)
+[Guard size: 1] code statement="assign"(_stats, { 0, { 0, 0, 0 }, { 0, 0 }, { 0, 0, 0, 0 } })
+[Guard size: 1] code statement="assign"(sched_active_pid, side_effect statement="nondet" is_nondet_nullable="1")
+
+Returning to: __CPROVER__start location number: 1104
+
+[Guard size: 1] code statement="function_call"(nil, harness, arguments)
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness
+
+[Guard size: 1] code statement="decl"(harness::1::pkt)
+[Guard size: 1] code statement="decl"(harness::$tmp::return_value_malloc)
+[Guard size: 1] code statement="function_call"(harness::$tmp::return_value_malloc, malloc, arguments(20))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1191
+malloc
+
+[Guard size: 1] code statement="decl"(malloc::1::1::should_malloc_fail)
+[Guard size: 1] code statement="decl"(malloc::$tmp::return_value___VERIFIER_nondet___CPROVER_bool)
+[Guard size: 1] code statement="assign"(malloc::$tmp::return_value___VERIFIER_nondet___CPROVER_bool, side_effect statement="nondet" #identifier="__VERIFIER_nondet___CPROVER_bool" is_nondet_nullable="1")
+[Guard size: 1] code statement="assign"(malloc::1::1::should_malloc_fail, malloc::$tmp::return_value___VERIFIER_nondet___CPROVER_bool)
+[Guard size: 1] code statement="return"(cast(0, empty*))
+[Guard size: 2] code statement="decl"(malloc::$tmp::malloc_value)
+[Guard size: 2] code statement="assign"(malloc::$tmp::malloc_value, side_effect statement="allocate"(malloc::malloc_size, 0 ≠ 0))
+[Guard size: 2] code statement="assign"(malloc::1::malloc_res, malloc::$tmp::malloc_value)
+[Guard size: 2] code statement="decl"(malloc::1::record_malloc)
+[Guard size: 2] code statement="decl"(malloc::$tmp::return_value___VERIFIER_nondet___CPROVER_bool$1)
+[Guard size: 2] code statement="assign"(malloc::$tmp::return_value___VERIFIER_nondet___CPROVER_bool$1, side_effect statement="nondet" #identifier="__VERIFIER_nondet___CPROVER_bool" is_nondet_nullable="1")
+[Guard size: 2] code statement="assign"(malloc::1::record_malloc, malloc::$tmp::return_value___VERIFIER_nondet___CPROVER_bool$1)
+[Guard size: 2] code statement="assign"(__CPROVER_malloc_is_new_array, (malloc::1::record_malloc ? 0 : cast(__CPROVER_malloc_is_new_array, signedbv[32])) ≠ 0)
+[Guard size: 2] code statement="decl"(malloc::1::record_may_leak)
+[Guard size: 2] code statement="decl"(malloc::$tmp::return_value___VERIFIER_nondet___CPROVER_bool$2)
+[Guard size: 2] code statement="assign"(malloc::$tmp::return_value___VERIFIER_nondet___CPROVER_bool$2, side_effect statement="nondet" #identifier="__VERIFIER_nondet___CPROVER_bool" is_nondet_nullable="1")
+[Guard size: 2] code statement="assign"(malloc::1::record_may_leak, malloc::$tmp::return_value___VERIFIER_nondet___CPROVER_bool$2)
+[Guard size: 2] code statement="assign"(__CPROVER_memory_leak, (malloc::1::record_may_leak ? malloc::1::malloc_res : __CPROVER_memory_leak))
+[Guard size: 2] code statement="return"(malloc::1::malloc_res)
+
+Returning to: harness location number: 1191
+
+[Guard size: 1] code statement="assign"(harness::1::pkt, cast(harness::$tmp::return_value_malloc, struct tag-gnrc_pktsnip*))
+[Guard size: 1] code statement="assign"(*harness::1::pkt.next, cast(cast(0, empty*), struct tag-gnrc_pktsnip*))
+[Guard size: 1] code statement="decl"(harness::1::size)
+[Guard size: 1] code statement="decl"(harness::1::data)
+[Guard size: 1] code statement="decl"(harness::$tmp::return_value_malloc$0)
+[Guard size: 1] code statement="function_call"(harness::$tmp::return_value_malloc$0, malloc, arguments(harness::1::size))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1206
+malloc
+
+[Guard size: 1] code statement="decl"(malloc::1::1::should_malloc_fail)
+[Guard size: 1] code statement="decl"(malloc::$tmp::return_value___VERIFIER_nondet___CPROVER_bool)
+[Guard size: 1] code statement="assign"(malloc::$tmp::return_value___VERIFIER_nondet___CPROVER_bool, side_effect statement="nondet" #identifier="__VERIFIER_nondet___CPROVER_bool" is_nondet_nullable="1")
+[Guard size: 1] code statement="assign"(malloc::1::1::should_malloc_fail, malloc::$tmp::return_value___VERIFIER_nondet___CPROVER_bool)
+[Guard size: 1] code statement="return"(cast(0, empty*))
+[Guard size: 2] code statement="decl"(malloc::$tmp::malloc_value)
+[Guard size: 2] code statement="assign"(malloc::$tmp::malloc_value, side_effect statement="allocate"(malloc::malloc_size, 0 ≠ 0))
+[Guard size: 2] code statement="assign"(malloc::1::malloc_res, malloc::$tmp::malloc_value)
+[Guard size: 2] code statement="decl"(malloc::1::record_malloc)
+[Guard size: 2] code statement="decl"(malloc::$tmp::return_value___VERIFIER_nondet___CPROVER_bool$1)
+[Guard size: 2] code statement="assign"(malloc::$tmp::return_value___VERIFIER_nondet___CPROVER_bool$1, side_effect statement="nondet" #identifier="__VERIFIER_nondet___CPROVER_bool" is_nondet_nullable="1")
+[Guard size: 2] code statement="assign"(malloc::1::record_malloc, malloc::$tmp::return_value___VERIFIER_nondet___CPROVER_bool$1)
+[Guard size: 2] code statement="assign"(__CPROVER_malloc_is_new_array, (malloc::1::record_malloc ? 0 : cast(__CPROVER_malloc_is_new_array, signedbv[32])) ≠ 0)
+[Guard size: 2] code statement="decl"(malloc::1::record_may_leak)
+[Guard size: 2] code statement="decl"(malloc::$tmp::return_value___VERIFIER_nondet___CPROVER_bool$2)
+[Guard size: 2] code statement="assign"(malloc::$tmp::return_value___VERIFIER_nondet___CPROVER_bool$2, side_effect statement="nondet" #identifier="__VERIFIER_nondet___CPROVER_bool" is_nondet_nullable="1")
+[Guard size: 2] code statement="assign"(malloc::1::record_may_leak, malloc::$tmp::return_value___VERIFIER_nondet___CPROVER_bool$2)
+[Guard size: 2] code statement="assign"(__CPROVER_memory_leak, (malloc::1::record_may_leak ? malloc::1::malloc_res : __CPROVER_memory_leak))
+[Guard size: 2] code statement="return"(malloc::1::malloc_res)
+
+Returning to: harness location number: 1206
+
+[Guard size: 1] code statement="assign"(harness::1::data, cast(harness::$tmp::return_value_malloc$0, unsignedbv[8]*))
+[Guard size: 1] code statement="assign"(*harness::1::pkt.data, cast(harness::1::data, empty*))
+[Guard size: 1] code statement="assign"(*harness::1::pkt.size, harness::1::size)
+[Guard size: 1] code statement="decl"(harness::1::ctx)
+[Guard size: 1] code statement="decl"(harness::$tmp::return_value_malloc$1)
+[Guard size: 1] code statement="function_call"(harness::$tmp::return_value_malloc$1, malloc, arguments(40))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1226
+malloc
+
+[Guard size: 1] code statement="decl"(malloc::1::1::should_malloc_fail)
+[Guard size: 1] code statement="decl"(malloc::$tmp::return_value___VERIFIER_nondet___CPROVER_bool)
+[Guard size: 1] code statement="assign"(malloc::$tmp::return_value___VERIFIER_nondet___CPROVER_bool, side_effect statement="nondet" #identifier="__VERIFIER_nondet___CPROVER_bool" is_nondet_nullable="1")
+[Guard size: 1] code statement="assign"(malloc::1::1::should_malloc_fail, malloc::$tmp::return_value___VERIFIER_nondet___CPROVER_bool)
+[Guard size: 1] code statement="return"(cast(0, empty*))
+[Guard size: 2] code statement="decl"(malloc::$tmp::malloc_value)
+[Guard size: 2] code statement="assign"(malloc::$tmp::malloc_value, side_effect statement="allocate"(malloc::malloc_size, 0 ≠ 0))
+[Guard size: 2] code statement="assign"(malloc::1::malloc_res, malloc::$tmp::malloc_value)
+[Guard size: 2] code statement="decl"(malloc::1::record_malloc)
+[Guard size: 2] code statement="decl"(malloc::$tmp::return_value___VERIFIER_nondet___CPROVER_bool$1)
+[Guard size: 2] code statement="assign"(malloc::$tmp::return_value___VERIFIER_nondet___CPROVER_bool$1, side_effect statement="nondet" #identifier="__VERIFIER_nondet___CPROVER_bool" is_nondet_nullable="1")
+[Guard size: 2] code statement="assign"(malloc::1::record_malloc, malloc::$tmp::return_value___VERIFIER_nondet___CPROVER_bool$1)
+[Guard size: 2] code statement="assign"(__CPROVER_malloc_is_new_array, (malloc::1::record_malloc ? 0 : cast(__CPROVER_malloc_is_new_array, signedbv[32])) ≠ 0)
+[Guard size: 2] code statement="decl"(malloc::1::record_may_leak)
+[Guard size: 2] code statement="decl"(malloc::$tmp::return_value___VERIFIER_nondet___CPROVER_bool$2)
+[Guard size: 2] code statement="assign"(malloc::$tmp::return_value___VERIFIER_nondet___CPROVER_bool$2, side_effect statement="nondet" #identifier="__VERIFIER_nondet___CPROVER_bool" is_nondet_nullable="1")
+[Guard size: 2] code statement="assign"(malloc::1::record_may_leak, malloc::$tmp::return_value___VERIFIER_nondet___CPROVER_bool$2)
+[Guard size: 2] code statement="assign"(__CPROVER_memory_leak, (malloc::1::record_may_leak ? malloc::1::malloc_res : __CPROVER_memory_leak))
+[Guard size: 2] code statement="return"(malloc::1::malloc_res)
+
+Returning to: harness location number: 1226
+
+[Guard size: 1] code statement="assign"(harness::1::ctx, cast(harness::$tmp::return_value_malloc$1, struct tag-#anon#ST[*{SYMgnrc_pktsnip#0={ST[*{SYMgnrc_pktsnip#0}'next'|*{V}'data'|U32'size'|EN[FFFFFFFD'GNRC_NETTYPE_TX_SYNC'|FFFFFFFF'GNRC_NETTYPE_NETIF'|0'GNRC_NETTYPE_UNDEF'|1'GNRC_NETTYPE_SIXLOWPAN'|2'GNRC_NETTYPE_NUMOF'{S32}'type'|U8'users'|U24'$pad5']}}'pkt'|U16'datagram_size'|U16'tag'|U16'offset'|U16'$pad4'|SYMgnrc_sixlowpan_frag_sfr_fb#1={ST[SYM#2={ST[SYMevtimer_event#3={ST[*{SYMevtimer_event#3}'next'|U32'offset']}'event'|SYM#4={ST[S16'sender_pid'|U16'type'|SYM#5={UN[*{V}'ptr'|U32'value']}'content']}'msg']}'arq_timeout_event'|U32'arq_timeout'|U8'cur_seq'|U8'frags_sent'|U8'retrans'|U8'$pad5'|SYMlist_node#6={ST[*{SYMlist_node#6}'next']}'window']}'sfr']*))
+[Guard size: 1] code statement="assign"(*harness::1::ctx.pkt, harness::1::pkt)
+[Guard size: 1] code statement="decl"(harness::1::page)
+[Guard size: 1] code statement="function_call"(nil, gnrc_sixlowpan_frag_sfr_send, arguments(harness::1::pkt, cast(harness::1::ctx, empty*), cast(harness::1::page, unsignedbv[32])))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send
+
+[Guard size: 1] code statement="decl"(__CPROVER_going_to::error)
+[Guard size: 1] code statement="assign"(__CPROVER_going_to::error, false)
+[Guard size: 1] code statement="decl"(gnrc_sixlowpan_frag_sfr_send::1::fbuf)
+[Guard size: 1] code statement="assign"(gnrc_sixlowpan_frag_sfr_send::1::fbuf, cast(gnrc_sixlowpan_frag_sfr_send::ctx, struct tag-#anon#ST[*{SYMgnrc_pktsnip#0={ST[*{SYMgnrc_pktsnip#0}'next'|*{V}'data'|U32'size'|EN[FFFFFFFD'GNRC_NETTYPE_TX_SYNC'|FFFFFFFF'GNRC_NETTYPE_NETIF'|0'GNRC_NETTYPE_UNDEF'|1'GNRC_NETTYPE_SIXLOWPAN'|2'GNRC_NETTYPE_NUMOF'{S32}'type'|U8'users'|U24'$pad5']}}'pkt'|U16'datagram_size'|U16'tag'|U16'offset'|U16'$pad4'|SYMgnrc_sixlowpan_frag_sfr_fb#1={ST[SYM#2={ST[SYMevtimer_event#3={ST[*{SYMevtimer_event#3}'next'|U32'offset']}'event'|SYM#4={ST[S16'sender_pid'|U16'type'|SYM#5={UN[*{V}'ptr'|U32'value']}'content']}'msg']}'arq_timeout_event'|U32'arq_timeout'|U8'cur_seq'|U8'frags_sent'|U8'retrans'|U8'$pad5'|SYMlist_node#6={ST[*{SYMlist_node#6}'next']}'window']}'sfr']*))
+[Guard size: 1] code statement="decl"(gnrc_sixlowpan_frag_sfr_send::1::netif)
+[Guard size: 1] code statement="decl"(gnrc_sixlowpan_frag_sfr_send::1::error_no)
+[Guard size: 1] code statement="assign"(gnrc_sixlowpan_frag_sfr_send::1::error_no, 0)
+[Guard size: 1] code statement="decl"(gnrc_sixlowpan_frag_sfr_send::1::tx_sync)
+[Guard size: 1] code statement="assign"(gnrc_sixlowpan_frag_sfr_send::1::tx_sync, cast(cast(0, empty*), struct tag-gnrc_pktsnip*))
+[Guard size: 1] code statement="decl"(gnrc_sixlowpan_frag_sfr_send::1::res)
+[Guard size: 1] code statement="assign"(gnrc_sixlowpan_frag_sfr_send::pkt, *gnrc_sixlowpan_frag_sfr_send::1::fbuf.pkt)
+[Guard size: 1] code statement="function_call"(gnrc_sixlowpan_frag_sfr_send::1::netif, gnrc_netif_hdr_get_netif, arguments(cast(*gnrc_sixlowpan_frag_sfr_send::pkt.data, struct tag-#anon#ST[U8'src_l2addr_len'|U8'dst_l2addr_len'|S16'if_pid'|U8'flags'|U8'lqi'|S16'rssi']*)))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 98
+gnrc_netif_hdr_get_netif
+
+[Guard size: 1] code statement="decl"(gnrc_netif_hdr_get_netif::$tmp::return_value_gnrc_netif_get_by_pid)
+[Guard size: 1] code statement="function_call"(gnrc_netif_hdr_get_netif::$tmp::return_value_gnrc_netif_get_by_pid, gnrc_netif_get_by_pid, arguments(*gnrc_netif_hdr_get_netif::hdr.if_pid))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 98
+gnrc_netif_hdr_get_netif location number: 497
+gnrc_netif_get_by_pid
+
+[Guard size: 1] code statement="return"(gnrc_netif_hdr_get_netif::$tmp::return_value_gnrc_netif_get_by_pid)
+
+Returning to: gnrc_sixlowpan_frag_sfr_send location number: 98
+
+[Guard size: 1] code statement="function_call"(nil, gnrc_sixlowpan_frag_sfr_congure_snd_setup, arguments(gnrc_sixlowpan_frag_sfr_send::1::fbuf))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 111
+gnrc_sixlowpan_frag_sfr_congure_snd_setup
+
+[Guard size: 1] code statement="expression"(cast(gnrc_sixlowpan_frag_sfr_congure_snd_setup::fb, empty))
+
+Returning to: gnrc_sixlowpan_frag_sfr_send location number: 111
+
+[Guard size: 1] code statement="function_call"(gnrc_sixlowpan_frag_sfr_send::1::res, _send_1st_fragment, arguments(gnrc_sixlowpan_frag_sfr_send::1::netif, gnrc_sixlowpan_frag_sfr_send::1::fbuf, gnrc_sixlowpan_frag_sfr_send::page, address_of(gnrc_sixlowpan_frag_sfr_send::1::tx_sync)))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 112
+_send_1st_fragment
+
+[Guard size: 1] code statement="decl"(_send_1st_fragment::1::res)
+[Guard size: 1] code statement="return"(_send_1st_fragment::1::res)
+
+Returning to: gnrc_sixlowpan_frag_sfr_send location number: 112
+
+[Guard size: 3] code statement="assign"(gnrc_sixlowpan_frag_sfr_send::1::error_no, 12)
+[Guard size: 3] code statement="assign"(__CPROVER_going_to::error, true)
+[Guard size: 2] code statement="function_call"(gnrc_sixlowpan_frag_sfr_send::$tmp::return_value_gnrc_sixlowpan_frag_sfr_congure_snd_in_cwnd, gnrc_sixlowpan_frag_sfr_congure_snd_in_cwnd, arguments(gnrc_sixlowpan_frag_sfr_send::1::fbuf))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 122
+gnrc_sixlowpan_frag_sfr_congure_snd_in_cwnd
+
+[Guard size: 2] code statement="return"(cast(cast(*gnrc_sixlowpan_frag_sfr_congure_snd_in_cwnd::fb.sfr.frags_sent, unsignedbv[32]) < 16, c_bool[8]))
+
+Returning to: gnrc_sixlowpan_frag_sfr_send location number: 122
+
+[Guard size: 4] code statement="assign"(__CPROVER_dead_object, (side_effect statement="nondet" is_nondet_nullable="1" ? cast(address_of(gnrc_sixlowpan_frag_sfr_send::1::tx_sync), empty*) : __CPROVER_dead_object))
+[Guard size: 6] code statement="function_call"(gnrc_sixlowpan_frag_sfr_send::1::res, _send_nth_fragment, arguments(gnrc_sixlowpan_frag_sfr_send::1::netif, gnrc_sixlowpan_frag_sfr_send::1::fbuf, gnrc_sixlowpan_frag_sfr_send::page, address_of(gnrc_sixlowpan_frag_sfr_send::1::tx_sync)))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 152
+_send_nth_fragment
+
+[Guard size: 6] code statement="decl"(_send_nth_fragment::1::res)
+[Guard size: 6] code statement="return"(_send_nth_fragment::1::res)
+
+Returning to: gnrc_sixlowpan_frag_sfr_send location number: 152
+
+[Guard size: 7] code statement="assign"(gnrc_sixlowpan_frag_sfr_send::1::error_no, 12)
+[Guard size: 7] code statement="assign"(__CPROVER_going_to::error, true)
+[Guard size: 13] code statement="expression"(cast(gnrc_sixlowpan_frag_sfr_congure_snd_report_frag_sent::fb, empty))
+
+Returning to: gnrc_sixlowpan_frag_sfr_send location number: 169
+
+[Guard size: 13] code statement="assign"(*gnrc_sixlowpan_frag_sfr_send::1::fbuf.offset, cast(cast(*gnrc_sixlowpan_frag_sfr_send::1::fbuf.offset, signedbv[32]) + cast(gnrc_sixlowpan_frag_sfr_send::1::res, signedbv[32]), unsignedbv[16]))
+[Guard size: 13] code statement="decl"(gnrc_sixlowpan_frag_sfr_send::$tmp::return_value_gnrc_sixlowpan_frag_sfr_congure_snd_in_cwnd$0)
+[Guard size: 13] code statement="function_call"(gnrc_sixlowpan_frag_sfr_send::$tmp::return_value_gnrc_sixlowpan_frag_sfr_congure_snd_in_cwnd$0, gnrc_sixlowpan_frag_sfr_congure_snd_in_cwnd, arguments(gnrc_sixlowpan_frag_sfr_send::1::fbuf))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 179
+gnrc_sixlowpan_frag_sfr_congure_snd_in_cwnd
+
+[Guard size: 13] code statement="return"(cast(cast(*gnrc_sixlowpan_frag_sfr_congure_snd_in_cwnd::fb.sfr.frags_sent, unsignedbv[32]) < 16, c_bool[8]))
+
+Returning to: gnrc_sixlowpan_frag_sfr_send location number: 179
+
+[Guard size: 16] code statement="decl"(gnrc_sixlowpan_frag_sfr_send::$tmp::return_value_gnrc_sixlowpan_frag_fb_send)
+[Guard size: 16] code statement="function_call"(gnrc_sixlowpan_frag_sfr_send::$tmp::return_value_gnrc_sixlowpan_frag_fb_send, gnrc_sixlowpan_frag_fb_send, arguments(gnrc_sixlowpan_frag_sfr_send::1::fbuf))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 196
+gnrc_sixlowpan_frag_fb_send
+
+[Guard size: 16] code statement="decl"(gnrc_sixlowpan_frag_fb_send::1::msg)
+[Guard size: 16] code statement="assign"(byte_extract_little_endian(gnrc_sixlowpan_frag_fb_send::1::msg.content, 0, empty*), cast(gnrc_sixlowpan_frag_fb_send::fbuf, empty*))
+[Guard size: 16] code statement="assign"(gnrc_sixlowpan_frag_fb_send::1::msg.type, cast(549, unsignedbv[16]))
+[Guard size: 16] code statement="decl"(gnrc_sixlowpan_frag_fb_send::$tmp::return_value_msg_send_to_self)
+[Guard size: 16] code statement="function_call"(gnrc_sixlowpan_frag_fb_send::$tmp::return_value_msg_send_to_self, msg_send_to_self, arguments(address_of(gnrc_sixlowpan_frag_fb_send::1::msg)))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 196
+gnrc_sixlowpan_frag_fb_send location number: 393
+msg_send_to_self
+
+[Guard size: 16] code statement="return"(cast(gnrc_sixlowpan_frag_fb_send::$tmp::return_value_msg_send_to_self ≠ 0, c_bool[8]))
+[Guard size: 16] code statement="assign"(__CPROVER_dead_object, (side_effect statement="nondet" is_nondet_nullable="1" ? cast(address_of(gnrc_sixlowpan_frag_fb_send::1::msg), empty*) : __CPROVER_dead_object))
+
+Returning to: gnrc_sixlowpan_frag_sfr_send location number: 196
+
+[Guard size: 17] code statement="assign"(gnrc_sixlowpan_frag_sfr_send::1::error_no, 12)
+[Guard size: 17] code statement="assign"(*gnrc_sixlowpan_frag_sfr_send::1::fbuf.offset, cast(cast(*gnrc_sixlowpan_frag_sfr_send::1::fbuf.offset, signedbv[32]) - cast(gnrc_sixlowpan_frag_sfr_send::1::res, signedbv[32]), unsignedbv[16]))
+[Guard size: 17] code statement="function_call"(nil, gnrc_sixlowpan_frag_sfr_congure_snd_report_frag_discard, arguments(gnrc_sixlowpan_frag_sfr_send::1::fbuf))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 208
+gnrc_sixlowpan_frag_sfr_congure_snd_report_frag_discard
+
+[Guard size: 17] code statement="expression"(cast(gnrc_sixlowpan_frag_sfr_congure_snd_report_frag_discard::fb, empty))
+
+Returning to: gnrc_sixlowpan_frag_sfr_send location number: 208
+
+[Guard size: 17] code statement="assign"(__CPROVER_going_to::error, true)
+[Guard size: 16] code statement="decl"(gnrc_sixlowpan_frag_sfr_send::1::frag_desc)
+[Guard size: 54] code statement="decl"(gnrc_sixlowpan_frag_sfr_send::$tmp::return_value_clist_rpeek)
+[Guard size: 54] code statement="function_call"(gnrc_sixlowpan_frag_sfr_send::$tmp::return_value_clist_rpeek, clist_rpeek, arguments(address_of(*gnrc_sixlowpan_frag_sfr_send::1::fbuf.sfr.window)))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 218
+clist_rpeek
+
+[Guard size: 54] code statement="return"(*clist_rpeek::list.next)
+
+Returning to: gnrc_sixlowpan_frag_sfr_send location number: 218
+
+[Guard size: 54] code statement="assign"(gnrc_sixlowpan_frag_sfr_send::1::frag_desc, cast(gnrc_sixlowpan_frag_sfr_send::$tmp::return_value_clist_rpeek, struct tag-#anon#ST[SYM#0={ST[SYMlist_node#1={ST[*{SYMlist_node#1}'next']}'super'|U32'send_time'|U16'size'|U8'resends'|U8'$pad4']}'super'|U16'ar_seq_fs'|U16'offset']*))
+[Guard size: 54] code statement="decl"(gnrc_sixlowpan_frag_sfr_send::$tmp::return_value__frag_ack_req$0)
+[Guard size: 54] code statement="function_call"(gnrc_sixlowpan_frag_sfr_send::$tmp::return_value__frag_ack_req$0, _frag_ack_req, arguments(gnrc_sixlowpan_frag_sfr_send::1::frag_desc))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 246
+_frag_ack_req
+
+[Guard size: 54] code statement="return"(cast(bitand(cast(*_frag_ack_req::frag.ar_seq_fs, unsignedbv[32]), shl(128, 8)), c_bool[8]))
+
+Returning to: gnrc_sixlowpan_frag_sfr_send location number: 246
+
+[Guard size: 55] code statement="function_call"(nil, _sched_arq_timeout, arguments(gnrc_sixlowpan_frag_sfr_send::1::fbuf, *gnrc_sixlowpan_frag_sfr_send::1::fbuf.sfr.arq_timeout))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 255
+_sched_arq_timeout
+
+[Guard size: 55] code statement="decl"(_sched_arq_timeout::$tmp::return_value__arq_scheduled)
+[Guard size: 55] code statement="function_call"(_sched_arq_timeout::$tmp::return_value__arq_scheduled, _arq_scheduled, arguments(_sched_arq_timeout::fbuf))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 255
+_sched_arq_timeout location number: 1450
+_arq_scheduled
+
+[Guard size: 55] code statement="decl"(_arq_scheduled::1::ptr)
+[Guard size: 55] code statement="assign"(_arq_scheduled::1::ptr, _arq_timer.events)
+[Guard size: 55] code statement="decl"(_arq_scheduled::1::event)
+[Guard size: 55] code statement="assign"(_arq_scheduled::1::event, address_of(*_arq_scheduled::fbuf.sfr.arq_timeout_event.event))
+
+Returning to: _sched_arq_timeout location number: 1450
+
+[Guard size: 55] code statement="assign"(*_sched_arq_timeout::fbuf.sfr.arq_timeout_event.event.offset, _sched_arq_timeout::offset)
+[Guard size: 55] code statement="assign"(byte_extract_little_endian(*_sched_arq_timeout::fbuf.sfr.arq_timeout_event.msg.content, 0, empty*), cast(_sched_arq_timeout::fbuf, empty*))
+[Guard size: 55] code statement="assign"(*_sched_arq_timeout::fbuf.sfr.arq_timeout_event.msg.type, cast(551, unsignedbv[16]))
+[Guard size: 55] code statement="decl"(_sched_arq_timeout::$tmp::return_value__getpid)
+[Guard size: 55] code statement="function_call"(_sched_arq_timeout::$tmp::return_value__getpid, _getpid, arguments)
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 255
+_sched_arq_timeout location number: 1495
+_getpid
+
+[Guard size: 55] code statement="decl"(_getpid::$tmp::tmp_if_expr)
+[Guard size: 55] code statement="decl"(_getpid::$tmp::return_value_thread_getpid)
+[Guard size: 55] code statement="function_call"(_getpid::$tmp::return_value_thread_getpid, thread_getpid, arguments)
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 255
+_sched_arq_timeout location number: 1495
+_getpid location number: 1297
+thread_getpid
+
+[Guard size: 55] code statement="return"(sched_active_pid)
+
+Returning to: _getpid location number: 1297
+
+[Guard size: 55] code statement="assign"(_getpid::$tmp::tmp_if_expr, _getpid::$tmp::return_value_thread_getpid)
+[Guard size: 55] code statement="return"(_getpid::$tmp::tmp_if_expr)
+
+Returning to: _sched_arq_timeout location number: 1495
+
+[Guard size: 55] code statement="function_call"(nil, evtimer_add_msg, arguments(address_of(_arq_timer), address_of(*_sched_arq_timeout::fbuf.sfr.arq_timeout_event), _sched_arq_timeout::$tmp::return_value__getpid))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 255
+_sched_arq_timeout location number: 1496
+evtimer_add_msg
+
+[Guard size: 55] code statement="assign"(*evtimer_add_msg::event.msg.sender_pid, evtimer_add_msg::target_pid)
+[Guard size: 55] code statement="function_call"(nil, evtimer_add, arguments(evtimer_add_msg::evtimer, address_of(*evtimer_add_msg::event.event)))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 255
+_sched_arq_timeout location number: 1496
+evtimer_add_msg location number: 1420
+evtimer_add
+
+
+Returning to: _sched_arq_timeout location number: 1496
+
+
+Returning to: gnrc_sixlowpan_frag_sfr_send location number: 255
+
+[Guard size: 54] code statement="function_call"(nil, thread_yield, arguments)
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 260
+thread_yield
+
+
+Returning to: gnrc_sixlowpan_frag_sfr_send location number: 260
+
+[Guard size: 54] code statement="assign"(__CPROVER_dead_object, (side_effect statement="nondet" is_nondet_nullable="1" ? cast(address_of(gnrc_sixlowpan_frag_sfr_send::1::tx_sync), empty*) : __CPROVER_dead_object))
+[Guard size: 53] code statement="decl"(gnrc_sixlowpan_frag_sfr_send::$tmp::tmp_if_expr)
+[Guard size: 54] code statement="decl"(gnrc_sixlowpan_frag_sfr_send::$tmp::return_value__send_abort_frag)
+[Guard size: 54] code statement="function_call"(gnrc_sixlowpan_frag_sfr_send::$tmp::return_value__send_abort_frag, _send_abort_frag, arguments(*gnrc_sixlowpan_frag_sfr_send::1::fbuf.pkt, gnrc_sixlowpan_frag_sfr_send::1::fbuf, cast(1, c_bool[8]), cast(0, unsignedbv[32])))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 285
+_send_abort_frag
+
+[Guard size: 54] code statement="decl"(_send_abort_frag::1::frag)
+[Guard size: 54] code statement="function_call"(_send_abort_frag::1::frag, _build_frag_pkt, arguments(cast(*_send_abort_frag::pkt.data, struct tag-#anon#ST[U8'src_l2addr_len'|U8'dst_l2addr_len'|S16'if_pid'|U8'flags'|U8'lqi'|S16'rssi']*), cast(*_send_abort_frag::fbuf.tag, unsignedbv[8]), _send_abort_frag::req_ack, cast(0, unsignedbv[16]), cast(0, unsignedbv[8])))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 285
+_send_abort_frag location number: 1122
+_build_frag_pkt
+
+[Guard size: 54] code statement="decl"(_build_frag_pkt::1::new_netif_hdr)
+[Guard size: 54] code statement="decl"(_build_frag_pkt::1::netif)
+[Guard size: 54] code statement="decl"(_build_frag_pkt::1::res)
+[Guard size: 54] code statement="decl"(_build_frag_pkt::$tmp::return_value_gnrc_netif_hdr_get_src_addr)
+[Guard size: 54] code statement="function_call"(_build_frag_pkt::$tmp::return_value_gnrc_netif_hdr_get_src_addr, gnrc_netif_hdr_get_src_addr, arguments(_build_frag_pkt::old_netif_hdr))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 285
+_send_abort_frag location number: 1122
+_build_frag_pkt location number: 979
+gnrc_netif_hdr_get_src_addr
+
+[Guard size: 54] code statement="return"(cast(gnrc_netif_hdr_get_src_addr::hdr + 1, unsignedbv[8]*))
+
+Returning to: _build_frag_pkt location number: 979
+
+[Guard size: 54] code statement="decl"(_build_frag_pkt::$tmp::return_value_gnrc_netif_hdr_get_dst_addr)
+[Guard size: 54] code statement="function_call"(_build_frag_pkt::$tmp::return_value_gnrc_netif_hdr_get_dst_addr, gnrc_netif_hdr_get_dst_addr, arguments(_build_frag_pkt::old_netif_hdr))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 285
+_send_abort_frag location number: 1122
+_build_frag_pkt location number: 981
+gnrc_netif_hdr_get_dst_addr
+
+[Guard size: 54] code statement="return"(cast(gnrc_netif_hdr_get_dst_addr::hdr + 1, unsignedbv[8]*) + cast(*gnrc_netif_hdr_get_dst_addr::hdr.src_l2addr_len, signedbv[32]))
+
+Returning to: _build_frag_pkt location number: 981
+
+[Guard size: 54] code statement="function_call"(_build_frag_pkt::1::netif, gnrc_netif_hdr_build, arguments(_build_frag_pkt::$tmp::return_value_gnrc_netif_hdr_get_src_addr, *_build_frag_pkt::old_netif_hdr.src_l2addr_len, _build_frag_pkt::$tmp::return_value_gnrc_netif_hdr_get_dst_addr, *_build_frag_pkt::old_netif_hdr.dst_l2addr_len))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 285
+_send_abort_frag location number: 1122
+_build_frag_pkt location number: 994
+gnrc_netif_hdr_build
+
+[Guard size: 55] code statement="return"(cast(cast(0, empty*), struct tag-gnrc_pktsnip*))
+[Guard size: 56] code statement="assign"(_build_frag_pkt::1::new_netif_hdr, cast(*_build_frag_pkt::1::netif.data, struct tag-#anon#ST[U8'src_l2addr_len'|U8'dst_l2addr_len'|S16'if_pid'|U8'flags'|U8'lqi'|S16'rssi']*))
+[Guard size: 56] code statement="assign"(*_build_frag_pkt::1::new_netif_hdr, *_build_frag_pkt::old_netif_hdr)
+[Guard size: 56] code statement="function_call"(_build_frag_pkt::1::res, _build_rfrag, arguments(_build_frag_pkt::tag, _build_frag_pkt::ack_req, _build_frag_pkt::size, _build_frag_pkt::seq))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 285
+_send_abort_frag location number: 1122
+_build_frag_pkt location number: 1023
+_build_rfrag
+
+[Guard size: 56] code statement="decl"(_build_rfrag::1::hdr)
+[Guard size: 56] code statement="decl"(_build_rfrag::1::frag)
+[Guard size: 56] code statement="decl"(_build_rfrag::$tmp::return_value_gnrc_pktbuf_add)
+[Guard size: 56] code statement="function_call"(_build_rfrag::$tmp::return_value_gnrc_pktbuf_add, gnrc_pktbuf_add, arguments(cast(cast(0, empty*), struct tag-gnrc_pktsnip*), cast(0, empty*), 6 + cast(_build_rfrag::size, unsignedbv[32]), cast(1, c_enum #anon_enum$GNRC_NETTYPE_TX_SYNC=FFFFFFFD$GNRC_NETTYPE_NETIF=FFFFFFFF$GNRC_NETTYPE_UNDEF=0$GNRC_NETTYPE_SIXLOWPAN=1$GNRC_NETTYPE_NUMOF=2)))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 285
+_send_abort_frag location number: 1122
+_build_frag_pkt location number: 1023
+_build_rfrag location number: 504
+gnrc_pktbuf_add
+
+[Guard size: 56] code statement="assign"(_build_rfrag::1::frag, _build_rfrag::$tmp::return_value_gnrc_pktbuf_add)
+[Guard size: 57] code statement="return"(cast(cast(0, empty*), struct tag-gnrc_pktsnip*))
+[Guard size: 58] code statement="function_call"(nil, sixlowpan_sfr_rfrag_set_disp, arguments(cast(*_build_rfrag::1::frag.data, struct tag-#anon#ST[U8'disp_ecn'|U8'tag']*)))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 285
+_send_abort_frag location number: 1122
+_build_frag_pkt location number: 1023
+_build_rfrag location number: 518
+sixlowpan_sfr_rfrag_set_disp
+
+[Guard size: 58] code statement="assign"(*sixlowpan_sfr_rfrag_set_disp::hdr.disp_ecn, cast(bitand(cast(*sixlowpan_sfr_rfrag_set_disp::hdr.disp_ecn, signedbv[32]), bitnot(254)), unsignedbv[8]))
+[Guard size: 58] code statement="assign"(*sixlowpan_sfr_rfrag_set_disp::hdr.disp_ecn, cast(bitor(cast(*sixlowpan_sfr_rfrag_set_disp::hdr.disp_ecn, signedbv[32]), 232), unsignedbv[8]))
+
+Returning to: _build_rfrag location number: 518
+
+[Guard size: 58] code statement="assign"(_build_rfrag::1::hdr, cast(*_build_rfrag::1::frag.data, struct tag-#anon#ST[SYM#0={ST[U8'disp_ecn'|U8'tag']}'base'|SYM#1={UN[U16'u16'|ARR2{U8}'u8']}'ar_seq_fs'|SYM#1'offset']*))
+[Guard size: 58] code statement="assign"(*_build_rfrag::1::hdr.base.tag, _build_rfrag::tag)
+[Guard size: 58] code statement="function_call"(nil, sixlowpan_sfr_rfrag_set_ack_req, arguments(_build_rfrag::1::hdr))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 285
+_send_abort_frag location number: 1122
+_build_frag_pkt location number: 1023
+_build_rfrag location number: 534
+sixlowpan_sfr_rfrag_set_ack_req
+
+[Guard size: 58] code statement="assign"(byte_extract_little_endian(*sixlowpan_sfr_rfrag_set_ack_req::hdr.ar_seq_fs, 0, unsignedbv[8][2])[0], cast(bitor(cast(byte_extract_little_endian(*sixlowpan_sfr_rfrag_set_ack_req::hdr.ar_seq_fs, 0, unsignedbv[8][2])[0], unsignedbv[32]), 128), unsignedbv[8]))
+
+Returning to: _build_rfrag location number: 534
+
+[Guard size: 58] code statement="decl"(sixlowpan_sfr_rfrag_set_frag_size::$tmp::return_value_htons)
+[Guard size: 58] code statement="function_call"(sixlowpan_sfr_rfrag_set_frag_size::$tmp::return_value_htons, htons, arguments(cast(1023, unsignedbv[16])))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 285
+_send_abort_frag location number: 1122
+_build_frag_pkt location number: 1023
+_build_rfrag location number: 537
+sixlowpan_sfr_rfrag_set_frag_size location number: 309
+htons
+
+[Guard size: 58] code statement="return"(bswap bits_per_byte="8"(htons::v))
+
+Returning to: sixlowpan_sfr_rfrag_set_frag_size location number: 309
+
+[Guard size: 58] code statement="assign"(byte_extract_little_endian(*sixlowpan_sfr_rfrag_set_frag_size::hdr.ar_seq_fs, 0, unsignedbv[16]), cast(bitand(cast(byte_extract_little_endian(*sixlowpan_sfr_rfrag_set_frag_size::hdr.ar_seq_fs, 0, unsignedbv[16]), signedbv[32]), bitnot(cast(sixlowpan_sfr_rfrag_set_frag_size::$tmp::return_value_htons, signedbv[32]))), unsignedbv[16]))
+[Guard size: 58] code statement="decl"(sixlowpan_sfr_rfrag_set_frag_size::$tmp::return_value_htons$0)
+[Guard size: 58] code statement="function_call"(sixlowpan_sfr_rfrag_set_frag_size::$tmp::return_value_htons$0, htons, arguments(sixlowpan_sfr_rfrag_set_frag_size::frag_size))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 285
+_send_abort_frag location number: 1122
+_build_frag_pkt location number: 1023
+_build_rfrag location number: 537
+sixlowpan_sfr_rfrag_set_frag_size location number: 319
+htons
+
+[Guard size: 58] code statement="return"(bswap bits_per_byte="8"(htons::v))
+
+Returning to: sixlowpan_sfr_rfrag_set_frag_size location number: 319
+
+[Guard size: 58] code statement="assign"(byte_extract_little_endian(*sixlowpan_sfr_rfrag_set_frag_size::hdr.ar_seq_fs, 0, unsignedbv[16]), cast(bitor(cast(byte_extract_little_endian(*sixlowpan_sfr_rfrag_set_frag_size::hdr.ar_seq_fs, 0, unsignedbv[16]), signedbv[32]), cast(sixlowpan_sfr_rfrag_set_frag_size::$tmp::return_value_htons$0, signedbv[32])), unsignedbv[16]))
+
+Returning to: _build_rfrag location number: 537
+
+[Guard size: 58] code statement="function_call"(nil, sixlowpan_sfr_rfrag_set_seq, arguments(_build_rfrag::1::hdr, _build_rfrag::seq))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 285
+_send_abort_frag location number: 1122
+_build_frag_pkt location number: 1023
+_build_rfrag location number: 538
+sixlowpan_sfr_rfrag_set_seq
+
+[Guard size: 58] code statement="assign"(byte_extract_little_endian(*sixlowpan_sfr_rfrag_set_seq::hdr.ar_seq_fs, 0, unsignedbv[8][2])[0], cast(bitand(cast(byte_extract_little_endian(*sixlowpan_sfr_rfrag_set_seq::hdr.ar_seq_fs, 0, unsignedbv[8][2])[0], unsignedbv[32]), bitnot(124)), unsignedbv[8]))
+[Guard size: 58] code statement="assign"(byte_extract_little_endian(*sixlowpan_sfr_rfrag_set_seq::hdr.ar_seq_fs, 0, unsignedbv[8][2])[0], cast(bitor(cast(byte_extract_little_endian(*sixlowpan_sfr_rfrag_set_seq::hdr.ar_seq_fs, 0, unsignedbv[8][2])[0], signedbv[32]), shl(cast(sixlowpan_sfr_rfrag_set_seq::seq, signedbv[32]), 2)), unsignedbv[8]))
+
+Returning to: _build_rfrag location number: 538
+
+[Guard size: 58] code statement="return"(_build_rfrag::1::frag)
+
+Returning to: _build_frag_pkt location number: 1023
+
+[Guard size: 57] code statement="function_call"(nil, gnrc_pktbuf_release, arguments(_build_frag_pkt::1::netif))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 285
+_send_abort_frag location number: 1122
+_build_frag_pkt location number: 1025
+gnrc_pktbuf_release
+
+[Guard size: 57] code statement="function_call"(nil, gnrc_pktbuf_release_error, arguments(gnrc_pktbuf_release::pkt, cast(0, unsignedbv[32])))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 285
+_send_abort_frag location number: 1122
+_build_frag_pkt location number: 1025
+gnrc_pktbuf_release location number: 21
+gnrc_pktbuf_release_error
+
+
+Returning to: _build_frag_pkt location number: 1025
+
+[Guard size: 57] code statement="return"(cast(cast(0, empty*), struct tag-gnrc_pktsnip*))
+[Guard size: 58] code statement="function_call"(_build_frag_pkt::$tmp::return_value_gnrc_pkt_prepend, gnrc_pkt_prepend, arguments(_build_frag_pkt::1::res, _build_frag_pkt::1::netif))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 285
+_send_abort_frag location number: 1122
+_build_frag_pkt location number: 1032
+gnrc_pkt_prepend
+
+[Guard size: 58] code statement="assign"(*gnrc_pkt_prepend::snip.next, gnrc_pkt_prepend::pkt)
+[Guard size: 58] code statement="return"(gnrc_pkt_prepend::snip)
+
+Returning to: _build_frag_pkt location number: 1032
+
+[Guard size: 58] code statement="return"(_build_frag_pkt::$tmp::return_value_gnrc_pkt_prepend)
+
+Returning to: _send_abort_frag location number: 1122
+
+[Guard size: 55] code statement="function_call"(nil, sixlowpan_sfr_rfrag_set_offset, arguments(cast(*(*_send_abort_frag::1::frag.next).data, struct tag-#anon#ST[SYM#0={ST[U8'disp_ecn'|U8'tag']}'base'|SYM#1={UN[U16'u16'|ARR2{U8}'u8']}'ar_seq_fs'|SYM#1'offset']*), cast(0, unsignedbv[16])))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 285
+_send_abort_frag location number: 1136
+sixlowpan_sfr_rfrag_set_offset
+
+[Guard size: 55] code statement="decl"(sixlowpan_sfr_rfrag_set_offset::$tmp::return_value_byteorder_htons)
+[Guard size: 55] code statement="function_call"(sixlowpan_sfr_rfrag_set_offset::$tmp::return_value_byteorder_htons, byteorder_htons, arguments(sixlowpan_sfr_rfrag_set_offset::offset))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 285
+_send_abort_frag location number: 1136
+sixlowpan_sfr_rfrag_set_offset location number: 882
+byteorder_htons
+
+[Guard size: 55] code statement="decl"(byteorder_htons::1::result)
+[Guard size: 55] code statement="assign"(byteorder_htons::1::result, byte_update_little_endian(side_effect statement="nondet" is_nondet_nullable="1", 0, bswap bits_per_byte="8"(byteorder_htons::v), union tag-#anon#UN[U16'u16'|ARR2{U8}'u8']))
+[Guard size: 55] code statement="return"(byteorder_htons::1::result)
+
+Returning to: sixlowpan_sfr_rfrag_set_offset location number: 882
+
+[Guard size: 55] code statement="assign"(*sixlowpan_sfr_rfrag_set_offset::hdr.offset, sixlowpan_sfr_rfrag_set_offset::$tmp::return_value_byteorder_htons)
+
+Returning to: _send_abort_frag location number: 1136
+
+[Guard size: 55] code statement="function_call"(nil, _send_frame, arguments(_send_abort_frag::1::frag, _send_abort_frag::fbuf, cast(0, empty*), _send_abort_frag::page))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 285
+_send_abort_frag location number: 1137
+_send_frame
+
+[Guard size: 55] code statement="decl"(_send_frame::1::now)
+[Guard size: 55] code statement="decl"(_send_frame::1::if_gap)
+[Guard size: 55] code statement="decl"(_send_frame::$tmp::return_value_gnrc_sixlowpan_frag_sfr_congure_snd_inter_frame_gap)
+[Guard size: 55] code statement="function_call"(_send_frame::$tmp::return_value_gnrc_sixlowpan_frag_sfr_congure_snd_inter_frame_gap, gnrc_sixlowpan_frag_sfr_congure_snd_inter_frame_gap, arguments(_send_frame::fbuf))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 285
+_send_abort_frag location number: 1137
+_send_frame location number: 411
+gnrc_sixlowpan_frag_sfr_congure_snd_inter_frame_gap
+
+[Guard size: 55] code statement="expression"(cast(gnrc_sixlowpan_frag_sfr_congure_snd_inter_frame_gap::fb, empty))
+[Guard size: 55] code statement="return"(100)
+
+Returning to: _send_frame location number: 411
+
+[Guard size: 55] code statement="assign"(_send_frame::1::if_gap, _send_frame::$tmp::return_value_gnrc_sixlowpan_frag_sfr_congure_snd_inter_frame_gap)
+[Guard size: 55] code statement="function_call"(nil, _check_for_ecn, arguments(_send_frame::frame))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 285
+_send_abort_frag location number: 1137
+_send_frame location number: 414
+_check_for_ecn
+
+[Guard size: 55] code statement="function_call"(_send_frame::1::now, xtimer_now_usec, arguments)
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 285
+_send_abort_frag location number: 1137
+_send_frame location number: 415
+xtimer_now_usec
+
+[Guard size: 55] code statement="decl"(xtimer_now_usec::$tmp::return_value_xtimer_now)
+[Guard size: 55] code statement="function_call"(xtimer_now_usec::$tmp::return_value_xtimer_now, xtimer_now, arguments)
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 285
+_send_abort_frag location number: 1137
+_send_frame location number: 415
+xtimer_now_usec location number: 951
+xtimer_now
+
+[Guard size: 55] code statement="decl"(xtimer_now::1::ret)
+[Guard size: 55] code statement="decl"(xtimer_now::$tmp::return_value__xtimer_now)
+[Guard size: 55] code statement="function_call"(xtimer_now::$tmp::return_value__xtimer_now, _xtimer_now, arguments)
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 285
+_send_abort_frag location number: 1137
+_send_frame location number: 415
+xtimer_now_usec location number: 951
+xtimer_now location number: 1355
+_xtimer_now
+
+[Guard size: 55] code statement="assign"(xtimer_now::1::ret.ticks32, xtimer_now::$tmp::return_value__xtimer_now)
+[Guard size: 55] code statement="return"(xtimer_now::1::ret)
+
+Returning to: xtimer_now_usec location number: 951
+
+[Guard size: 55] code statement="decl"(xtimer_now_usec::$tmp::return_value_xtimer_usec_from_ticks)
+[Guard size: 55] code statement="function_call"(xtimer_now_usec::$tmp::return_value_xtimer_usec_from_ticks, xtimer_usec_from_ticks, arguments(xtimer_now_usec::$tmp::return_value_xtimer_now))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 285
+_send_abort_frag location number: 1137
+_send_frame location number: 415
+xtimer_now_usec location number: 953
+xtimer_usec_from_ticks
+
+[Guard size: 55] code statement="decl"(xtimer_usec_from_ticks::$tmp::return_value__xtimer_usec_from_ticks)
+[Guard size: 55] code statement="function_call"(xtimer_usec_from_ticks::$tmp::return_value__xtimer_usec_from_ticks, _xtimer_usec_from_ticks, arguments(xtimer_usec_from_ticks::ticks.ticks32))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 285
+_send_abort_frag location number: 1137
+_send_frame location number: 415
+xtimer_now_usec location number: 953
+xtimer_usec_from_ticks location number: 1262
+_xtimer_usec_from_ticks
+
+[Guard size: 55] code statement="return"(_xtimer_usec_from_ticks::ticks)
+
+Returning to: xtimer_usec_from_ticks location number: 1262
+
+[Guard size: 55] code statement="return"(xtimer_usec_from_ticks::$tmp::return_value__xtimer_usec_from_ticks)
+
+Returning to: xtimer_now_usec location number: 953
+
+[Guard size: 55] code statement="return"(xtimer_now_usec::$tmp::return_value_xtimer_usec_from_ticks)
+
+Returning to: _send_frame location number: 415
+
+[Guard size: 56] code statement="assign"(_last_frame_sent, _send_frame::1::now)
+[Guard size: 56] code statement="function_call"(nil, gnrc_sixlowpan_dispatch_send, arguments(_send_frame::frame, _send_frame::ctx, _send_frame::page))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 285
+_send_abort_frag location number: 1137
+_send_frame location number: 421
+gnrc_sixlowpan_dispatch_send
+
+[Guard size: 56] code statement="return"(cast(1, c_bool[8]))
+[Guard size: 57] code statement="decl"(_send_frame::$tmp::return_value_clist_lpop)
+[Guard size: 57] code statement="function_call"(_send_frame::$tmp::return_value_clist_lpop, clist_lpop, arguments(address_of(_frame_queue_free)))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 285
+_send_abort_frag location number: 1137
+_send_frame location number: 428
+clist_lpop
+
+
+Returning to: _send_frame location number: 428
+
+[Guard size: 57] code statement="assign"(_send_frame::1::2::node, cast(_send_frame::$tmp::return_value_clist_lpop, struct tag-#anon#ST[SYMlist_node#0={ST[*{SYMlist_node#0}'next']}'super'|*{SYMgnrc_pktsnip#1={ST[*{SYMgnrc_pktsnip#1}'next'|*{V}'data'|U32'size'|EN[FFFFFFFD'GNRC_NETTYPE_TX_SYNC'|FFFFFFFF'GNRC_NETTYPE_NETIF'|0'GNRC_NETTYPE_UNDEF'|1'GNRC_NETTYPE_SIXLOWPAN'|2'GNRC_NETTYPE_NUMOF'{S32}'type'|U8'users'|U24'$pad5']}}'frame'|U8'datagram_tag'|U8'page'|U16'$pad4']*))
+
+Returning to: _send_abort_frag location number: 1137
+
+[Guard size: 55] code statement="return"(cast(1, c_bool[8]))
+
+Returning to: gnrc_sixlowpan_frag_sfr_send location number: 285
+
+[Guard size: 54] code statement="assign"(gnrc_sixlowpan_frag_sfr_send::$tmp::tmp_if_expr, (gnrc_sixlowpan_frag_sfr_send::$tmp::return_value__send_abort_frag ≠ 0 ? true : false))
+[Guard size: 54] code statement="function_call"(nil, _sched_abort_timeout, arguments(gnrc_sixlowpan_frag_sfr_send::1::fbuf))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout
+
+[Guard size: 54] code statement="function_call"(nil, _clean_slate_datagram, arguments(_sched_abort_timeout::fbuf))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram
+
+[Guard size: 54] code statement="decl"(_clean_slate_datagram::1::new_queue)
+[Guard size: 54] code statement="assign"(_clean_slate_datagram::1::new_queue, { cast(cast(0, empty*), struct tag-list_node*) })
+[Guard size: 54] code statement="assign"(byte_extract_little_endian(*_clean_slate_datagram::fbuf.sfr.arq_timeout_event.msg.content, 0, empty*), cast(0, empty*))
+[Guard size: 54] code statement="function_call"(nil, evtimer_del, arguments(cast(address_of(_arq_timer), struct tag-#anon#ST[SYM#0={ST[SYMztimer_base#1={ST[*{SYMztimer_base#1}'next'|U32'offset']}'base'|*{V(l*{V})->V}'callback'|*{V}'arg']}'timer'|U32'base'|*{V(l*{SYMevtimer_event#2={ST[*{SYMevtimer_event#2}'next'|U32'offset']}})->V}'callback'|*{SYMevtimer_event#2}'events']*), address_of(*_clean_slate_datagram::fbuf.sfr.arq_timeout_event.event)))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 570
+evtimer_del
+
+[Guard size: 54] code statement="decl"(_clean_slate_datagram::$tmp::return_value_gnrc_sixlowpan_frag_sfr_congure_snd_has_inter_frame_gap)
+[Guard size: 54] code statement="function_call"(_clean_slate_datagram::$tmp::return_value_gnrc_sixlowpan_frag_sfr_congure_snd_has_inter_frame_gap, gnrc_sixlowpan_frag_sfr_congure_snd_has_inter_frame_gap, arguments)
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 572
+gnrc_sixlowpan_frag_sfr_congure_snd_has_inter_frame_gap
+
+[Guard size: 54] code statement="return"(cast(100 > cast(0, unsignedbv[32]) ∨ 0 ≠ 0, c_bool[8]))
+
+Returning to: _clean_slate_datagram location number: 572
+
+[Guard size: 54] code statement="decl"(_clean_slate_datagram::1::1::1::node)
+[Guard size: 54] code statement="decl"(_clean_slate_datagram::$tmp::return_value_clist_lpop)
+[Guard size: 54] code statement="function_call"(_clean_slate_datagram::$tmp::return_value_clist_lpop, clist_lpop, arguments(address_of(_frame_queue)))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 577
+clist_lpop
+
+
+Returning to: _clean_slate_datagram location number: 577
+
+[Guard size: 54] code statement="assign"(_clean_slate_datagram::1::1::1::node, _clean_slate_datagram::$tmp::return_value_clist_lpop)
+[Guard size: 54] code statement="assign"(_frame_queue, _clean_slate_datagram::1::new_queue)
+[Guard size: 54] code statement="assign"(*_clean_slate_datagram::fbuf.offset, cast(0, unsignedbv[16]))
+[Guard size: 54] code statement="assign"(*_clean_slate_datagram::fbuf.sfr.cur_seq, cast(0, unsignedbv[8]))
+[Guard size: 54] code statement="assign"(*_clean_slate_datagram::fbuf.sfr.frags_sent, cast(0, unsignedbv[8]))
+[Guard size: 54] code statement="decl"(_clean_slate_datagram::1::2::node)
+[Guard size: 54] code statement="decl"(_clean_slate_datagram::$tmp::return_value_clist_lpop$0)
+[Guard size: 54] code statement="function_call"(_clean_slate_datagram::$tmp::return_value_clist_lpop$0, clist_lpop, arguments(address_of(*_clean_slate_datagram::fbuf.sfr.window)))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 643
+clist_lpop
+
+[Guard size: 55] code statement="decl"(clist_lpop::1::1::first)
+[Guard size: 55] code statement="assign"(clist_lpop::1::1::first, *(*clist_lpop::list.next).next)
+[Guard size: 56] code statement="assign"(*clist_lpop::list.next, cast(cast(0, empty*), struct tag-list_node*))
+[Guard size: 57] code statement="assign"(*(*clist_lpop::list.next).next, *clist_lpop::1::1::first.next)
+[Guard size: 57] code statement="return"(clist_lpop::1::1::first)
+
+Returning to: _clean_slate_datagram location number: 643
+
+[Guard size: 54] code statement="assign"(_clean_slate_datagram::1::2::node, _clean_slate_datagram::$tmp::return_value_clist_lpop$0)
+[Guard size: 55] code statement="function_call"(nil, clist_rpush, arguments(address_of(_frag_descs_free), _clean_slate_datagram::1::2::node))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 647
+clist_rpush
+
+[Guard size: 55] code statement="assign"(*clist_rpush::new_node.next, clist_rpush::new_node)
+[Guard size: 55] code statement="assign"(*clist_rpush::list.next, clist_rpush::new_node)
+
+Returning to: _clean_slate_datagram location number: 647
+
+[Guard size: 55] code statement="function_call"(_clean_slate_datagram::1::2::node, clist_lpop, arguments(address_of(*_clean_slate_datagram::fbuf.sfr.window)))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 648
+clist_lpop
+
+[Guard size: 56] code statement="decl"(clist_lpop::1::1::first)
+[Guard size: 56] code statement="assign"(clist_lpop::1::1::first, *(*clist_lpop::list.next).next)
+[Guard size: 57] code statement="assign"(*clist_lpop::list.next, cast(cast(0, empty*), struct tag-list_node*))
+[Guard size: 58] code statement="assign"(*(*clist_lpop::list.next).next, *clist_lpop::1::1::first.next)
+[Guard size: 58] code statement="return"(clist_lpop::1::1::first)
+
+Returning to: _clean_slate_datagram location number: 648
+
+[Guard size: 56] code statement="function_call"(nil, clist_rpush, arguments(address_of(_frag_descs_free), _clean_slate_datagram::1::2::node))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 647
+clist_rpush
+
+[Guard size: 57] code statement="assign"(*clist_rpush::new_node.next, *(*clist_rpush::list.next).next)
+[Guard size: 57] code statement="assign"(*(*clist_rpush::list.next).next, clist_rpush::new_node)
+[Guard size: 58] code statement="assign"(*clist_rpush::new_node.next, clist_rpush::new_node)
+[Guard size: 56] code statement="assign"(*clist_rpush::list.next, clist_rpush::new_node)
+
+Returning to: _clean_slate_datagram location number: 647
+
+[Guard size: 56] code statement="function_call"(_clean_slate_datagram::1::2::node, clist_lpop, arguments(address_of(*_clean_slate_datagram::fbuf.sfr.window)))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 648
+clist_lpop
+
+[Guard size: 57] code statement="decl"(clist_lpop::1::1::first)
+[Guard size: 57] code statement="assign"(clist_lpop::1::1::first, *(*clist_lpop::list.next).next)
+[Guard size: 58] code statement="assign"(*clist_lpop::list.next, cast(cast(0, empty*), struct tag-list_node*))
+[Guard size: 59] code statement="assign"(*(*clist_lpop::list.next).next, *clist_lpop::1::1::first.next)
+[Guard size: 59] code statement="return"(clist_lpop::1::1::first)
+
+Returning to: _clean_slate_datagram location number: 648
+
+[Guard size: 57] code statement="function_call"(nil, clist_rpush, arguments(address_of(_frag_descs_free), _clean_slate_datagram::1::2::node))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 647
+clist_rpush
+
+[Guard size: 58] code statement="assign"(*clist_rpush::new_node.next, *(*clist_rpush::list.next).next)
+[Guard size: 58] code statement="assign"(*(*clist_rpush::list.next).next, clist_rpush::new_node)
+[Guard size: 59] code statement="assign"(*clist_rpush::new_node.next, clist_rpush::new_node)
+[Guard size: 57] code statement="assign"(*clist_rpush::list.next, clist_rpush::new_node)
+
+Returning to: _clean_slate_datagram location number: 647
+
+[Guard size: 57] code statement="function_call"(_clean_slate_datagram::1::2::node, clist_lpop, arguments(address_of(*_clean_slate_datagram::fbuf.sfr.window)))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 648
+clist_lpop
+
+[Guard size: 58] code statement="decl"(clist_lpop::1::1::first)
+[Guard size: 58] code statement="assign"(clist_lpop::1::1::first, *(*clist_lpop::list.next).next)
+[Guard size: 59] code statement="assign"(*clist_lpop::list.next, cast(cast(0, empty*), struct tag-list_node*))
+[Guard size: 60] code statement="assign"(*(*clist_lpop::list.next).next, *clist_lpop::1::1::first.next)
+[Guard size: 60] code statement="return"(clist_lpop::1::1::first)
+
+Returning to: _clean_slate_datagram location number: 648
+
+[Guard size: 58] code statement="function_call"(nil, clist_rpush, arguments(address_of(_frag_descs_free), _clean_slate_datagram::1::2::node))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 647
+clist_rpush
+
+[Guard size: 59] code statement="assign"(*clist_rpush::new_node.next, *(*clist_rpush::list.next).next)
+[Guard size: 59] code statement="assign"(*(*clist_rpush::list.next).next, clist_rpush::new_node)
+[Guard size: 60] code statement="assign"(*clist_rpush::new_node.next, clist_rpush::new_node)
+[Guard size: 58] code statement="assign"(*clist_rpush::list.next, clist_rpush::new_node)
+
+Returning to: _clean_slate_datagram location number: 647
+
+[Guard size: 58] code statement="function_call"(_clean_slate_datagram::1::2::node, clist_lpop, arguments(address_of(*_clean_slate_datagram::fbuf.sfr.window)))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 648
+clist_lpop
+
+[Guard size: 59] code statement="decl"(clist_lpop::1::1::first)
+[Guard size: 59] code statement="assign"(clist_lpop::1::1::first, *(*clist_lpop::list.next).next)
+[Guard size: 60] code statement="assign"(*clist_lpop::list.next, cast(cast(0, empty*), struct tag-list_node*))
+[Guard size: 61] code statement="assign"(*(*clist_lpop::list.next).next, *clist_lpop::1::1::first.next)
+[Guard size: 61] code statement="return"(clist_lpop::1::1::first)
+
+Returning to: _clean_slate_datagram location number: 648
+
+[Guard size: 59] code statement="function_call"(nil, clist_rpush, arguments(address_of(_frag_descs_free), _clean_slate_datagram::1::2::node))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 647
+clist_rpush
+
+[Guard size: 60] code statement="assign"(*clist_rpush::new_node.next, *(*clist_rpush::list.next).next)
+[Guard size: 60] code statement="assign"(*(*clist_rpush::list.next).next, clist_rpush::new_node)
+[Guard size: 61] code statement="assign"(*clist_rpush::new_node.next, clist_rpush::new_node)
+[Guard size: 59] code statement="assign"(*clist_rpush::list.next, clist_rpush::new_node)
+
+Returning to: _clean_slate_datagram location number: 647
+
+[Guard size: 59] code statement="function_call"(_clean_slate_datagram::1::2::node, clist_lpop, arguments(address_of(*_clean_slate_datagram::fbuf.sfr.window)))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 648
+clist_lpop
+
+[Guard size: 60] code statement="decl"(clist_lpop::1::1::first)
+[Guard size: 60] code statement="assign"(clist_lpop::1::1::first, *(*clist_lpop::list.next).next)
+[Guard size: 61] code statement="assign"(*clist_lpop::list.next, cast(cast(0, empty*), struct tag-list_node*))
+[Guard size: 62] code statement="assign"(*(*clist_lpop::list.next).next, *clist_lpop::1::1::first.next)
+[Guard size: 62] code statement="return"(clist_lpop::1::1::first)
+
+Returning to: _clean_slate_datagram location number: 648
+
+[Guard size: 60] code statement="function_call"(nil, clist_rpush, arguments(address_of(_frag_descs_free), _clean_slate_datagram::1::2::node))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 647
+clist_rpush
+
+[Guard size: 61] code statement="assign"(*clist_rpush::new_node.next, *(*clist_rpush::list.next).next)
+[Guard size: 61] code statement="assign"(*(*clist_rpush::list.next).next, clist_rpush::new_node)
+[Guard size: 62] code statement="assign"(*clist_rpush::new_node.next, clist_rpush::new_node)
+[Guard size: 60] code statement="assign"(*clist_rpush::list.next, clist_rpush::new_node)
+
+Returning to: _clean_slate_datagram location number: 647
+
+[Guard size: 60] code statement="function_call"(_clean_slate_datagram::1::2::node, clist_lpop, arguments(address_of(*_clean_slate_datagram::fbuf.sfr.window)))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 648
+clist_lpop
+
+[Guard size: 61] code statement="decl"(clist_lpop::1::1::first)
+[Guard size: 61] code statement="assign"(clist_lpop::1::1::first, *(*clist_lpop::list.next).next)
+[Guard size: 62] code statement="assign"(*clist_lpop::list.next, cast(cast(0, empty*), struct tag-list_node*))
+[Guard size: 63] code statement="assign"(*(*clist_lpop::list.next).next, *clist_lpop::1::1::first.next)
+[Guard size: 63] code statement="return"(clist_lpop::1::1::first)
+
+Returning to: _clean_slate_datagram location number: 648
+
+[Guard size: 61] code statement="function_call"(nil, clist_rpush, arguments(address_of(_frag_descs_free), _clean_slate_datagram::1::2::node))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 647
+clist_rpush
+
+[Guard size: 62] code statement="assign"(*clist_rpush::new_node.next, *(*clist_rpush::list.next).next)
+[Guard size: 62] code statement="assign"(*(*clist_rpush::list.next).next, clist_rpush::new_node)
+[Guard size: 63] code statement="assign"(*clist_rpush::new_node.next, clist_rpush::new_node)
+[Guard size: 61] code statement="assign"(*clist_rpush::list.next, clist_rpush::new_node)
+
+Returning to: _clean_slate_datagram location number: 647
+
+[Guard size: 61] code statement="function_call"(_clean_slate_datagram::1::2::node, clist_lpop, arguments(address_of(*_clean_slate_datagram::fbuf.sfr.window)))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 648
+clist_lpop
+
+[Guard size: 62] code statement="decl"(clist_lpop::1::1::first)
+[Guard size: 62] code statement="assign"(clist_lpop::1::1::first, *(*clist_lpop::list.next).next)
+[Guard size: 63] code statement="assign"(*clist_lpop::list.next, cast(cast(0, empty*), struct tag-list_node*))
+[Guard size: 64] code statement="assign"(*(*clist_lpop::list.next).next, *clist_lpop::1::1::first.next)
+[Guard size: 64] code statement="return"(clist_lpop::1::1::first)
+
+Returning to: _clean_slate_datagram location number: 648
+
+[Guard size: 62] code statement="function_call"(nil, clist_rpush, arguments(address_of(_frag_descs_free), _clean_slate_datagram::1::2::node))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 647
+clist_rpush
+
+[Guard size: 63] code statement="assign"(*clist_rpush::new_node.next, *(*clist_rpush::list.next).next)
+[Guard size: 63] code statement="assign"(*(*clist_rpush::list.next).next, clist_rpush::new_node)
+[Guard size: 64] code statement="assign"(*clist_rpush::new_node.next, clist_rpush::new_node)
+[Guard size: 62] code statement="assign"(*clist_rpush::list.next, clist_rpush::new_node)
+
+Returning to: _clean_slate_datagram location number: 647
+
+[Guard size: 62] code statement="function_call"(_clean_slate_datagram::1::2::node, clist_lpop, arguments(address_of(*_clean_slate_datagram::fbuf.sfr.window)))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 648
+clist_lpop
+
+[Guard size: 63] code statement="decl"(clist_lpop::1::1::first)
+[Guard size: 63] code statement="assign"(clist_lpop::1::1::first, *(*clist_lpop::list.next).next)
+[Guard size: 64] code statement="assign"(*clist_lpop::list.next, cast(cast(0, empty*), struct tag-list_node*))
+[Guard size: 65] code statement="assign"(*(*clist_lpop::list.next).next, *clist_lpop::1::1::first.next)
+[Guard size: 65] code statement="return"(clist_lpop::1::1::first)
+
+Returning to: _clean_slate_datagram location number: 648
+
+[Guard size: 63] code statement="function_call"(nil, clist_rpush, arguments(address_of(_frag_descs_free), _clean_slate_datagram::1::2::node))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 647
+clist_rpush
+
+[Guard size: 64] code statement="assign"(*clist_rpush::new_node.next, *(*clist_rpush::list.next).next)
+[Guard size: 64] code statement="assign"(*(*clist_rpush::list.next).next, clist_rpush::new_node)
+[Guard size: 65] code statement="assign"(*clist_rpush::new_node.next, clist_rpush::new_node)
+[Guard size: 63] code statement="assign"(*clist_rpush::list.next, clist_rpush::new_node)
+
+Returning to: _clean_slate_datagram location number: 647
+
+[Guard size: 63] code statement="function_call"(_clean_slate_datagram::1::2::node, clist_lpop, arguments(address_of(*_clean_slate_datagram::fbuf.sfr.window)))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 648
+clist_lpop
+
+[Guard size: 64] code statement="decl"(clist_lpop::1::1::first)
+[Guard size: 64] code statement="assign"(clist_lpop::1::1::first, *(*clist_lpop::list.next).next)
+[Guard size: 65] code statement="assign"(*clist_lpop::list.next, cast(cast(0, empty*), struct tag-list_node*))
+[Guard size: 66] code statement="assign"(*(*clist_lpop::list.next).next, *clist_lpop::1::1::first.next)
+[Guard size: 66] code statement="return"(clist_lpop::1::1::first)
+
+Returning to: _clean_slate_datagram location number: 648
+
+[Guard size: 64] code statement="function_call"(nil, clist_rpush, arguments(address_of(_frag_descs_free), _clean_slate_datagram::1::2::node))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 647
+clist_rpush
+
+[Guard size: 65] code statement="assign"(*clist_rpush::new_node.next, *(*clist_rpush::list.next).next)
+[Guard size: 65] code statement="assign"(*(*clist_rpush::list.next).next, clist_rpush::new_node)
+[Guard size: 66] code statement="assign"(*clist_rpush::new_node.next, clist_rpush::new_node)
+[Guard size: 64] code statement="assign"(*clist_rpush::list.next, clist_rpush::new_node)
+
+Returning to: _clean_slate_datagram location number: 647
+
+[Guard size: 64] code statement="function_call"(_clean_slate_datagram::1::2::node, clist_lpop, arguments(address_of(*_clean_slate_datagram::fbuf.sfr.window)))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 648
+clist_lpop
+
+[Guard size: 65] code statement="decl"(clist_lpop::1::1::first)
+[Guard size: 65] code statement="assign"(clist_lpop::1::1::first, *(*clist_lpop::list.next).next)
+[Guard size: 66] code statement="assign"(*clist_lpop::list.next, cast(cast(0, empty*), struct tag-list_node*))
+[Guard size: 67] code statement="assign"(*(*clist_lpop::list.next).next, *clist_lpop::1::1::first.next)
+[Guard size: 67] code statement="return"(clist_lpop::1::1::first)
+
+Returning to: _clean_slate_datagram location number: 648
+
+[Guard size: 65] code statement="function_call"(nil, clist_rpush, arguments(address_of(_frag_descs_free), _clean_slate_datagram::1::2::node))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 647
+clist_rpush
+
+[Guard size: 66] code statement="assign"(*clist_rpush::new_node.next, *(*clist_rpush::list.next).next)
+[Guard size: 66] code statement="assign"(*(*clist_rpush::list.next).next, clist_rpush::new_node)
+[Guard size: 67] code statement="assign"(*clist_rpush::new_node.next, clist_rpush::new_node)
+[Guard size: 65] code statement="assign"(*clist_rpush::list.next, clist_rpush::new_node)
+
+Returning to: _clean_slate_datagram location number: 647
+
+[Guard size: 65] code statement="function_call"(_clean_slate_datagram::1::2::node, clist_lpop, arguments(address_of(*_clean_slate_datagram::fbuf.sfr.window)))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 648
+clist_lpop
+
+[Guard size: 66] code statement="decl"(clist_lpop::1::1::first)
+[Guard size: 66] code statement="assign"(clist_lpop::1::1::first, *(*clist_lpop::list.next).next)
+[Guard size: 67] code statement="assign"(*clist_lpop::list.next, cast(cast(0, empty*), struct tag-list_node*))
+[Guard size: 68] code statement="assign"(*(*clist_lpop::list.next).next, *clist_lpop::1::1::first.next)
+[Guard size: 68] code statement="return"(clist_lpop::1::1::first)
+
+Returning to: _clean_slate_datagram location number: 648
+
+[Guard size: 66] code statement="function_call"(nil, clist_rpush, arguments(address_of(_frag_descs_free), _clean_slate_datagram::1::2::node))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 647
+clist_rpush
+
+[Guard size: 67] code statement="assign"(*clist_rpush::new_node.next, *(*clist_rpush::list.next).next)
+[Guard size: 67] code statement="assign"(*(*clist_rpush::list.next).next, clist_rpush::new_node)
+[Guard size: 68] code statement="assign"(*clist_rpush::new_node.next, clist_rpush::new_node)
+[Guard size: 66] code statement="assign"(*clist_rpush::list.next, clist_rpush::new_node)
+
+Returning to: _clean_slate_datagram location number: 647
+
+[Guard size: 66] code statement="function_call"(_clean_slate_datagram::1::2::node, clist_lpop, arguments(address_of(*_clean_slate_datagram::fbuf.sfr.window)))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 648
+clist_lpop
+
+[Guard size: 67] code statement="decl"(clist_lpop::1::1::first)
+[Guard size: 67] code statement="assign"(clist_lpop::1::1::first, *(*clist_lpop::list.next).next)
+[Guard size: 68] code statement="assign"(*clist_lpop::list.next, cast(cast(0, empty*), struct tag-list_node*))
+[Guard size: 69] code statement="assign"(*(*clist_lpop::list.next).next, *clist_lpop::1::1::first.next)
+[Guard size: 69] code statement="return"(clist_lpop::1::1::first)
+
+Returning to: _clean_slate_datagram location number: 648
+
+[Guard size: 67] code statement="function_call"(nil, clist_rpush, arguments(address_of(_frag_descs_free), _clean_slate_datagram::1::2::node))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 647
+clist_rpush
+
+[Guard size: 68] code statement="assign"(*clist_rpush::new_node.next, *(*clist_rpush::list.next).next)
+[Guard size: 68] code statement="assign"(*(*clist_rpush::list.next).next, clist_rpush::new_node)
+[Guard size: 69] code statement="assign"(*clist_rpush::new_node.next, clist_rpush::new_node)
+[Guard size: 67] code statement="assign"(*clist_rpush::list.next, clist_rpush::new_node)
+
+Returning to: _clean_slate_datagram location number: 647
+
+[Guard size: 67] code statement="function_call"(_clean_slate_datagram::1::2::node, clist_lpop, arguments(address_of(*_clean_slate_datagram::fbuf.sfr.window)))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 648
+clist_lpop
+
+[Guard size: 68] code statement="decl"(clist_lpop::1::1::first)
+[Guard size: 68] code statement="assign"(clist_lpop::1::1::first, *(*clist_lpop::list.next).next)
+[Guard size: 69] code statement="assign"(*clist_lpop::list.next, cast(cast(0, empty*), struct tag-list_node*))
+[Guard size: 70] code statement="assign"(*(*clist_lpop::list.next).next, *clist_lpop::1::1::first.next)
+[Guard size: 70] code statement="return"(clist_lpop::1::1::first)
+
+Returning to: _clean_slate_datagram location number: 648
+
+[Guard size: 68] code statement="function_call"(nil, clist_rpush, arguments(address_of(_frag_descs_free), _clean_slate_datagram::1::2::node))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 647
+clist_rpush
+
+[Guard size: 69] code statement="assign"(*clist_rpush::new_node.next, *(*clist_rpush::list.next).next)
+[Guard size: 69] code statement="assign"(*(*clist_rpush::list.next).next, clist_rpush::new_node)
+[Guard size: 70] code statement="assign"(*clist_rpush::new_node.next, clist_rpush::new_node)
+[Guard size: 68] code statement="assign"(*clist_rpush::list.next, clist_rpush::new_node)
+
+Returning to: _clean_slate_datagram location number: 647
+
+[Guard size: 68] code statement="function_call"(_clean_slate_datagram::1::2::node, clist_lpop, arguments(address_of(*_clean_slate_datagram::fbuf.sfr.window)))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 648
+clist_lpop
+
+[Guard size: 69] code statement="decl"(clist_lpop::1::1::first)
+[Guard size: 69] code statement="assign"(clist_lpop::1::1::first, *(*clist_lpop::list.next).next)
+[Guard size: 70] code statement="assign"(*clist_lpop::list.next, cast(cast(0, empty*), struct tag-list_node*))
+[Guard size: 71] code statement="assign"(*(*clist_lpop::list.next).next, *clist_lpop::1::1::first.next)
+[Guard size: 71] code statement="return"(clist_lpop::1::1::first)
+
+Returning to: _clean_slate_datagram location number: 648
+
+[Guard size: 69] code statement="function_call"(nil, clist_rpush, arguments(address_of(_frag_descs_free), _clean_slate_datagram::1::2::node))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 647
+clist_rpush
+
+[Guard size: 70] code statement="assign"(*clist_rpush::new_node.next, *(*clist_rpush::list.next).next)
+[Guard size: 70] code statement="assign"(*(*clist_rpush::list.next).next, clist_rpush::new_node)
+[Guard size: 71] code statement="assign"(*clist_rpush::new_node.next, clist_rpush::new_node)
+[Guard size: 69] code statement="assign"(*clist_rpush::list.next, clist_rpush::new_node)
+
+Returning to: _clean_slate_datagram location number: 647
+
+[Guard size: 69] code statement="function_call"(_clean_slate_datagram::1::2::node, clist_lpop, arguments(address_of(*_clean_slate_datagram::fbuf.sfr.window)))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 648
+clist_lpop
+
+[Guard size: 70] code statement="decl"(clist_lpop::1::1::first)
+[Guard size: 70] code statement="assign"(clist_lpop::1::1::first, *(*clist_lpop::list.next).next)
+[Guard size: 71] code statement="assign"(*clist_lpop::list.next, cast(cast(0, empty*), struct tag-list_node*))
+[Guard size: 72] code statement="assign"(*(*clist_lpop::list.next).next, *clist_lpop::1::1::first.next)
+[Guard size: 72] code statement="return"(clist_lpop::1::1::first)
+
+Returning to: _clean_slate_datagram location number: 648
+
+[Guard size: 70] code statement="function_call"(nil, clist_rpush, arguments(address_of(_frag_descs_free), _clean_slate_datagram::1::2::node))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 647
+clist_rpush
+
+[Guard size: 71] code statement="assign"(*clist_rpush::new_node.next, *(*clist_rpush::list.next).next)
+[Guard size: 71] code statement="assign"(*(*clist_rpush::list.next).next, clist_rpush::new_node)
+[Guard size: 72] code statement="assign"(*clist_rpush::new_node.next, clist_rpush::new_node)
+[Guard size: 70] code statement="assign"(*clist_rpush::list.next, clist_rpush::new_node)
+
+Returning to: _clean_slate_datagram location number: 647
+
+[Guard size: 70] code statement="function_call"(_clean_slate_datagram::1::2::node, clist_lpop, arguments(address_of(*_clean_slate_datagram::fbuf.sfr.window)))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 648
+clist_lpop
+
+[Guard size: 71] code statement="decl"(clist_lpop::1::1::first)
+[Guard size: 71] code statement="assign"(clist_lpop::1::1::first, *(*clist_lpop::list.next).next)
+[Guard size: 72] code statement="assign"(*clist_lpop::list.next, cast(cast(0, empty*), struct tag-list_node*))
+[Guard size: 73] code statement="assign"(*(*clist_lpop::list.next).next, *clist_lpop::1::1::first.next)
+[Guard size: 73] code statement="return"(clist_lpop::1::1::first)
+
+Returning to: _clean_slate_datagram location number: 648
+
+[Guard size: 71] code statement="function_call"(nil, clist_rpush, arguments(address_of(_frag_descs_free), _clean_slate_datagram::1::2::node))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 647
+clist_rpush
+
+[Guard size: 72] code statement="assign"(*clist_rpush::new_node.next, *(*clist_rpush::list.next).next)
+[Guard size: 72] code statement="assign"(*(*clist_rpush::list.next).next, clist_rpush::new_node)
+[Guard size: 73] code statement="assign"(*clist_rpush::new_node.next, clist_rpush::new_node)
+[Guard size: 71] code statement="assign"(*clist_rpush::list.next, clist_rpush::new_node)
+
+Returning to: _clean_slate_datagram location number: 647
+
+[Guard size: 71] code statement="function_call"(_clean_slate_datagram::1::2::node, clist_lpop, arguments(address_of(*_clean_slate_datagram::fbuf.sfr.window)))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 648
+clist_lpop
+
+[Guard size: 72] code statement="decl"(clist_lpop::1::1::first)
+[Guard size: 72] code statement="assign"(clist_lpop::1::1::first, *(*clist_lpop::list.next).next)
+[Guard size: 73] code statement="assign"(*clist_lpop::list.next, cast(cast(0, empty*), struct tag-list_node*))
+[Guard size: 74] code statement="assign"(*(*clist_lpop::list.next).next, *clist_lpop::1::1::first.next)
+[Guard size: 74] code statement="return"(clist_lpop::1::1::first)
+
+Returning to: _clean_slate_datagram location number: 648
+
+[Guard size: 72] code statement="function_call"(nil, clist_rpush, arguments(address_of(_frag_descs_free), _clean_slate_datagram::1::2::node))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 647
+clist_rpush
+
+[Guard size: 73] code statement="assign"(*clist_rpush::new_node.next, *(*clist_rpush::list.next).next)
+[Guard size: 73] code statement="assign"(*(*clist_rpush::list.next).next, clist_rpush::new_node)
+[Guard size: 74] code statement="assign"(*clist_rpush::new_node.next, clist_rpush::new_node)
+[Guard size: 72] code statement="assign"(*clist_rpush::list.next, clist_rpush::new_node)
+
+Returning to: _clean_slate_datagram location number: 647
+
+[Guard size: 72] code statement="function_call"(_clean_slate_datagram::1::2::node, clist_lpop, arguments(address_of(*_clean_slate_datagram::fbuf.sfr.window)))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 648
+clist_lpop
+
+[Guard size: 73] code statement="decl"(clist_lpop::1::1::first)
+[Guard size: 73] code statement="assign"(clist_lpop::1::1::first, *(*clist_lpop::list.next).next)
+[Guard size: 74] code statement="assign"(*clist_lpop::list.next, cast(cast(0, empty*), struct tag-list_node*))
+[Guard size: 75] code statement="assign"(*(*clist_lpop::list.next).next, *clist_lpop::1::1::first.next)
+[Guard size: 75] code statement="return"(clist_lpop::1::1::first)
+
+Returning to: _clean_slate_datagram location number: 648
+
+[Guard size: 73] code statement="function_call"(nil, clist_rpush, arguments(address_of(_frag_descs_free), _clean_slate_datagram::1::2::node))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 647
+clist_rpush
+
+[Guard size: 74] code statement="assign"(*clist_rpush::new_node.next, *(*clist_rpush::list.next).next)
+[Guard size: 74] code statement="assign"(*(*clist_rpush::list.next).next, clist_rpush::new_node)
+[Guard size: 75] code statement="assign"(*clist_rpush::new_node.next, clist_rpush::new_node)
+[Guard size: 73] code statement="assign"(*clist_rpush::list.next, clist_rpush::new_node)
+
+Returning to: _clean_slate_datagram location number: 647
+
+[Guard size: 73] code statement="function_call"(_clean_slate_datagram::1::2::node, clist_lpop, arguments(address_of(*_clean_slate_datagram::fbuf.sfr.window)))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 648
+clist_lpop
+
+[Guard size: 74] code statement="decl"(clist_lpop::1::1::first)
+[Guard size: 74] code statement="assign"(clist_lpop::1::1::first, *(*clist_lpop::list.next).next)
+[Guard size: 75] code statement="assign"(*clist_lpop::list.next, cast(cast(0, empty*), struct tag-list_node*))
+[Guard size: 76] code statement="assign"(*(*clist_lpop::list.next).next, *clist_lpop::1::1::first.next)
+[Guard size: 76] code statement="return"(clist_lpop::1::1::first)
+
+Returning to: _clean_slate_datagram location number: 648
+
+[Guard size: 74] code statement="function_call"(nil, clist_rpush, arguments(address_of(_frag_descs_free), _clean_slate_datagram::1::2::node))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 647
+clist_rpush
+
+[Guard size: 75] code statement="assign"(*clist_rpush::new_node.next, *(*clist_rpush::list.next).next)
+[Guard size: 75] code statement="assign"(*(*clist_rpush::list.next).next, clist_rpush::new_node)
+[Guard size: 76] code statement="assign"(*clist_rpush::new_node.next, clist_rpush::new_node)
+[Guard size: 74] code statement="assign"(*clist_rpush::list.next, clist_rpush::new_node)
+
+Returning to: _clean_slate_datagram location number: 647
+
+[Guard size: 74] code statement="function_call"(_clean_slate_datagram::1::2::node, clist_lpop, arguments(address_of(*_clean_slate_datagram::fbuf.sfr.window)))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 648
+clist_lpop
+
+[Guard size: 75] code statement="decl"(clist_lpop::1::1::first)
+[Guard size: 75] code statement="assign"(clist_lpop::1::1::first, *(*clist_lpop::list.next).next)
+[Guard size: 76] code statement="assign"(*clist_lpop::list.next, cast(cast(0, empty*), struct tag-list_node*))
+[Guard size: 77] code statement="assign"(*(*clist_lpop::list.next).next, *clist_lpop::1::1::first.next)
+[Guard size: 77] code statement="return"(clist_lpop::1::1::first)
+
+Returning to: _clean_slate_datagram location number: 648
+
+[Guard size: 75] code statement="function_call"(nil, clist_rpush, arguments(address_of(_frag_descs_free), _clean_slate_datagram::1::2::node))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 647
+clist_rpush
+
+[Guard size: 76] code statement="assign"(*clist_rpush::new_node.next, *(*clist_rpush::list.next).next)
+[Guard size: 76] code statement="assign"(*(*clist_rpush::list.next).next, clist_rpush::new_node)
+[Guard size: 77] code statement="assign"(*clist_rpush::new_node.next, clist_rpush::new_node)
+[Guard size: 75] code statement="assign"(*clist_rpush::list.next, clist_rpush::new_node)
+
+Returning to: _clean_slate_datagram location number: 647
+
+[Guard size: 75] code statement="function_call"(_clean_slate_datagram::1::2::node, clist_lpop, arguments(address_of(*_clean_slate_datagram::fbuf.sfr.window)))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 648
+clist_lpop
+
+[Guard size: 76] code statement="decl"(clist_lpop::1::1::first)
+[Guard size: 76] code statement="assign"(clist_lpop::1::1::first, *(*clist_lpop::list.next).next)
+[Guard size: 77] code statement="assign"(*clist_lpop::list.next, cast(cast(0, empty*), struct tag-list_node*))
+[Guard size: 78] code statement="assign"(*(*clist_lpop::list.next).next, *clist_lpop::1::1::first.next)
+[Guard size: 78] code statement="return"(clist_lpop::1::1::first)
+
+Returning to: _clean_slate_datagram location number: 648
+
+[Guard size: 76] code statement="function_call"(nil, clist_rpush, arguments(address_of(_frag_descs_free), _clean_slate_datagram::1::2::node))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 647
+clist_rpush
+
+[Guard size: 77] code statement="assign"(*clist_rpush::new_node.next, *(*clist_rpush::list.next).next)
+[Guard size: 77] code statement="assign"(*(*clist_rpush::list.next).next, clist_rpush::new_node)
+[Guard size: 78] code statement="assign"(*clist_rpush::new_node.next, clist_rpush::new_node)
+[Guard size: 76] code statement="assign"(*clist_rpush::list.next, clist_rpush::new_node)
+
+Returning to: _clean_slate_datagram location number: 647
+
+[Guard size: 76] code statement="function_call"(_clean_slate_datagram::1::2::node, clist_lpop, arguments(address_of(*_clean_slate_datagram::fbuf.sfr.window)))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 648
+clist_lpop
+
+[Guard size: 77] code statement="decl"(clist_lpop::1::1::first)
+[Guard size: 77] code statement="assign"(clist_lpop::1::1::first, *(*clist_lpop::list.next).next)
+[Guard size: 78] code statement="assign"(*clist_lpop::list.next, cast(cast(0, empty*), struct tag-list_node*))
+[Guard size: 79] code statement="assign"(*(*clist_lpop::list.next).next, *clist_lpop::1::1::first.next)
+[Guard size: 79] code statement="return"(clist_lpop::1::1::first)
+
+Returning to: _clean_slate_datagram location number: 648
+
+[Guard size: 77] code statement="function_call"(nil, clist_rpush, arguments(address_of(_frag_descs_free), _clean_slate_datagram::1::2::node))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 647
+clist_rpush
+
+[Guard size: 78] code statement="assign"(*clist_rpush::new_node.next, *(*clist_rpush::list.next).next)
+[Guard size: 78] code statement="assign"(*(*clist_rpush::list.next).next, clist_rpush::new_node)
+[Guard size: 79] code statement="assign"(*clist_rpush::new_node.next, clist_rpush::new_node)
+[Guard size: 77] code statement="assign"(*clist_rpush::list.next, clist_rpush::new_node)
+
+Returning to: _clean_slate_datagram location number: 647
+
+[Guard size: 77] code statement="function_call"(_clean_slate_datagram::1::2::node, clist_lpop, arguments(address_of(*_clean_slate_datagram::fbuf.sfr.window)))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 648
+clist_lpop
+
+[Guard size: 78] code statement="decl"(clist_lpop::1::1::first)
+[Guard size: 78] code statement="assign"(clist_lpop::1::1::first, *(*clist_lpop::list.next).next)
+[Guard size: 79] code statement="assign"(*clist_lpop::list.next, cast(cast(0, empty*), struct tag-list_node*))
+[Guard size: 80] code statement="assign"(*(*clist_lpop::list.next).next, *clist_lpop::1::1::first.next)
+[Guard size: 80] code statement="return"(clist_lpop::1::1::first)
+
+Returning to: _clean_slate_datagram location number: 648
+
+[Guard size: 78] code statement="function_call"(nil, clist_rpush, arguments(address_of(_frag_descs_free), _clean_slate_datagram::1::2::node))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 647
+clist_rpush
+
+[Guard size: 79] code statement="assign"(*clist_rpush::new_node.next, *(*clist_rpush::list.next).next)
+[Guard size: 79] code statement="assign"(*(*clist_rpush::list.next).next, clist_rpush::new_node)
+[Guard size: 80] code statement="assign"(*clist_rpush::new_node.next, clist_rpush::new_node)
+[Guard size: 78] code statement="assign"(*clist_rpush::list.next, clist_rpush::new_node)
+
+Returning to: _clean_slate_datagram location number: 647
+
+[Guard size: 78] code statement="function_call"(_clean_slate_datagram::1::2::node, clist_lpop, arguments(address_of(*_clean_slate_datagram::fbuf.sfr.window)))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 648
+clist_lpop
+
+[Guard size: 79] code statement="decl"(clist_lpop::1::1::first)
+[Guard size: 79] code statement="assign"(clist_lpop::1::1::first, *(*clist_lpop::list.next).next)
+[Guard size: 80] code statement="assign"(*clist_lpop::list.next, cast(cast(0, empty*), struct tag-list_node*))
+[Guard size: 81] code statement="assign"(*(*clist_lpop::list.next).next, *clist_lpop::1::1::first.next)
+[Guard size: 81] code statement="return"(clist_lpop::1::1::first)
+
+Returning to: _clean_slate_datagram location number: 648
+
+[Guard size: 79] code statement="function_call"(nil, clist_rpush, arguments(address_of(_frag_descs_free), _clean_slate_datagram::1::2::node))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 647
+clist_rpush
+
+[Guard size: 80] code statement="assign"(*clist_rpush::new_node.next, *(*clist_rpush::list.next).next)
+[Guard size: 80] code statement="assign"(*(*clist_rpush::list.next).next, clist_rpush::new_node)
+[Guard size: 81] code statement="assign"(*clist_rpush::new_node.next, clist_rpush::new_node)
+[Guard size: 79] code statement="assign"(*clist_rpush::list.next, clist_rpush::new_node)
+
+Returning to: _clean_slate_datagram location number: 647
+
+[Guard size: 79] code statement="function_call"(_clean_slate_datagram::1::2::node, clist_lpop, arguments(address_of(*_clean_slate_datagram::fbuf.sfr.window)))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 648
+clist_lpop
+
+[Guard size: 80] code statement="decl"(clist_lpop::1::1::first)
+[Guard size: 80] code statement="assign"(clist_lpop::1::1::first, *(*clist_lpop::list.next).next)
+[Guard size: 81] code statement="assign"(*clist_lpop::list.next, cast(cast(0, empty*), struct tag-list_node*))
+[Guard size: 82] code statement="assign"(*(*clist_lpop::list.next).next, *clist_lpop::1::1::first.next)
+[Guard size: 82] code statement="return"(clist_lpop::1::1::first)
+
+Returning to: _clean_slate_datagram location number: 648
+
+[Guard size: 80] code statement="function_call"(nil, clist_rpush, arguments(address_of(_frag_descs_free), _clean_slate_datagram::1::2::node))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 647
+clist_rpush
+
+[Guard size: 81] code statement="assign"(*clist_rpush::new_node.next, *(*clist_rpush::list.next).next)
+[Guard size: 81] code statement="assign"(*(*clist_rpush::list.next).next, clist_rpush::new_node)
+[Guard size: 82] code statement="assign"(*clist_rpush::new_node.next, clist_rpush::new_node)
+[Guard size: 80] code statement="assign"(*clist_rpush::list.next, clist_rpush::new_node)
+
+Returning to: _clean_slate_datagram location number: 647
+
+[Guard size: 80] code statement="function_call"(_clean_slate_datagram::1::2::node, clist_lpop, arguments(address_of(*_clean_slate_datagram::fbuf.sfr.window)))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 648
+clist_lpop
+
+[Guard size: 81] code statement="decl"(clist_lpop::1::1::first)
+[Guard size: 81] code statement="assign"(clist_lpop::1::1::first, *(*clist_lpop::list.next).next)
+[Guard size: 82] code statement="assign"(*clist_lpop::list.next, cast(cast(0, empty*), struct tag-list_node*))
+[Guard size: 83] code statement="assign"(*(*clist_lpop::list.next).next, *clist_lpop::1::1::first.next)
+[Guard size: 83] code statement="return"(clist_lpop::1::1::first)
+
+Returning to: _clean_slate_datagram location number: 648
+
+[Guard size: 81] code statement="function_call"(nil, clist_rpush, arguments(address_of(_frag_descs_free), _clean_slate_datagram::1::2::node))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 647
+clist_rpush
+
+[Guard size: 82] code statement="assign"(*clist_rpush::new_node.next, *(*clist_rpush::list.next).next)
+[Guard size: 82] code statement="assign"(*(*clist_rpush::list.next).next, clist_rpush::new_node)
+[Guard size: 83] code statement="assign"(*clist_rpush::new_node.next, clist_rpush::new_node)
+[Guard size: 81] code statement="assign"(*clist_rpush::list.next, clist_rpush::new_node)
+
+Returning to: _clean_slate_datagram location number: 647
+
+[Guard size: 81] code statement="function_call"(_clean_slate_datagram::1::2::node, clist_lpop, arguments(address_of(*_clean_slate_datagram::fbuf.sfr.window)))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 648
+clist_lpop
+
+[Guard size: 82] code statement="decl"(clist_lpop::1::1::first)
+[Guard size: 82] code statement="assign"(clist_lpop::1::1::first, *(*clist_lpop::list.next).next)
+[Guard size: 83] code statement="assign"(*clist_lpop::list.next, cast(cast(0, empty*), struct tag-list_node*))
+[Guard size: 84] code statement="assign"(*(*clist_lpop::list.next).next, *clist_lpop::1::1::first.next)
+[Guard size: 84] code statement="return"(clist_lpop::1::1::first)
+
+Returning to: _clean_slate_datagram location number: 648
+
+[Guard size: 82] code statement="function_call"(nil, clist_rpush, arguments(address_of(_frag_descs_free), _clean_slate_datagram::1::2::node))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 647
+clist_rpush
+
+[Guard size: 83] code statement="assign"(*clist_rpush::new_node.next, *(*clist_rpush::list.next).next)
+[Guard size: 83] code statement="assign"(*(*clist_rpush::list.next).next, clist_rpush::new_node)
+[Guard size: 84] code statement="assign"(*clist_rpush::new_node.next, clist_rpush::new_node)
+[Guard size: 82] code statement="assign"(*clist_rpush::list.next, clist_rpush::new_node)
+
+Returning to: _clean_slate_datagram location number: 647
+
+[Guard size: 82] code statement="function_call"(_clean_slate_datagram::1::2::node, clist_lpop, arguments(address_of(*_clean_slate_datagram::fbuf.sfr.window)))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 648
+clist_lpop
+
+[Guard size: 83] code statement="decl"(clist_lpop::1::1::first)
+[Guard size: 83] code statement="assign"(clist_lpop::1::1::first, *(*clist_lpop::list.next).next)
+[Guard size: 84] code statement="assign"(*clist_lpop::list.next, cast(cast(0, empty*), struct tag-list_node*))
+[Guard size: 85] code statement="assign"(*(*clist_lpop::list.next).next, *clist_lpop::1::1::first.next)
+[Guard size: 85] code statement="return"(clist_lpop::1::1::first)
+
+Returning to: _clean_slate_datagram location number: 648
+
+[Guard size: 83] code statement="function_call"(nil, clist_rpush, arguments(address_of(_frag_descs_free), _clean_slate_datagram::1::2::node))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 647
+clist_rpush
+
+[Guard size: 84] code statement="assign"(*clist_rpush::new_node.next, *(*clist_rpush::list.next).next)
+[Guard size: 84] code statement="assign"(*(*clist_rpush::list.next).next, clist_rpush::new_node)
+[Guard size: 85] code statement="assign"(*clist_rpush::new_node.next, clist_rpush::new_node)
+[Guard size: 83] code statement="assign"(*clist_rpush::list.next, clist_rpush::new_node)
+
+Returning to: _clean_slate_datagram location number: 647
+
+[Guard size: 83] code statement="function_call"(_clean_slate_datagram::1::2::node, clist_lpop, arguments(address_of(*_clean_slate_datagram::fbuf.sfr.window)))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 648
+clist_lpop
+
+[Guard size: 84] code statement="decl"(clist_lpop::1::1::first)
+[Guard size: 84] code statement="assign"(clist_lpop::1::1::first, *(*clist_lpop::list.next).next)
+[Guard size: 85] code statement="assign"(*clist_lpop::list.next, cast(cast(0, empty*), struct tag-list_node*))
+[Guard size: 86] code statement="assign"(*(*clist_lpop::list.next).next, *clist_lpop::1::1::first.next)
+[Guard size: 86] code statement="return"(clist_lpop::1::1::first)
+
+Returning to: _clean_slate_datagram location number: 648
+
+[Guard size: 84] code statement="function_call"(nil, clist_rpush, arguments(address_of(_frag_descs_free), _clean_slate_datagram::1::2::node))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 647
+clist_rpush
+
+[Guard size: 85] code statement="assign"(*clist_rpush::new_node.next, *(*clist_rpush::list.next).next)
+[Guard size: 85] code statement="assign"(*(*clist_rpush::list.next).next, clist_rpush::new_node)
+[Guard size: 86] code statement="assign"(*clist_rpush::new_node.next, clist_rpush::new_node)
+[Guard size: 84] code statement="assign"(*clist_rpush::list.next, clist_rpush::new_node)
+
+Returning to: _clean_slate_datagram location number: 647
+
+[Guard size: 84] code statement="function_call"(_clean_slate_datagram::1::2::node, clist_lpop, arguments(address_of(*_clean_slate_datagram::fbuf.sfr.window)))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 648
+clist_lpop
+
+[Guard size: 85] code statement="decl"(clist_lpop::1::1::first)
+[Guard size: 85] code statement="assign"(clist_lpop::1::1::first, *(*clist_lpop::list.next).next)
+[Guard size: 86] code statement="assign"(*clist_lpop::list.next, cast(cast(0, empty*), struct tag-list_node*))
+[Guard size: 87] code statement="assign"(*(*clist_lpop::list.next).next, *clist_lpop::1::1::first.next)
+[Guard size: 87] code statement="return"(clist_lpop::1::1::first)
+
+Returning to: _clean_slate_datagram location number: 648
+
+[Guard size: 85] code statement="function_call"(nil, clist_rpush, arguments(address_of(_frag_descs_free), _clean_slate_datagram::1::2::node))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 647
+clist_rpush
+
+[Guard size: 86] code statement="assign"(*clist_rpush::new_node.next, *(*clist_rpush::list.next).next)
+[Guard size: 86] code statement="assign"(*(*clist_rpush::list.next).next, clist_rpush::new_node)
+[Guard size: 87] code statement="assign"(*clist_rpush::new_node.next, clist_rpush::new_node)
+[Guard size: 85] code statement="assign"(*clist_rpush::list.next, clist_rpush::new_node)
+
+Returning to: _clean_slate_datagram location number: 647
+
+[Guard size: 85] code statement="function_call"(_clean_slate_datagram::1::2::node, clist_lpop, arguments(address_of(*_clean_slate_datagram::fbuf.sfr.window)))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 648
+clist_lpop
+
+[Guard size: 86] code statement="decl"(clist_lpop::1::1::first)
+[Guard size: 86] code statement="assign"(clist_lpop::1::1::first, *(*clist_lpop::list.next).next)
+[Guard size: 87] code statement="assign"(*clist_lpop::list.next, cast(cast(0, empty*), struct tag-list_node*))
+[Guard size: 88] code statement="assign"(*(*clist_lpop::list.next).next, *clist_lpop::1::1::first.next)
+[Guard size: 88] code statement="return"(clist_lpop::1::1::first)
+
+Returning to: _clean_slate_datagram location number: 648
+
+[Guard size: 86] code statement="function_call"(nil, clist_rpush, arguments(address_of(_frag_descs_free), _clean_slate_datagram::1::2::node))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 647
+clist_rpush
+
+[Guard size: 87] code statement="assign"(*clist_rpush::new_node.next, *(*clist_rpush::list.next).next)
+[Guard size: 87] code statement="assign"(*(*clist_rpush::list.next).next, clist_rpush::new_node)
+[Guard size: 88] code statement="assign"(*clist_rpush::new_node.next, clist_rpush::new_node)
+[Guard size: 86] code statement="assign"(*clist_rpush::list.next, clist_rpush::new_node)
+
+Returning to: _clean_slate_datagram location number: 647
+
+[Guard size: 86] code statement="function_call"(_clean_slate_datagram::1::2::node, clist_lpop, arguments(address_of(*_clean_slate_datagram::fbuf.sfr.window)))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 648
+clist_lpop
+
+[Guard size: 87] code statement="decl"(clist_lpop::1::1::first)
+[Guard size: 87] code statement="assign"(clist_lpop::1::1::first, *(*clist_lpop::list.next).next)
+[Guard size: 88] code statement="assign"(*clist_lpop::list.next, cast(cast(0, empty*), struct tag-list_node*))
+[Guard size: 89] code statement="assign"(*(*clist_lpop::list.next).next, *clist_lpop::1::1::first.next)
+[Guard size: 89] code statement="return"(clist_lpop::1::1::first)
+
+Returning to: _clean_slate_datagram location number: 648
+
+[Guard size: 87] code statement="function_call"(nil, clist_rpush, arguments(address_of(_frag_descs_free), _clean_slate_datagram::1::2::node))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 647
+clist_rpush
+
+[Guard size: 88] code statement="assign"(*clist_rpush::new_node.next, *(*clist_rpush::list.next).next)
+[Guard size: 88] code statement="assign"(*(*clist_rpush::list.next).next, clist_rpush::new_node)
+[Guard size: 89] code statement="assign"(*clist_rpush::new_node.next, clist_rpush::new_node)
+[Guard size: 87] code statement="assign"(*clist_rpush::list.next, clist_rpush::new_node)
+
+Returning to: _clean_slate_datagram location number: 647
+
+[Guard size: 87] code statement="function_call"(_clean_slate_datagram::1::2::node, clist_lpop, arguments(address_of(*_clean_slate_datagram::fbuf.sfr.window)))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 648
+clist_lpop
+
+[Guard size: 88] code statement="decl"(clist_lpop::1::1::first)
+[Guard size: 88] code statement="assign"(clist_lpop::1::1::first, *(*clist_lpop::list.next).next)
+[Guard size: 89] code statement="assign"(*clist_lpop::list.next, cast(cast(0, empty*), struct tag-list_node*))
+[Guard size: 90] code statement="assign"(*(*clist_lpop::list.next).next, *clist_lpop::1::1::first.next)
+[Guard size: 90] code statement="return"(clist_lpop::1::1::first)
+
+Returning to: _clean_slate_datagram location number: 648
+
+[Guard size: 88] code statement="function_call"(nil, clist_rpush, arguments(address_of(_frag_descs_free), _clean_slate_datagram::1::2::node))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 647
+clist_rpush
+
+[Guard size: 89] code statement="assign"(*clist_rpush::new_node.next, *(*clist_rpush::list.next).next)
+[Guard size: 89] code statement="assign"(*(*clist_rpush::list.next).next, clist_rpush::new_node)
+[Guard size: 90] code statement="assign"(*clist_rpush::new_node.next, clist_rpush::new_node)
+[Guard size: 88] code statement="assign"(*clist_rpush::list.next, clist_rpush::new_node)
+
+Returning to: _clean_slate_datagram location number: 647
+
+[Guard size: 88] code statement="function_call"(_clean_slate_datagram::1::2::node, clist_lpop, arguments(address_of(*_clean_slate_datagram::fbuf.sfr.window)))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 648
+clist_lpop
+
+[Guard size: 89] code statement="decl"(clist_lpop::1::1::first)
+[Guard size: 89] code statement="assign"(clist_lpop::1::1::first, *(*clist_lpop::list.next).next)
+[Guard size: 90] code statement="assign"(*clist_lpop::list.next, cast(cast(0, empty*), struct tag-list_node*))
+[Guard size: 91] code statement="assign"(*(*clist_lpop::list.next).next, *clist_lpop::1::1::first.next)
+[Guard size: 91] code statement="return"(clist_lpop::1::1::first)
+
+Returning to: _clean_slate_datagram location number: 648
+
+[Guard size: 89] code statement="function_call"(nil, clist_rpush, arguments(address_of(_frag_descs_free), _clean_slate_datagram::1::2::node))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 647
+clist_rpush
+
+[Guard size: 90] code statement="assign"(*clist_rpush::new_node.next, *(*clist_rpush::list.next).next)
+[Guard size: 90] code statement="assign"(*(*clist_rpush::list.next).next, clist_rpush::new_node)
+[Guard size: 91] code statement="assign"(*clist_rpush::new_node.next, clist_rpush::new_node)
+[Guard size: 89] code statement="assign"(*clist_rpush::list.next, clist_rpush::new_node)
+
+Returning to: _clean_slate_datagram location number: 647
+
+[Guard size: 89] code statement="function_call"(_clean_slate_datagram::1::2::node, clist_lpop, arguments(address_of(*_clean_slate_datagram::fbuf.sfr.window)))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 648
+clist_lpop
+
+[Guard size: 90] code statement="decl"(clist_lpop::1::1::first)
+[Guard size: 90] code statement="assign"(clist_lpop::1::1::first, *(*clist_lpop::list.next).next)
+[Guard size: 91] code statement="assign"(*clist_lpop::list.next, cast(cast(0, empty*), struct tag-list_node*))
+[Guard size: 92] code statement="assign"(*(*clist_lpop::list.next).next, *clist_lpop::1::1::first.next)
+[Guard size: 92] code statement="return"(clist_lpop::1::1::first)
+
+Returning to: _clean_slate_datagram location number: 648
+
+[Guard size: 90] code statement="function_call"(nil, clist_rpush, arguments(address_of(_frag_descs_free), _clean_slate_datagram::1::2::node))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 647
+clist_rpush
+
+[Guard size: 91] code statement="assign"(*clist_rpush::new_node.next, *(*clist_rpush::list.next).next)
+[Guard size: 91] code statement="assign"(*(*clist_rpush::list.next).next, clist_rpush::new_node)
+[Guard size: 92] code statement="assign"(*clist_rpush::new_node.next, clist_rpush::new_node)
+[Guard size: 90] code statement="assign"(*clist_rpush::list.next, clist_rpush::new_node)
+
+Returning to: _clean_slate_datagram location number: 647
+
+[Guard size: 90] code statement="function_call"(_clean_slate_datagram::1::2::node, clist_lpop, arguments(address_of(*_clean_slate_datagram::fbuf.sfr.window)))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 648
+clist_lpop
+
+[Guard size: 91] code statement="decl"(clist_lpop::1::1::first)
+[Guard size: 91] code statement="assign"(clist_lpop::1::1::first, *(*clist_lpop::list.next).next)
+[Guard size: 92] code statement="assign"(*clist_lpop::list.next, cast(cast(0, empty*), struct tag-list_node*))
+[Guard size: 93] code statement="assign"(*(*clist_lpop::list.next).next, *clist_lpop::1::1::first.next)
+[Guard size: 93] code statement="return"(clist_lpop::1::1::first)
+
+Returning to: _clean_slate_datagram location number: 648
+
+[Guard size: 91] code statement="function_call"(nil, clist_rpush, arguments(address_of(_frag_descs_free), _clean_slate_datagram::1::2::node))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 647
+clist_rpush
+
+[Guard size: 92] code statement="assign"(*clist_rpush::new_node.next, *(*clist_rpush::list.next).next)
+[Guard size: 92] code statement="assign"(*(*clist_rpush::list.next).next, clist_rpush::new_node)
+[Guard size: 93] code statement="assign"(*clist_rpush::new_node.next, clist_rpush::new_node)
+[Guard size: 91] code statement="assign"(*clist_rpush::list.next, clist_rpush::new_node)
+
+Returning to: _clean_slate_datagram location number: 647
+
+[Guard size: 91] code statement="function_call"(_clean_slate_datagram::1::2::node, clist_lpop, arguments(address_of(*_clean_slate_datagram::fbuf.sfr.window)))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 648
+clist_lpop
+
+[Guard size: 92] code statement="decl"(clist_lpop::1::1::first)
+[Guard size: 92] code statement="assign"(clist_lpop::1::1::first, *(*clist_lpop::list.next).next)
+[Guard size: 93] code statement="assign"(*clist_lpop::list.next, cast(cast(0, empty*), struct tag-list_node*))
+[Guard size: 94] code statement="assign"(*(*clist_lpop::list.next).next, *clist_lpop::1::1::first.next)
+[Guard size: 94] code statement="return"(clist_lpop::1::1::first)
+
+Returning to: _clean_slate_datagram location number: 648
+
+[Guard size: 92] code statement="function_call"(nil, clist_rpush, arguments(address_of(_frag_descs_free), _clean_slate_datagram::1::2::node))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 647
+clist_rpush
+
+[Guard size: 93] code statement="assign"(*clist_rpush::new_node.next, *(*clist_rpush::list.next).next)
+[Guard size: 93] code statement="assign"(*(*clist_rpush::list.next).next, clist_rpush::new_node)
+[Guard size: 94] code statement="assign"(*clist_rpush::new_node.next, clist_rpush::new_node)
+[Guard size: 92] code statement="assign"(*clist_rpush::list.next, clist_rpush::new_node)
+
+Returning to: _clean_slate_datagram location number: 647
+
+[Guard size: 92] code statement="function_call"(_clean_slate_datagram::1::2::node, clist_lpop, arguments(address_of(*_clean_slate_datagram::fbuf.sfr.window)))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 648
+clist_lpop
+
+[Guard size: 93] code statement="decl"(clist_lpop::1::1::first)
+[Guard size: 93] code statement="assign"(clist_lpop::1::1::first, *(*clist_lpop::list.next).next)
+[Guard size: 94] code statement="assign"(*clist_lpop::list.next, cast(cast(0, empty*), struct tag-list_node*))
+[Guard size: 95] code statement="assign"(*(*clist_lpop::list.next).next, *clist_lpop::1::1::first.next)
+[Guard size: 95] code statement="return"(clist_lpop::1::1::first)
+
+Returning to: _clean_slate_datagram location number: 648
+
+[Guard size: 93] code statement="function_call"(nil, clist_rpush, arguments(address_of(_frag_descs_free), _clean_slate_datagram::1::2::node))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 647
+clist_rpush
+
+[Guard size: 94] code statement="assign"(*clist_rpush::new_node.next, *(*clist_rpush::list.next).next)
+[Guard size: 94] code statement="assign"(*(*clist_rpush::list.next).next, clist_rpush::new_node)
+[Guard size: 95] code statement="assign"(*clist_rpush::new_node.next, clist_rpush::new_node)
+[Guard size: 93] code statement="assign"(*clist_rpush::list.next, clist_rpush::new_node)
+
+Returning to: _clean_slate_datagram location number: 647
+
+[Guard size: 93] code statement="function_call"(_clean_slate_datagram::1::2::node, clist_lpop, arguments(address_of(*_clean_slate_datagram::fbuf.sfr.window)))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 648
+clist_lpop
+
+[Guard size: 94] code statement="decl"(clist_lpop::1::1::first)
+[Guard size: 94] code statement="assign"(clist_lpop::1::1::first, *(*clist_lpop::list.next).next)
+[Guard size: 95] code statement="assign"(*clist_lpop::list.next, cast(cast(0, empty*), struct tag-list_node*))
+[Guard size: 96] code statement="assign"(*(*clist_lpop::list.next).next, *clist_lpop::1::1::first.next)
+[Guard size: 96] code statement="return"(clist_lpop::1::1::first)
+
+Returning to: _clean_slate_datagram location number: 648
+
+[Guard size: 94] code statement="function_call"(nil, clist_rpush, arguments(address_of(_frag_descs_free), _clean_slate_datagram::1::2::node))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 647
+clist_rpush
+
+[Guard size: 95] code statement="assign"(*clist_rpush::new_node.next, *(*clist_rpush::list.next).next)
+[Guard size: 95] code statement="assign"(*(*clist_rpush::list.next).next, clist_rpush::new_node)
+[Guard size: 96] code statement="assign"(*clist_rpush::new_node.next, clist_rpush::new_node)
+[Guard size: 94] code statement="assign"(*clist_rpush::list.next, clist_rpush::new_node)
+
+Returning to: _clean_slate_datagram location number: 647
+
+[Guard size: 94] code statement="function_call"(_clean_slate_datagram::1::2::node, clist_lpop, arguments(address_of(*_clean_slate_datagram::fbuf.sfr.window)))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 648
+clist_lpop
+
+[Guard size: 95] code statement="decl"(clist_lpop::1::1::first)
+[Guard size: 95] code statement="assign"(clist_lpop::1::1::first, *(*clist_lpop::list.next).next)
+[Guard size: 96] code statement="assign"(*clist_lpop::list.next, cast(cast(0, empty*), struct tag-list_node*))
+[Guard size: 97] code statement="assign"(*(*clist_lpop::list.next).next, *clist_lpop::1::1::first.next)
+[Guard size: 97] code statement="return"(clist_lpop::1::1::first)
+
+Returning to: _clean_slate_datagram location number: 648
+
+[Guard size: 95] code statement="function_call"(nil, clist_rpush, arguments(address_of(_frag_descs_free), _clean_slate_datagram::1::2::node))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 647
+clist_rpush
+
+[Guard size: 96] code statement="assign"(*clist_rpush::new_node.next, *(*clist_rpush::list.next).next)
+[Guard size: 96] code statement="assign"(*(*clist_rpush::list.next).next, clist_rpush::new_node)
+[Guard size: 97] code statement="assign"(*clist_rpush::new_node.next, clist_rpush::new_node)
+[Guard size: 95] code statement="assign"(*clist_rpush::list.next, clist_rpush::new_node)
+
+Returning to: _clean_slate_datagram location number: 647
+
+[Guard size: 95] code statement="function_call"(_clean_slate_datagram::1::2::node, clist_lpop, arguments(address_of(*_clean_slate_datagram::fbuf.sfr.window)))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 648
+clist_lpop
+
+[Guard size: 96] code statement="decl"(clist_lpop::1::1::first)
+[Guard size: 96] code statement="assign"(clist_lpop::1::1::first, *(*clist_lpop::list.next).next)
+[Guard size: 97] code statement="assign"(*clist_lpop::list.next, cast(cast(0, empty*), struct tag-list_node*))
+[Guard size: 98] code statement="assign"(*(*clist_lpop::list.next).next, *clist_lpop::1::1::first.next)
+[Guard size: 98] code statement="return"(clist_lpop::1::1::first)
+
+Returning to: _clean_slate_datagram location number: 648
+
+[Guard size: 96] code statement="function_call"(nil, clist_rpush, arguments(address_of(_frag_descs_free), _clean_slate_datagram::1::2::node))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 647
+clist_rpush
+
+[Guard size: 97] code statement="assign"(*clist_rpush::new_node.next, *(*clist_rpush::list.next).next)
+[Guard size: 97] code statement="assign"(*(*clist_rpush::list.next).next, clist_rpush::new_node)
+[Guard size: 98] code statement="assign"(*clist_rpush::new_node.next, clist_rpush::new_node)
+[Guard size: 96] code statement="assign"(*clist_rpush::list.next, clist_rpush::new_node)
+
+Returning to: _clean_slate_datagram location number: 647
+
+[Guard size: 96] code statement="function_call"(_clean_slate_datagram::1::2::node, clist_lpop, arguments(address_of(*_clean_slate_datagram::fbuf.sfr.window)))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 648
+clist_lpop
+
+[Guard size: 97] code statement="decl"(clist_lpop::1::1::first)
+[Guard size: 97] code statement="assign"(clist_lpop::1::1::first, *(*clist_lpop::list.next).next)
+[Guard size: 98] code statement="assign"(*clist_lpop::list.next, cast(cast(0, empty*), struct tag-list_node*))
+[Guard size: 99] code statement="assign"(*(*clist_lpop::list.next).next, *clist_lpop::1::1::first.next)
+[Guard size: 99] code statement="return"(clist_lpop::1::1::first)
+
+Returning to: _clean_slate_datagram location number: 648
+
+[Guard size: 97] code statement="function_call"(nil, clist_rpush, arguments(address_of(_frag_descs_free), _clean_slate_datagram::1::2::node))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 647
+clist_rpush
+
+[Guard size: 98] code statement="assign"(*clist_rpush::new_node.next, *(*clist_rpush::list.next).next)
+[Guard size: 98] code statement="assign"(*(*clist_rpush::list.next).next, clist_rpush::new_node)
+[Guard size: 99] code statement="assign"(*clist_rpush::new_node.next, clist_rpush::new_node)
+[Guard size: 97] code statement="assign"(*clist_rpush::list.next, clist_rpush::new_node)
+
+Returning to: _clean_slate_datagram location number: 647
+
+[Guard size: 97] code statement="function_call"(_clean_slate_datagram::1::2::node, clist_lpop, arguments(address_of(*_clean_slate_datagram::fbuf.sfr.window)))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 648
+clist_lpop
+
+[Guard size: 98] code statement="decl"(clist_lpop::1::1::first)
+[Guard size: 98] code statement="assign"(clist_lpop::1::1::first, *(*clist_lpop::list.next).next)
+[Guard size: 99] code statement="assign"(*clist_lpop::list.next, cast(cast(0, empty*), struct tag-list_node*))
+[Guard size: 100] code statement="assign"(*(*clist_lpop::list.next).next, *clist_lpop::1::1::first.next)
+[Guard size: 100] code statement="return"(clist_lpop::1::1::first)
+
+Returning to: _clean_slate_datagram location number: 648
+
+[Guard size: 98] code statement="function_call"(nil, clist_rpush, arguments(address_of(_frag_descs_free), _clean_slate_datagram::1::2::node))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 647
+clist_rpush
+
+[Guard size: 99] code statement="assign"(*clist_rpush::new_node.next, *(*clist_rpush::list.next).next)
+[Guard size: 99] code statement="assign"(*(*clist_rpush::list.next).next, clist_rpush::new_node)
+[Guard size: 100] code statement="assign"(*clist_rpush::new_node.next, clist_rpush::new_node)
+[Guard size: 98] code statement="assign"(*clist_rpush::list.next, clist_rpush::new_node)
+
+Returning to: _clean_slate_datagram location number: 647
+
+[Guard size: 98] code statement="function_call"(_clean_slate_datagram::1::2::node, clist_lpop, arguments(address_of(*_clean_slate_datagram::fbuf.sfr.window)))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 648
+clist_lpop
+
+[Guard size: 99] code statement="decl"(clist_lpop::1::1::first)
+[Guard size: 99] code statement="assign"(clist_lpop::1::1::first, *(*clist_lpop::list.next).next)
+[Guard size: 100] code statement="assign"(*clist_lpop::list.next, cast(cast(0, empty*), struct tag-list_node*))
+[Guard size: 101] code statement="assign"(*(*clist_lpop::list.next).next, *clist_lpop::1::1::first.next)
+[Guard size: 101] code statement="return"(clist_lpop::1::1::first)
+
+Returning to: _clean_slate_datagram location number: 648
+
+[Guard size: 99] code statement="function_call"(nil, clist_rpush, arguments(address_of(_frag_descs_free), _clean_slate_datagram::1::2::node))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 647
+clist_rpush
+
+[Guard size: 100] code statement="assign"(*clist_rpush::new_node.next, *(*clist_rpush::list.next).next)
+[Guard size: 100] code statement="assign"(*(*clist_rpush::list.next).next, clist_rpush::new_node)
+[Guard size: 101] code statement="assign"(*clist_rpush::new_node.next, clist_rpush::new_node)
+[Guard size: 99] code statement="assign"(*clist_rpush::list.next, clist_rpush::new_node)
+
+Returning to: _clean_slate_datagram location number: 647
+
+[Guard size: 99] code statement="function_call"(_clean_slate_datagram::1::2::node, clist_lpop, arguments(address_of(*_clean_slate_datagram::fbuf.sfr.window)))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 648
+clist_lpop
+
+[Guard size: 100] code statement="decl"(clist_lpop::1::1::first)
+[Guard size: 100] code statement="assign"(clist_lpop::1::1::first, *(*clist_lpop::list.next).next)
+[Guard size: 101] code statement="assign"(*clist_lpop::list.next, cast(cast(0, empty*), struct tag-list_node*))
+[Guard size: 102] code statement="assign"(*(*clist_lpop::list.next).next, *clist_lpop::1::1::first.next)
+[Guard size: 102] code statement="return"(clist_lpop::1::1::first)
+
+Returning to: _clean_slate_datagram location number: 648
+
+[Guard size: 100] code statement="function_call"(nil, clist_rpush, arguments(address_of(_frag_descs_free), _clean_slate_datagram::1::2::node))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 647
+clist_rpush
+
+[Guard size: 101] code statement="assign"(*clist_rpush::new_node.next, *(*clist_rpush::list.next).next)
+[Guard size: 101] code statement="assign"(*(*clist_rpush::list.next).next, clist_rpush::new_node)
+[Guard size: 102] code statement="assign"(*clist_rpush::new_node.next, clist_rpush::new_node)
+[Guard size: 100] code statement="assign"(*clist_rpush::list.next, clist_rpush::new_node)
+
+Returning to: _clean_slate_datagram location number: 647
+
+[Guard size: 100] code statement="function_call"(_clean_slate_datagram::1::2::node, clist_lpop, arguments(address_of(*_clean_slate_datagram::fbuf.sfr.window)))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 648
+clist_lpop
+
+[Guard size: 101] code statement="decl"(clist_lpop::1::1::first)
+[Guard size: 101] code statement="assign"(clist_lpop::1::1::first, *(*clist_lpop::list.next).next)
+[Guard size: 102] code statement="assign"(*clist_lpop::list.next, cast(cast(0, empty*), struct tag-list_node*))
+[Guard size: 103] code statement="assign"(*(*clist_lpop::list.next).next, *clist_lpop::1::1::first.next)
+[Guard size: 103] code statement="return"(clist_lpop::1::1::first)
+
+Returning to: _clean_slate_datagram location number: 648
+
+[Guard size: 101] code statement="function_call"(nil, clist_rpush, arguments(address_of(_frag_descs_free), _clean_slate_datagram::1::2::node))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 647
+clist_rpush
+
+[Guard size: 102] code statement="assign"(*clist_rpush::new_node.next, *(*clist_rpush::list.next).next)
+[Guard size: 102] code statement="assign"(*(*clist_rpush::list.next).next, clist_rpush::new_node)
+[Guard size: 103] code statement="assign"(*clist_rpush::new_node.next, clist_rpush::new_node)
+[Guard size: 101] code statement="assign"(*clist_rpush::list.next, clist_rpush::new_node)
+
+Returning to: _clean_slate_datagram location number: 647
+
+[Guard size: 101] code statement="function_call"(_clean_slate_datagram::1::2::node, clist_lpop, arguments(address_of(*_clean_slate_datagram::fbuf.sfr.window)))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 648
+clist_lpop
+
+[Guard size: 102] code statement="decl"(clist_lpop::1::1::first)
+[Guard size: 102] code statement="assign"(clist_lpop::1::1::first, *(*clist_lpop::list.next).next)
+[Guard size: 103] code statement="assign"(*clist_lpop::list.next, cast(cast(0, empty*), struct tag-list_node*))
+[Guard size: 104] code statement="assign"(*(*clist_lpop::list.next).next, *clist_lpop::1::1::first.next)
+[Guard size: 104] code statement="return"(clist_lpop::1::1::first)
+
+Returning to: _clean_slate_datagram location number: 648
+
+[Guard size: 102] code statement="function_call"(nil, clist_rpush, arguments(address_of(_frag_descs_free), _clean_slate_datagram::1::2::node))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 647
+clist_rpush
+
+[Guard size: 103] code statement="assign"(*clist_rpush::new_node.next, *(*clist_rpush::list.next).next)
+[Guard size: 103] code statement="assign"(*(*clist_rpush::list.next).next, clist_rpush::new_node)
+[Guard size: 104] code statement="assign"(*clist_rpush::new_node.next, clist_rpush::new_node)
+[Guard size: 102] code statement="assign"(*clist_rpush::list.next, clist_rpush::new_node)
+
+Returning to: _clean_slate_datagram location number: 647
+
+[Guard size: 102] code statement="function_call"(_clean_slate_datagram::1::2::node, clist_lpop, arguments(address_of(*_clean_slate_datagram::fbuf.sfr.window)))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 648
+clist_lpop
+
+[Guard size: 103] code statement="decl"(clist_lpop::1::1::first)
+[Guard size: 103] code statement="assign"(clist_lpop::1::1::first, *(*clist_lpop::list.next).next)
+[Guard size: 104] code statement="assign"(*clist_lpop::list.next, cast(cast(0, empty*), struct tag-list_node*))
+[Guard size: 105] code statement="assign"(*(*clist_lpop::list.next).next, *clist_lpop::1::1::first.next)
+[Guard size: 105] code statement="return"(clist_lpop::1::1::first)
+
+Returning to: _clean_slate_datagram location number: 648
+
+[Guard size: 103] code statement="function_call"(nil, clist_rpush, arguments(address_of(_frag_descs_free), _clean_slate_datagram::1::2::node))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 647
+clist_rpush
+
+[Guard size: 104] code statement="assign"(*clist_rpush::new_node.next, *(*clist_rpush::list.next).next)
+[Guard size: 104] code statement="assign"(*(*clist_rpush::list.next).next, clist_rpush::new_node)
+[Guard size: 105] code statement="assign"(*clist_rpush::new_node.next, clist_rpush::new_node)
+[Guard size: 103] code statement="assign"(*clist_rpush::list.next, clist_rpush::new_node)
+
+Returning to: _clean_slate_datagram location number: 647
+
+[Guard size: 103] code statement="function_call"(_clean_slate_datagram::1::2::node, clist_lpop, arguments(address_of(*_clean_slate_datagram::fbuf.sfr.window)))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 648
+clist_lpop
+
+[Guard size: 104] code statement="decl"(clist_lpop::1::1::first)
+[Guard size: 104] code statement="assign"(clist_lpop::1::1::first, *(*clist_lpop::list.next).next)
+[Guard size: 105] code statement="assign"(*clist_lpop::list.next, cast(cast(0, empty*), struct tag-list_node*))
+[Guard size: 106] code statement="assign"(*(*clist_lpop::list.next).next, *clist_lpop::1::1::first.next)
+[Guard size: 106] code statement="return"(clist_lpop::1::1::first)
+
+Returning to: _clean_slate_datagram location number: 648
+
+[Guard size: 104] code statement="function_call"(nil, clist_rpush, arguments(address_of(_frag_descs_free), _clean_slate_datagram::1::2::node))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 647
+clist_rpush
+
+[Guard size: 105] code statement="assign"(*clist_rpush::new_node.next, *(*clist_rpush::list.next).next)
+[Guard size: 105] code statement="assign"(*(*clist_rpush::list.next).next, clist_rpush::new_node)
+[Guard size: 106] code statement="assign"(*clist_rpush::new_node.next, clist_rpush::new_node)
+[Guard size: 104] code statement="assign"(*clist_rpush::list.next, clist_rpush::new_node)
+
+Returning to: _clean_slate_datagram location number: 647
+
+[Guard size: 104] code statement="function_call"(_clean_slate_datagram::1::2::node, clist_lpop, arguments(address_of(*_clean_slate_datagram::fbuf.sfr.window)))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 648
+clist_lpop
+
+[Guard size: 105] code statement="decl"(clist_lpop::1::1::first)
+[Guard size: 105] code statement="assign"(clist_lpop::1::1::first, *(*clist_lpop::list.next).next)
+[Guard size: 106] code statement="assign"(*clist_lpop::list.next, cast(cast(0, empty*), struct tag-list_node*))
+[Guard size: 107] code statement="assign"(*(*clist_lpop::list.next).next, *clist_lpop::1::1::first.next)
+[Guard size: 107] code statement="return"(clist_lpop::1::1::first)
+
+Returning to: _clean_slate_datagram location number: 648
+
+[Guard size: 105] code statement="function_call"(nil, clist_rpush, arguments(address_of(_frag_descs_free), _clean_slate_datagram::1::2::node))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 647
+clist_rpush
+
+[Guard size: 106] code statement="assign"(*clist_rpush::new_node.next, *(*clist_rpush::list.next).next)
+[Guard size: 106] code statement="assign"(*(*clist_rpush::list.next).next, clist_rpush::new_node)
+[Guard size: 107] code statement="assign"(*clist_rpush::new_node.next, clist_rpush::new_node)
+[Guard size: 105] code statement="assign"(*clist_rpush::list.next, clist_rpush::new_node)
+
+Returning to: _clean_slate_datagram location number: 647
+
+[Guard size: 105] code statement="function_call"(_clean_slate_datagram::1::2::node, clist_lpop, arguments(address_of(*_clean_slate_datagram::fbuf.sfr.window)))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 648
+clist_lpop
+
+[Guard size: 106] code statement="decl"(clist_lpop::1::1::first)
+[Guard size: 106] code statement="assign"(clist_lpop::1::1::first, *(*clist_lpop::list.next).next)
+[Guard size: 107] code statement="assign"(*clist_lpop::list.next, cast(cast(0, empty*), struct tag-list_node*))
+[Guard size: 108] code statement="assign"(*(*clist_lpop::list.next).next, *clist_lpop::1::1::first.next)
+[Guard size: 108] code statement="return"(clist_lpop::1::1::first)
+
+Returning to: _clean_slate_datagram location number: 648
+
+[Guard size: 106] code statement="function_call"(nil, clist_rpush, arguments(address_of(_frag_descs_free), _clean_slate_datagram::1::2::node))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 647
+clist_rpush
+
+[Guard size: 107] code statement="assign"(*clist_rpush::new_node.next, *(*clist_rpush::list.next).next)
+[Guard size: 107] code statement="assign"(*(*clist_rpush::list.next).next, clist_rpush::new_node)
+[Guard size: 108] code statement="assign"(*clist_rpush::new_node.next, clist_rpush::new_node)
+[Guard size: 106] code statement="assign"(*clist_rpush::list.next, clist_rpush::new_node)
+
+Returning to: _clean_slate_datagram location number: 647
+
+[Guard size: 106] code statement="function_call"(_clean_slate_datagram::1::2::node, clist_lpop, arguments(address_of(*_clean_slate_datagram::fbuf.sfr.window)))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 648
+clist_lpop
+
+[Guard size: 107] code statement="decl"(clist_lpop::1::1::first)
+[Guard size: 107] code statement="assign"(clist_lpop::1::1::first, *(*clist_lpop::list.next).next)
+[Guard size: 108] code statement="assign"(*clist_lpop::list.next, cast(cast(0, empty*), struct tag-list_node*))
+[Guard size: 109] code statement="assign"(*(*clist_lpop::list.next).next, *clist_lpop::1::1::first.next)
+[Guard size: 109] code statement="return"(clist_lpop::1::1::first)
+
+Returning to: _clean_slate_datagram location number: 648
+
+[Guard size: 107] code statement="function_call"(nil, clist_rpush, arguments(address_of(_frag_descs_free), _clean_slate_datagram::1::2::node))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 647
+clist_rpush
+
+[Guard size: 108] code statement="assign"(*clist_rpush::new_node.next, *(*clist_rpush::list.next).next)
+[Guard size: 108] code statement="assign"(*(*clist_rpush::list.next).next, clist_rpush::new_node)
+[Guard size: 109] code statement="assign"(*clist_rpush::new_node.next, clist_rpush::new_node)
+[Guard size: 107] code statement="assign"(*clist_rpush::list.next, clist_rpush::new_node)
+
+Returning to: _clean_slate_datagram location number: 647
+
+[Guard size: 107] code statement="function_call"(_clean_slate_datagram::1::2::node, clist_lpop, arguments(address_of(*_clean_slate_datagram::fbuf.sfr.window)))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 648
+clist_lpop
+
+[Guard size: 108] code statement="decl"(clist_lpop::1::1::first)
+[Guard size: 108] code statement="assign"(clist_lpop::1::1::first, *(*clist_lpop::list.next).next)
+[Guard size: 109] code statement="assign"(*clist_lpop::list.next, cast(cast(0, empty*), struct tag-list_node*))
+[Guard size: 110] code statement="assign"(*(*clist_lpop::list.next).next, *clist_lpop::1::1::first.next)
+[Guard size: 110] code statement="return"(clist_lpop::1::1::first)
+
+Returning to: _clean_slate_datagram location number: 648
+
+[Guard size: 108] code statement="function_call"(nil, clist_rpush, arguments(address_of(_frag_descs_free), _clean_slate_datagram::1::2::node))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 647
+clist_rpush
+
+[Guard size: 109] code statement="assign"(*clist_rpush::new_node.next, *(*clist_rpush::list.next).next)
+[Guard size: 109] code statement="assign"(*(*clist_rpush::list.next).next, clist_rpush::new_node)
+[Guard size: 110] code statement="assign"(*clist_rpush::new_node.next, clist_rpush::new_node)
+[Guard size: 108] code statement="assign"(*clist_rpush::list.next, clist_rpush::new_node)
+
+Returning to: _clean_slate_datagram location number: 647
+
+[Guard size: 108] code statement="function_call"(_clean_slate_datagram::1::2::node, clist_lpop, arguments(address_of(*_clean_slate_datagram::fbuf.sfr.window)))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 648
+clist_lpop
+
+[Guard size: 109] code statement="decl"(clist_lpop::1::1::first)
+[Guard size: 109] code statement="assign"(clist_lpop::1::1::first, *(*clist_lpop::list.next).next)
+[Guard size: 110] code statement="assign"(*clist_lpop::list.next, cast(cast(0, empty*), struct tag-list_node*))
+[Guard size: 111] code statement="assign"(*(*clist_lpop::list.next).next, *clist_lpop::1::1::first.next)
+[Guard size: 111] code statement="return"(clist_lpop::1::1::first)
+
+Returning to: _clean_slate_datagram location number: 648
+
+[Guard size: 109] code statement="function_call"(nil, clist_rpush, arguments(address_of(_frag_descs_free), _clean_slate_datagram::1::2::node))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 647
+clist_rpush
+
+[Guard size: 110] code statement="assign"(*clist_rpush::new_node.next, *(*clist_rpush::list.next).next)
+[Guard size: 110] code statement="assign"(*(*clist_rpush::list.next).next, clist_rpush::new_node)
+[Guard size: 111] code statement="assign"(*clist_rpush::new_node.next, clist_rpush::new_node)
+[Guard size: 109] code statement="assign"(*clist_rpush::list.next, clist_rpush::new_node)
+
+Returning to: _clean_slate_datagram location number: 647
+
+[Guard size: 109] code statement="function_call"(_clean_slate_datagram::1::2::node, clist_lpop, arguments(address_of(*_clean_slate_datagram::fbuf.sfr.window)))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 648
+clist_lpop
+
+[Guard size: 110] code statement="decl"(clist_lpop::1::1::first)
+[Guard size: 110] code statement="assign"(clist_lpop::1::1::first, *(*clist_lpop::list.next).next)
+[Guard size: 111] code statement="assign"(*clist_lpop::list.next, cast(cast(0, empty*), struct tag-list_node*))
+[Guard size: 112] code statement="assign"(*(*clist_lpop::list.next).next, *clist_lpop::1::1::first.next)
+[Guard size: 112] code statement="return"(clist_lpop::1::1::first)
+
+Returning to: _clean_slate_datagram location number: 648
+
+[Guard size: 110] code statement="function_call"(nil, clist_rpush, arguments(address_of(_frag_descs_free), _clean_slate_datagram::1::2::node))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 647
+clist_rpush
+
+[Guard size: 111] code statement="assign"(*clist_rpush::new_node.next, *(*clist_rpush::list.next).next)
+[Guard size: 111] code statement="assign"(*(*clist_rpush::list.next).next, clist_rpush::new_node)
+[Guard size: 112] code statement="assign"(*clist_rpush::new_node.next, clist_rpush::new_node)
+[Guard size: 110] code statement="assign"(*clist_rpush::list.next, clist_rpush::new_node)
+
+Returning to: _clean_slate_datagram location number: 647
+
+[Guard size: 110] code statement="function_call"(_clean_slate_datagram::1::2::node, clist_lpop, arguments(address_of(*_clean_slate_datagram::fbuf.sfr.window)))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 648
+clist_lpop
+
+[Guard size: 111] code statement="decl"(clist_lpop::1::1::first)
+[Guard size: 111] code statement="assign"(clist_lpop::1::1::first, *(*clist_lpop::list.next).next)
+[Guard size: 112] code statement="assign"(*clist_lpop::list.next, cast(cast(0, empty*), struct tag-list_node*))
+[Guard size: 113] code statement="assign"(*(*clist_lpop::list.next).next, *clist_lpop::1::1::first.next)
+[Guard size: 113] code statement="return"(clist_lpop::1::1::first)
+
+Returning to: _clean_slate_datagram location number: 648
+
+[Guard size: 111] code statement="function_call"(nil, clist_rpush, arguments(address_of(_frag_descs_free), _clean_slate_datagram::1::2::node))
+
+Call stack:
+__CPROVER__start location number: 1106
+__CPROVER__start location number: 1105
+harness location number: 1238
+gnrc_sixlowpan_frag_sfr_send location number: 292
+_sched_abort_timeout location number: 1430
+_clean_slate_datagram location number: 647
+clist_rpush
+
+[Guard size: 112] code statement="assign"(*clist_rpush::new_node.next, *(*clist_rpush::list.next).next)

@@ -1,0 +1,149 @@
+[
+    {
+        "cve_id": "CVE-2023-33973",
+        "part1": "30",
+        "part2": "40",
+        "part3": "20",
+        "total_time": "90"
+    },
+    {
+        "cve_id": "CVE-2023-24826",
+        "part1": "120",
+        "part2": "30",
+        "part3": "120",
+        "total_time": "270"
+    },
+    {
+        "cve_id": "CVE-2023-24821",
+        "part1": "24",
+        "part2": "48",
+        "part3": "255",
+        "total_time": "327"
+    },
+    {
+        "cve_id": "CVE-2023-24820",
+        "part1": "43",
+        "part2": "111",
+        "part3": "90",
+        "total_time": "244"
+    },    
+    {
+        "cve_id": "CVE-2021-31664",
+        "part1": "48",
+        "part2": "7",
+        "part3": "23",
+        "total_time": "78"
+    },    
+    {
+        "cve_id": "CVE-2021-31663",
+        "part1": "6",
+        "part2": "26",
+        "part3": "59",
+        "total_time": "91"
+    },
+    {
+        "cve_id": "CVE-2021-31661",
+        "part1": "8",
+        "part2": "0",
+        "part3": "8",
+        "total_time": "16"
+    },
+    {
+        "cve_id": "CVE-2021-31660",
+        "part1": "22",
+        "part2": "0",
+        "part3": "80",
+        "total_time": "102"
+    },
+    {
+        "cve_id": "CVE-2021-27698",
+        "part1": "26",
+        "part2": "25",
+        "part3": "21",
+        "total_time": "72"
+    },
+    {
+        "cve_id": "CVE-2021-27357",
+        "part1": "19",
+        "part2": "12",
+        "part3": "70",
+        "total_time": "101"
+    },
+    {
+        "cve_id": "CVE-2020-15350",
+        "part1": "15",
+        "part2": "7",
+        "part3": "22",
+        "total_time": "44"
+    },
+    {
+        "cve_id": "CVE-2019-17389",
+        "part1": "11",
+        "part2": "0",
+        "part3": "13",
+        "total_time": "24"
+    },
+    {
+        "cve_id": "CVE-2019-16754",
+        "part1": "24",
+        "part2": "0",
+        "part3": "37",
+        "total_time": "61"
+    },
+    {
+        "cve_id": "CVE-2019-15134",
+        "part1": "6",
+        "part2": "10",
+        "part3": "13",
+        "total_time": "29"
+    },
+    {
+        "cve_id": "CVE-2023-24817",
+        "part1": "4",
+        "part2": "27",
+        "part3": "40",
+        "total_time": "71"
+    },
+    {
+        "cve_id": "CVE-2018-16525",
+        "part1": "2",
+        "part2": "4",
+        "part3": "7",
+        "total_time": "13"
+    },
+    {
+        "cve_id": "CVE-2024-52802",
+        "part1": "15",
+        "part2": "45",
+        "part3": "40",
+        "total_time": "100"
+    },
+    {
+        "cve_id": "CVE-2018-16600",
+        "part1": "5",
+        "part2": "15",
+        "part3": "20",
+        "total_time": "40"
+    },
+    {
+        "cve_id": "CVE-2018-16523",
+        "part1": "5",
+        "part2": "0",
+        "part3": "15",
+        "total_time": "20"
+    },
+    {
+        "cve_id": "CVE-1028-16524",
+        "part1": "3",
+        "part2": "0",
+        "part3": "20",
+        "total_time": "23"
+    },
+    {
+        "cve_id": "CVE-2018-16602",
+        "part1": "2",
+        "part2": "7",
+        "part3": "8",
+        "total_time": "17"
+    }
+]

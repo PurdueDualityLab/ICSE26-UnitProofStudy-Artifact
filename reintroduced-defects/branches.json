@@ -1,0 +1,568 @@
+{
+    "contiki-ng": [
+        {
+            "cve_id": "CVE-2022-41873",
+            "branch": "cbmc_2022_41873_recreated",
+            "harness_path": "cbmc/proofs/net/l2cap/get_channel_for_cid",
+            "target_func": "get_channel_for_cid"
+        },
+        {
+            "cve_id": "CVE-2020-14937",
+            "branch": "cbmc_cve_2020_14937_recreated",
+            "harness_path": "cbmc/proofs/net/snmp/snmp_ber/decode_unsgined_integer",
+            "target_func": "snmp_ber_decode_unsigned_integer"
+        },
+        {
+            "cve_id": "CVE-2020-14936",
+            "branch": "cbmc_cve_2020_14936",
+            "harness_path": "cbmc/proofs/net/snmp/snmp_ber/decode_oid",
+            "target_func": "snmp_ber_decode_oid"
+        },
+        {
+            "cve_id": "CVE-2020-12141",
+            "branch": "cbmc_2020_12141_recreated",
+            "harness_path": "cbmc/proofs/net/snmp/snmp_ber/encode_string_len",
+            "target_func": "snmp_ber_encode_string_len"
+        },
+        {
+            "cve_id": "CVE-2020-14934",
+            "branch": "cbmc_2020_14934",
+            "harness_path": "cbmc/proofs/net/snmp/snmp_message/message_decode",
+            "target_func": "snmp_message_decode"
+        },
+        {
+            "cve_id": "CVE-2020-14935",
+            "branch": "cbmc_2020_14935",
+            "harness_path": "cbmc/proofs/net/snmp/snmp_engine/get_bulk",
+            "target_func": "snmp_engine_get_bulk"
+        },
+        {
+            "cve_id": "CVE-2021-21410",
+            "branch": "cbmc_2020_21410",
+            "harness_path": "cbmc/proofs/net/6lowpan/uncompress_hdr_iphc",
+            "target_func": "uncompress_hdr_iphc"
+        },
+        {
+            "cve_id": "CVE-2021-21280",
+            "branch": "cbmc_2020_21410",
+            "harness_path": "cbmc/proofs/net/6lowpan/uncompress_hdr_iphc",
+            "target_func": "uncompress_hdr_iphc"
+        },
+        {
+            "cve_id": "CVE-2022-36054",
+            "branch": "cbmc_2022_36054",
+            "harness_path": "cbmc/proofs/net/ipv6/uipbuf/get_next_header",
+            "target_func": "uipbuf_get_next_header"
+        },
+        {
+            "cve_id": "CVE-2022-36052",
+            "branch": "cve-2022-36052",
+            "harness_path": "cbmc/proofs/net/6lowpan/uncompress_hdr_iphc",
+            "target_func": "uncompress_hdr_iphc"
+        },
+        {
+            "cve_id": "CVE-2022-36053",
+            "branch": "cbmc_2022_36053",
+            "harness_path": "cbmc/proofs/net/ipv6/uipbuf/get_next_header",
+            "target_func": "uipbuf_get_next_header"
+        },
+        {
+            "cve_id": "CVE-2022-35926",
+            "branch": "CBMC_2022_35926",
+            "harness_path": "cbmc/proofs/net/ipv6/icmp/ns_input",
+            "target_func": "ns_input"
+        },
+        {
+            "cve_id": "CVE-2021-21279",
+            "branch": "CBMC_2022_35926",
+            "harness_path": "cbmc/proofs/net/ipv6/icmp/ns_input",
+            "target_func": "ns_input"
+        },
+        {
+            "cve_id": "CVE-2021-21282",
+            "branch": "CBMC_2021_21282",
+            "harness_path": "cbmc/proofs/net/rpl-classic/ext-header/srh-update",
+            "target_func": "rpl_ext_header_srh_update"
+        },
+        {
+            "cve_id": "CVE-2021-21257",
+            "branch": "CBMC_2021_21257",
+            "harness_path": "cbmc/proofs/net/rpl-classic/ext-header/srh-update",
+            "target_func": "rpl_ext_header_srh_update"
+        },
+        {
+            "cve_id": "CVE-2021-32771",
+            "branch": "cbmc_2021_32771",
+            "harness_path": "cbmc/proofs/net/rpl-classic/icmp6/dao_input_storing",
+            "target_func": "dao_input_storing"
+        },
+        {
+            "cve_id": "CVE-2022-35927",
+            "branch": "cbmc_2022_35927",
+            "harness_path": "cbmc/proofs/net/rpl-classic/icmp6/dio_input",
+            "target_func": "dio_input"
+        },
+        {
+            "cve_id": "CVE-2023-23609",
+            "branch": "CVE-2023-23609",
+            "harness_path": "cbmc/proofs/net/l2cap/input_l2cap_frame_flow_channel",
+            "target_func": "input_l2cap_frame_flow_channel"
+        },
+        {
+            "cve_id": "CVE-2020-12140",
+            "branch": "CVE-2020-12140",
+            "harness_path": "cbmc/proofs/net/l2cap/input_l2cap_frame_flow_channel",
+            "target_func": "input_l2cap_frame_flow_channel"
+        },
+        {
+            "cve_id": "CVE-2022-41972",
+            "branch": "CVE-2022-41972",
+            "harness_path": "cbmc/proofs/net/l2cap/input_l2cap_credit",
+            "target_func": "input_l2cap_credit"
+        },
+        {
+            "cve_id": "CVE-2023-50927",
+            "branch": "cbmc_2022_35927",
+            "harness_path": "cbmc/proofs/net/rpl-classic/icmp6/dio_input",
+            "target_func": "dio_input"
+        },
+        {
+            "cve_id": "CVE-2023-50926",
+            "branch": "CVE-2023-50926",
+            "harness_path": "cbmc/proofs/net/rpl-lite/icmp6/rpl_process_dio",
+            "target_func": "rpl_process_dio"
+        },
+        {
+            "cve_id": "CVE-2023-37459",
+            "branch": "CVE-2023-37459",
+            "harness_path": "cbmc/proofs/net/ipv6/tcp/check_for_tcp_syn",
+            "target_func": "check_for_tcp_syn"
+        },
+        {
+            "cve_id": "CVE-2023-37281",
+            "branch": "CVE-2023-37281",
+            "harness_path": "cbmc/proofs/net/6lowpan/uncompress_addr",
+            "target_func": "uncompress_addr"
+        },
+        {
+            "cve_id": "CVE-2023-34101",
+            "branch": "cbmc_2021_32771",
+            "harness_path": "cbmc/proofs/net/rpl-classic/icmp6/dao_input_storing",
+            "target_func": "dao_input_storing"
+        },
+        {
+            "cve_id": "CVE-2023-31129",
+            "branch": "CVE-2023-31129",
+            "harness_path": "cbmc/proofs/net/ipv6/rs_input",
+            "target_func": "rs_input"
+        }
+    ],
+    "freeRTOS": [
+        {
+            "cve_id": "CVE-2018-16523",
+            "branch": "prvSingleStepTCPHeaderOptions",
+            "harness_path": "cbmc/prvSingleStepTCPHeaderOptions",
+            "target_func": "prvSingleStepTCPHeaderOptions"
+        },
+        {
+            "cve_id": "CVE-1028-16524",
+            "branch": "prvCheckOptions",
+            "harness_path": "cbmc/prvCheckOptions",
+            "target_func": "prvCheckOptions"
+        },
+        {
+            "cve_id": "CVE-2018-16525",
+            "branch": "ulDNSHandlePacket",
+            "harness_path": "cbmc/ulDNSHandlePacket",
+            "target_func": "ulDNSHandlePacket"
+        },
+        {
+            "cve_id": "CVE-2018-16527",
+            "branch": "prvProcessICMPPacket",
+            "harness_path": "cbmc/ProcessICMPPacket",
+            "target_func": "ProcessICMPPacket"
+        },
+        {
+            "cve_id": "CVE-2018-16600",
+            "branch": "eARPProcessPacket",
+            "harness_path": "cbmc/eARPProcessPacket",
+            "target_func": "eARPProcessPacket"
+        },
+        {
+            "cve_id": "CVE-2018-16601",
+            "branch": "prvProcessIPPacket-base",
+            "harness_path": "cbmc/prvProcessIPPacket",
+            "target_func": "prvProcessIPPacket"
+        },
+        {
+            "cve_id": "CVE-2018-16602",
+            "branch": "cprvProcessDHCPReplies",
+            "harness_path": "cbmc/prvProcessDHCPReplies",
+            "target_func": "prvProcessDHCPReplies"
+        },
+        {
+            "cve_id": "CVE-2018-16603",
+            "branch": "xProcessReceivedTCPPacket-base",
+            "harness_path": "cbmc/xProcessReceivedTCPPacket",
+            "target_func": "xProcessReceivedTCPPacket"
+        }
+    ],
+    "RIOT": [
+        {
+            "cve_id": "CVE-2024-52802",
+            "branch": "dhcp_parse_advertise",
+            "harness_path": "cbmc/proofs/_parse_advertise",
+            "target_func": "_parse_advertise"
+        },
+        {
+            "cve_id": "CVE-2024-32018",
+            "branch": "nimble_scanlist_update",
+            "harness_path": "cbmc/proofs/nimble_scanlist_update",
+            "target_func": "nimble_scanlist_update"
+        },
+        {
+            "cve_id": "CVE-2024-32017",
+            "branch": "gcoap_dns_server_proxy_get",
+            "harness_path": "cbmc/proofs/gcoap_dns_server_proxy_get",
+            "target_func": "gcoap_dns_server_proxy_get"
+        },
+        {
+            "cve_id": "CVE-2024-32017B",
+            "branch": "gcoap_forward_proxy_copy_options",
+            "harness_path": "cbmc/proofs/_gcoap_forward_proxy_copy_options",
+            "target_func": "_gcoap_forward_proxy_copy_options"
+        },
+        {
+            "cve_id": "CVE-2024-31225",
+            "branch": "_on_rd_init",
+            "harness_path": "cbmc/proofs/_on_rd_init",
+            "target_func": "_on_rd_init"
+        },
+        {
+            "cve_id": "CVE-2023-33975",
+            "branch": "CVE-2023-33975-paschal",
+            "harness_path": "cbmc/proofs/_rbuf_add2",
+            "target_func": "_rbuf_add"
+        },
+        {
+            "cve_id": "CVE-2023-33973",
+            "branch": "_iphc_ipv6_encode",
+            "harness_path": "cbmc/proofs/_iphc_ipv6_encode",
+            "target_func": "_iphc_ipv6_encode"
+        },
+        {
+            "cve_id": "CVE-2023-24826",
+            "branch": "gnrc_sixlowpan_frag_sfr_send",
+            "harness_path": "cbmc/proofs/gnrc_sixlowpan_frag_sfr_send",
+            "target_func": "gnrc_sixlowpan_frag_sfr_send"
+        },
+        {
+            "cve_id": "CVE-2023-24821",
+            "branch": "CVE-2023-33975-paschal",
+            "harness_path": "cbmc/proofs/_rbuf_add2",
+            "target_func": "_rbuf_add"
+        },
+        {
+            "cve_id": "CVE-2023-24817",
+            "branch": "gnrc_rpl_srh_process",
+            "harness_path": "cbmc/proofs/gnrc_rpl_srh_process",
+            "target_func": "gnrc_rpl_srh_process"
+        },
+        {
+            "cve_id": "CVE-2023-24823",
+            "branch": "CVE-2023-24823",
+            "harness_path": "cbmc/proofs/_iphc_encode",
+            "target_func": "_iphc_encode"
+        },
+        {
+            "cve_id": "CVE-2023-24825",
+            "branch": "CVE-2023-33975-paschal",
+            "harness_path": "cbmc/proofs/_rbuf_add2",
+            "target_func": "_rbuf_add"
+        },
+        {
+            "cve_id": "CVE-2023-24822",
+            "branch": "CVE-2023-24822",
+            "harness_path": "cbmc/proofs/_iphc_encode",
+            "target_func": "_iphc_encode"
+        },
+        {
+            "cve_id": "CVE-2023-24820",
+            "branch": "gnrc_sixlowpan_iphc_recv",
+            "harness_path": "cbmc/proofs/gnrc_sixlowpan_iphc_recv",
+            "target_func": "gnrc_sixlowpan_iphc_recv"
+        },
+        {
+            "cve_id": "CVE-2023-24819",
+            "branch": "gnrc_sixlowpan_iphc_recv",
+            "harness_path": "cbmc/proofs/gnrc_sixlowpan_iphc_recv",
+            "target_func": "gnrc_sixlowpan_iphc_recv"
+        },
+        {
+            "cve_id": "CVE-2021-31664",
+            "branch": "dns_msg_parse_reply",
+            "harness_path": "cbmc/proofs/dns_msg_parse_reply",
+            "target_func": "dns_msg_parse_reply"
+        },
+        {
+            "cve_id": "CVE-2021-31663",
+            "branch": "CVE-2021-31663",
+            "harness_path": "cbmc/proofs/uri_parser_process",
+            "target_func": "uri_parser_process"
+        },
+        {
+            "cve_id": "CVE-2021-31662",
+            "branch": "CVE-2021-31662",
+            "harness_path": "cbmc/proofs/uri_parser_process",
+            "target_func": "uri_parser_process"
+        },
+        {
+            "cve_id": "CVE-2021-31661",
+            "branch": "clif_get_attr",
+            "harness_path": "cbmc/proofs/clif_get_attr",
+            "target_func": "clif_get_attr"
+        },
+        {
+            "cve_id": "CVE-2021-31660",
+            "branch": "clif_decode_link",
+            "harness_path": "cbmc/proofs/clif_decode_link",
+            "target_func": "clif_decode_link"
+        },
+        {
+            "cve_id": "CVE-2021-27698",
+            "branch": "_parse_options",
+            "harness_path": "cbmc/proofs/_parse_options",
+            "target_func": "_parse_options"
+        },
+        {
+            "cve_id": "CVE-2021-27697",
+            "branch": "gnrc_rpl_validation_options",
+            "harness_path": "cbmc/proofs/gnrc_rpl_validation_options",
+            "target_func": "gnrc_rpl_validation_options"
+        },
+        {
+            "cve_id": "CVE-2021-27357",
+            "branch": "gnrc_rpl_recv_DAO",
+            "harness_path": "cbmc/proofs/gnrc_rpl_recv_DAO",
+            "target_func": "gnrc_rpl_recv_DAO"
+        },
+        {
+            "cve_id": "CVE-2020-15350",
+            "branch": "base64_encode_base",
+            "harness_path": "cbmc/proofs/base64_encode_base",
+            "target_func": "base64_encode_base"
+        },
+        {
+            "cve_id": "CVE-2019-17389",
+            "branch": "emcute_run",
+            "harness_path": "cbmc/proofs/emcute_run",
+            "target_func": "emcute_run"
+        },
+        {
+            "cve_id": "CVE-2019-16754",
+            "branch": "_on_regack",
+            "harness_path": "cbmc/proofs/_on_regack",
+            "target_func": "_on_regack"
+        },
+        {
+            "cve_id": "CVE-2019-15134",
+            "branch": "_receive",
+            "harness_path": "cbmc/proofs/_receive",
+            "target_func": "_receive"
+        },
+        {
+            "cve_id": "CVE-2019-1000006",
+            "branch": "CVE-2019-1000006",
+            "harness_path": "cbmc/proofs/dns_msg_parse_reply",
+            "target_func": "dns_msg_parse_reply"
+        }
+    ],
+    "zephyr": [
+        {
+            "cve_id": "CVE-2024-4785",
+            "branch": "CVE-2024-4785-paschal",
+            "harness_path": "cbmc/rp_cu_st_wait_rx_conn_update_ind",
+            "target_func": "rp_cu_st_wait_rx_conn_update_ind"
+        },
+        {
+            "cve_id": "CVE-2024-3332",
+            "branch": "smp_error",
+            "harness_path": "cbmc/smp_error",
+            "target_func": "smp_error"
+        },
+        {
+            "cve_id": "CVE-2024-3077",
+            "branch": "paschal_gatt_find_info_rsp",
+            "harness_path": "cbmc/gatt_find_info_rsp",
+            "target_func": "gatt_find_info_rsp"
+        },
+        {
+            "cve_id": "CVE-2023-6881",
+            "branch": "is_mount_point",
+            "harness_path": "cbmc/is_mount_point",
+            "target_func": "is_mount_point"
+        },
+        {
+            "cve_id": "CVE-2023-6749",
+            "branch": "cmd_write",
+            "harness_path": "cbmc/cmd_write",
+            "target_func": "cmd_write"
+        },
+        {
+            "cve_id": "CVE-2023-5184",
+            "branch": "CVE-2023-5184-parth",
+            "harness_path": "cbmc/CVE-2023-5184",
+            "target_func": "imx_mu_ipm_send"
+        },
+        {
+            "cve_id": "CVE-2023-5139",
+            "branch": "cve-2023-5139-taylor",
+            "harness_path": "cbmc/copy_reverse_words",
+            "target_func": "copy_reverse_words"
+        },
+        {
+            "cve_id": "CVE-2023-4424",
+            "branch": "CVE-2023-4424-parth",
+            "harness_path": "cbmc/CVE-2023-4424",
+            "target_func": "le_advertising_report"
+        },
+        {
+            "cve_id": "CVE-2023-4265",
+            "branch": "CVE-2023-4265-parth",
+            "harness_path": "cbmc/CVE-2023-4265",
+            "target_func": "usb_dc_ep_write"
+        },
+        {
+            "cve_id": "CVE-2023-4264",
+            "branch": "CVE-2023-4264-parth-2",
+            "harness_path": "cbmc/CVE-2023-4264",
+            "target_func": "bt_tbs_remote_incoming"
+        },
+        {
+            "cve_id": "CVE-2023-4263",
+            "branch": "nrf5_tx",
+            "harness_path": "cbmc/nrf5_tx",
+            "target_func": "nrf5_tx"
+        },
+        {
+            "cve_id": "CVE-2023-4260",
+            "branch": "fuse_fs_access_readdir",
+            "harness_path": "cbmc/fuse_fs_access_readdir",
+            "target_func": "fuse_fs_access_readdir"
+        },
+        {
+            "cve_id": "CVE-2023-4259",
+            "branch": "eswifi_mgmt_iface_status",
+            "harness_path": "cbmc/eswifi_mgmt_iface_status",
+            "target_func": "eswifi_mgmt_iface_status"
+        },
+        {
+            "cve_id": "CVE-2023-3725",
+            "branch": "CVE-2023-3725-parth",
+            "harness_path": "cbmc/CVE-2023-3725",
+            "target_func": "send_sf"
+        },
+        {
+            "cve_id": "CVE-2023-0779",
+            "branch": "CVE-2023-0779-parth",
+            "harness_path": "cbmc/CVE-2023-0779",
+            "target_func": "cmd_net_pkt"
+        },
+        {
+            "cve_id": "CVE-2022-1042",
+            "branch": "gen_prov_cont-taylor",
+            "harness_path": "cbmc/gen_prov_cont",
+            "target_func": "gen_prov_cont"
+        },
+        {
+            "cve_id": "CVE-2022-1041",
+            "branch": "cve-2022-1041-taylor",
+            "harness_path": "cbmc/gen_prov_start",
+            "target_func": "gen_prov_start"
+        },
+        {
+            "cve_id": "CVE-2021-3861",
+            "branch": "cve-2021-3861-taylor-no-cmake",
+            "harness_path": "cbmc/cve-2021-3861",
+            "target_func": "queue_encapsulated_cmd"
+        },
+        {
+            "cve_id": "CVE-2021-3835",
+            "branch": "cve-2021-3835-taylor",
+            "harness_path": "cbmc/bt_buf_get_tx",
+            "target_func": "bt_buf_get_tx"
+        },
+        {
+            "cve_id": "CVE-2021-3625",
+            "branch": "CVE-2021-3625-paschal",
+            "harness_path": "cbmc/dfu_class_handle_to_device",
+            "target_func": "dfu_class_handle_to_device"
+        },
+        {
+            "cve_id": "CVE-2021-3581",
+            "branch": "ull_scan_rsp_set-taylor",
+            "harness_path": "cbmc/ull_scan_rsp_set",
+            "target_func": "ull_scan_rsp_set"
+        },
+        {
+            "cve_id": "CVE-2021-3454",
+            "branch": "CVE-2021-3454-taylor",
+            "harness_path": "cbmc/l2cap_chan_le_recv",
+            "target_func": "l2cap_chan_le_recv"
+        },
+        {
+            "cve_id": "CVE-2021-3432",
+            "branch": "CVE-2021-3432-taylor",
+            "harness_path": "cbmc/ull_periph_setup",
+            "target_func": "ull_periph_setup"
+        },
+        {
+            "cve_id": "CVE-2021-3323",
+            "branch": "uncompress_IPHC_header-taylor",
+            "harness_path": "",
+            "target_func": "uncompress_IPHC_header"
+        },
+        {
+            "cve_id": "CVE-2021-3322",
+            "branch": "CVE-2021-3322-parth",
+            "harness_path": "",
+            "target_func": "fragment_add_to_cache"
+        },
+        {
+            "cve_id": "CVE-2021-3321",
+            "branch": "CVE-2021-3321-parth",
+            "harness_path": "",
+            "target_func": "fragment_add_to_cache"
+        },
+        {
+            "cve_id": "CVE-2021-3320",
+            "branch": "cve-2021-3320-paschal",
+            "harness_path": "cbmc/ieee802154_recv",
+            "target_func": "ieee802154_recv"
+        },
+        {
+            "cve_id": "CVE-2021-3319",
+            "branch": "cve-2021-3319-taylor",
+            "harness_path": "cbmc/ieee802154_recv",
+            "target_func": "ieee802154_recv"
+        },
+        {
+            "cve_id": "CVE-2020-13602",
+            "branch": "cve-2020-13602-taylor",
+            "harness_path": "cbmc/do_write_op_tlv",
+            "target_func": "do_write_op_tlv"
+        },
+        {
+            "cve_id": "CVE-2020-13601",
+            "branch": "CVE-2020-13601-paschal",
+            "harness_path": "cbmc/dns_validate_msg",
+            "target_func": "dns_validate_msg"
+        },
+        {
+            "cve_id": "CVE-2020-13600",
+            "branch": "cve-2020-13600-taylor",
+            "harness_path": "cbmc/__parse_ssid",
+            "target_func": "__parse_ssid"
+        }
+    ]
+}
